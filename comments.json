@@ -1,0 +1,218 @@
+[
+  {
+    "selector": "nav.kit-nav",
+    "text": "none of the elements here pass ACAG or WCAG contrast test",
+    "snippet": "<nav class=\"kit-nav\">\n  <div class=\"nav-heading\">Foundation</div>\n  <a href=\"#typography\">Typography",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "a",
+    "text": "links must be consistent and easily identifiable active throughout (think about what that means)",
+    "snippet": "<a href=\"#spacing\">Spacing</a>",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "div.title",
+    "text": "hero block got all scrambled",
+    "snippet": "<div class=\"title\">Component<br>Reference</div>",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "div.kit-section-title",
+    "text": "move as a hanging element to the left of the section title",
+    "snippet": "<div class=\"kit-section-title\">01</div>",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "div",
+    "text": "more generous space between.",
+    "snippet": "<div style=\"display: flex; flex-direction: column; gap: 16px;\">\n        <div class=\"type-hero\">Hero ",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "div.code-block",
+    "text": "should be merged w prev section",
+    "snippet": "<div class=\"code-block\">.type-hero \u00b7 .type-display \u00b7 .type-heading \u00b7 .type-subheading\n.type-body \u00b7 .",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "#colors",
+    "text": "color blocks and titles take too little space on big screen \u2014 make it proportional and WCAG compliant font-size wise (let's go for em's)",
+    "snippet": "<section class=\"kit-section\" id=\"colors\">\n    <div class=\"kit-section-title\">02</div>\n    <h2>Colors",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "div",
+    "text": "super tiny presentation - enlarge; think of a representative demo component to the right visually representing spaces",
+    "snippet": "<div style=\"display: flex; flex-direction: column; gap: 8px;\">\n      <div style=\"display: flex; alig",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "button.btn.btn-secondary",
+    "text": "more active color needed for caption",
+    "snippet": "<button class=\"btn btn-secondary\">Secondary</button>",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "div.kit-label",
+    "text": "this class throughout is too dim against bg",
+    "snippet": "<div class=\"kit-label\">Variants</div>",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "#toggles",
+    "text": "give these and similar components a nice full-width grid with each element in separate cell with generous paddings",
+    "snippet": "<section class=\"kit-section\" id=\"toggles\">\n    <div class=\"kit-section-title\">06</div>\n    <h2>Toggl",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "div.tabs",
+    "text": "wut",
+    "snippet": "<div class=\"tabs\">\n      <button class=\"tab active\">Overview</button>\n      <button class=\"tab\">Sess",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "#tables",
+    "text": "add tables w/tabs and filter examples",
+    "snippet": "<section class=\"kit-section\" id=\"tables\">\n    <div class=\"kit-section-title\">09</div>\n    <h2>Tables",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "#bars",
+    "text": "same as everywhere \u2014 vertical spacing should be more generous",
+    "snippet": "<section class=\"kit-section\" id=\"bars\">\n    <div class=\"kit-section-title\">10</div>\n    <h2>Bars</h2",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "#progress",
+    "text": "there's just the titles visible",
+    "snippet": "<section class=\"kit-section\" id=\"progress\">\n    <div class=\"kit-section-title\">11</div>\n    <h2>Prog",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "div.card",
+    "text": "neat, though barely noticeable hover changes;",
+    "snippet": "<div class=\"card\">\n        <div class=\"type-overline\" style=\"margin-bottom: 8px;\">Card</div>\n       ",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "div.panel-footer",
+    "text": "show, don't tell",
+    "snippet": "<div class=\"panel-footer\">Panel footer \u2014 metadata or actions</div>",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "#vision",
+    "text": "why is this scrolled down to when open?",
+    "snippet": "<section class=\"kit-section\" id=\"vision\">\n    <div class=\"kit-section-title\">27</div>\n    <h2>Vision",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "div.title",
+    "text": "this and the  following section seem like the styles are not on",
+    "snippet": "<div class=\"title\">Component<br>Reference</div>",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "nav.kit-nav",
+    "text": "make section titles hanging like section numbers before; widen sidebar, tighten verticals; section titles in pure white",
+    "snippet": "<nav class=\"kit-nav\"><div class=\"nav-highlight\" style=\"transform: translateY(265px); height: 34px; o",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "#popover",
+    "text": "this spilled out and overlaps #30",
+    "snippet": "<section class=\"kit-section\" id=\"popover\">\n    <div class=\"kit-section-title\">29</div>\n    <h2>Popov",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "#hovercard",
+    "text": "overlap",
+    "snippet": "<section class=\"kit-section\" id=\"hovercard\">\n    <div class=\"kit-section-title\">31</div>\n    <h2>Hov",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "#vision",
+    "text": "not needed",
+    "snippet": "<section class=\"kit-section\" id=\"vision\">\n    <div class=\"kit-section-title\">27</div>\n    <h2>Vision",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "span.tooltip",
+    "text": "this is plain text",
+    "snippet": "<span class=\"tooltip\">This is a tooltip</span>",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "#skeleton",
+    "text": "spooky bc there is nothing there",
+    "snippet": "<section class=\"kit-section\" id=\"skeleton\">\n    <div class=\"kit-section-title\">25</div>\n    <h2>Skel",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "#dividers",
+    "text": "three identical lines?",
+    "snippet": "<section class=\"kit-section\" id=\"dividers\">\n    <div class=\"kit-section-title\">24</div>\n    <h2>Divi",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "#modal",
+    "text": "makes no sense shown like this, must be actual window",
+    "snippet": "<section class=\"kit-section\" id=\"modal\">\n    <div class=\"kit-section-title\">23</div>\n    <h2>Modal</",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "#kv",
+    "text": "one column is too little",
+    "snippet": "<section class=\"kit-section\" id=\"kv\">\n    <div class=\"kit-section-title\">19</div>\n    <h2>Key-Value ",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "div.empty-state",
+    "text": "explore more aesthetic layout",
+    "snippet": "<div class=\"empty-state\" style=\"max-width: 500px;\">\n      <div class=\"empty-icon\">\u25c7</div>\n      <div",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "div.summary",
+    "text": "up the size, decrease char per line to 80",
+    "snippet": "<div class=\"summary\">\n      Across 20 sessions, chemistry scores 8.0/10. At 6.2 prompts per session,",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "span.kv-label",
+    "text": "contradst low",
+    "snippet": "<span class=\"kv-label\">EVENT SOURCE</span>",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "div.kv-grid",
+    "text": "vertical gap too small",
+    "snippet": "<div class=\"kv-grid\" style=\"max-width: 350px;\">\n      <span class=\"kv-label\">REPORT GENERATED</span>",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "div.type-body",
+    "text": "needs bg",
+    "snippet": "<div class=\"type-body\">Run <span class=\"code-inline\">GEMINI_API_KEY=xxx node server.js</span> to sta",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "pre.code-block",
+    "text": "needs borders and padding",
+    "snippet": "<pre class=\"code-block\"><span class=\"keyword\">const</span> board = <span class=\"keyword\">await</span",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "div",
+    "text": "oth bullets?",
+    "snippet": "<div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 700px;\">\n      <div",
+    "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "div.kit-row",
+    "text": "all identical",
+    "snippet": "<div class=\"kit-row\" style=\"gap: 32px;\">\n      <span class=\"status\"><span class=\"status-dot online p",
+    "url": "http://localhost:8000/"
+  }
+]

@@ -6,1240 +6,12 @@
 <title>AEROSPACE UI KIT — Component Reference</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  /* ═══════════════════════════════════════════════
-     DESIGN TOKENS
-     ═══════════════════════════════════════════════ */
-  :root {
-    /* Backgrounds */
-    --bg:             #0a0a0a;
-    --bg-raised:      #111111;
-    --bg-surface:     #0d0d0d;
-    --bg-hover:       #141414;
-    --bg-input:       #0e0e0e;
-    --bg-overlay:     rgba(0,0,0,0.75);
-
-    /* Borders */
-    --border:         #f59e0b44;
-    --border-dim:     #f59e0b22;
-    --border-bright:  #f59e0b88;
-    --border-solid:   #f59e0b;
-    --border-muted:   #1a1a1a;
-    --border-input:   #333333;
-    --border-focus:   #f59e0b;
-
-    /* Text */
-    --text:           #e8e8e8;
-    --text-bright:    #ffffff;
-    --text-dim:       #666666;
-    --text-label:     #888888;
-    --text-muted:     #444444;
-
-    /* Accent */
-    --accent:         #f59e0b;
-    --accent-dim:     #f59e0b55;
-    --accent-bg:      #f59e0b11;
-    --accent-hover:   #fbbf24;
-
-    /* Semantic */
-    --green:          #22c55e;
-    --green-dim:      #22c55e33;
-    --red:            #ef4444;
-    --red-dim:        #ef444433;
-    --blue:           #3b82f6;
-    --blue-dim:       #3b82f633;
-    --yellow:         #f59e0b;
-    --yellow-dim:     #f59e0b33;
-
-    /* Spacing */
-    --space-xs:       4px;
-    --space-sm:       8px;
-    --space-md:       16px;
-    --space-lg:       24px;
-    --space-xl:       32px;
-    --space-2xl:      48px;
-    --space-3xl:      64px;
-
-    /* Typography */
-    --font-mono:      'Geist Mono', 'SF Mono', 'Consolas', monospace;
-    --text-xs:        11px;
-    --text-sm:        12px;
-    --text-base:      15px;
-    --text-md:        16px;
-    --text-lg:        20px;
-    --text-xl:        28px;
-    --text-2xl:       44px;
-    --text-3xl:       56px;
-    --label-spacing:  0.15em;
-    --title-spacing:  0.2em;
-
-    /* Radius */
-    --radius-none:    0;
-    --radius-sm:      2px;
-
-    /* Transitions */
-    --transition:     150ms ease;
-  }
-
-  /* ═══════════════════════════════════════════════
-     RESET & BASE
-     ═══════════════════════════════════════════════ */
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: var(--font-mono);
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    -webkit-font-smoothing: antialiased;
-    font-size: var(--text-base);
-    line-height: 1.5;
-  }
-
-  ::selection {
-    background: var(--accent);
-    color: var(--bg);
-  }
-
-  /* ═══════════════════════════════════════════════
-     KIT LAYOUT (not part of the kit itself)
-     ═══════════════════════════════════════════════ */
-  .kit-page {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--space-3xl) var(--space-xl);
-  }
-
-  .kit-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 220px;
-    height: 100vh;
-    padding: var(--space-xl) var(--space-lg);
-    border-right: 1px solid var(--border-dim);
-    background: var(--bg);
-    overflow-y: auto;
-    z-index: 100;
-  }
-
-  .kit-nav a {
-    display: block;
-    font-size: var(--text-sm);
-    color: var(--text-dim);
-    text-decoration: none;
-    padding: 6px 0;
-    letter-spacing: 0.05em;
-    transition: color var(--transition);
-  }
-
-  .kit-nav a:hover { color: var(--accent); }
-  .kit-nav .nav-heading {
-    font-size: var(--text-xs);
-    text-transform: uppercase;
-    letter-spacing: var(--label-spacing);
-    color: var(--text-muted);
-    margin-top: var(--space-lg);
-    margin-bottom: var(--space-sm);
-  }
-
-  .kit-nav .nav-heading:first-child { margin-top: 0; }
-
-  .kit-main {
-    margin-left: 220px;
-    padding: var(--space-3xl) var(--space-2xl);
-  }
-
-  .kit-section {
-    margin-bottom: var(--space-3xl);
-    padding-bottom: var(--space-2xl);
-    border-bottom: 1px dotted var(--border-dim);
-  }
-
-  .kit-section:last-child { border-bottom: none; }
-
-  .kit-section-title {
-    font-size: var(--text-xs);
-    text-transform: uppercase;
-    letter-spacing: var(--title-spacing);
-    color: var(--accent);
-    margin-bottom: var(--space-xs);
-  }
-
-  .kit-section h2 {
-    font-size: var(--text-xl);
-    font-weight: 700;
-    color: var(--text-bright);
-    letter-spacing: -0.02em;
-    margin-bottom: var(--space-lg);
-  }
-
-  .kit-row {
-    display: flex;
-    gap: var(--space-md);
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-bottom: var(--space-lg);
-  }
-
-  .kit-row.col {
-    flex-direction: column;
-  }
-
-  .kit-label {
-    font-size: var(--text-xs);
-    text-transform: uppercase;
-    letter-spacing: var(--label-spacing);
-    color: var(--text-dim);
-    margin-bottom: var(--space-sm);
-  }
-
-  .kit-group {
-    margin-bottom: var(--space-xl);
-  }
-
-  /* ═══════════════════════════════════════════════
-     01. TYPOGRAPHY
-     ═══════════════════════════════════════════════ */
-  .type-hero {
-    font-size: var(--text-3xl);
-    font-weight: 700;
-    color: var(--text-bright);
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-  }
-
-  .type-display {
-    font-size: var(--text-2xl);
-    font-weight: 700;
-    color: var(--text-bright);
-    line-height: 1.1;
-  }
-
-  .type-heading {
-    font-size: var(--text-xl);
-    font-weight: 700;
-    color: var(--text-bright);
-    letter-spacing: -0.01em;
-  }
-
-  .type-subheading {
-    font-size: var(--text-lg);
-    font-weight: 500;
-    color: var(--text);
-  }
-
-  .type-body {
-    font-size: var(--text-base);
-    color: var(--text);
-    line-height: 1.6;
-  }
-
-  .type-small {
-    font-size: var(--text-sm);
-    color: var(--text-label);
-  }
-
-  .type-overline {
-    font-size: var(--text-xs);
-    text-transform: uppercase;
-    letter-spacing: var(--label-spacing);
-    color: var(--text-dim);
-  }
-
-  .type-overline.bright { color: var(--accent); letter-spacing: var(--title-spacing); }
-
-  /* ═══════════════════════════════════════════════
-     02. COLORS (swatches rendered via markup)
-     ═══════════════════════════════════════════════ */
-  .swatch-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: var(--space-md);
-  }
-
-  .swatch {
-    border: 1px solid var(--border-dim);
-  }
-
-  .swatch-color {
-    height: 64px;
-  }
-
-  .swatch-info {
-    padding: var(--space-sm) var(--space-md);
-    font-size: var(--text-xs);
-    color: var(--text-dim);
-    border-top: 1px solid var(--border-dim);
-  }
-
-  .swatch-info strong {
-    display: block;
-    color: var(--text-label);
-    font-weight: 500;
-    margin-bottom: 2px;
-  }
-
-  /* ═══════════════════════════════════════════════
-     03. BUTTONS
-     ═══════════════════════════════════════════════ */
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-sm);
-    font-family: var(--font-mono);
-    font-size: var(--text-sm);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 10px 20px;
-    border: 1px solid transparent;
-    cursor: pointer;
-    transition: all var(--transition);
-    text-decoration: none;
-    line-height: 1;
-  }
-
-  /* Primary */
-  .btn-primary {
-    background: var(--accent);
-    color: var(--bg);
-    border-color: var(--accent);
-  }
-  .btn-primary:hover {
-    background: var(--accent-hover);
-    border-color: var(--accent-hover);
-  }
-
-  /* Secondary */
-  .btn-secondary {
-    background: transparent;
-    color: var(--accent);
-    border-color: var(--border);
-  }
-  .btn-secondary:hover {
-    background: var(--accent-bg);
-    border-color: var(--border-bright);
-  }
-
-  /* Ghost */
-  .btn-ghost {
-    background: transparent;
-    color: var(--text-label);
-    border-color: var(--border-muted);
-  }
-  .btn-ghost:hover {
-    color: var(--text);
-    border-color: var(--border-dim);
-    background: var(--bg-hover);
-  }
-
-  /* Danger */
-  .btn-danger {
-    background: transparent;
-    color: var(--red);
-    border-color: var(--red-dim);
-  }
-  .btn-danger:hover {
-    background: var(--red-dim);
-    border-color: var(--red);
-  }
-
-  /* Sizes */
-  .btn-sm {
-    font-size: var(--text-xs);
-    padding: 6px 12px;
-  }
-
-  .btn-lg {
-    font-size: 14px;
-    padding: 14px 28px;
-  }
-
-  /* Disabled */
-  .btn:disabled, .btn.disabled {
-    opacity: 0.35;
-    cursor: not-allowed;
-    pointer-events: none;
-  }
-
-  /* Icon-only */
-  .btn-icon {
-    padding: 10px;
-    min-width: 36px;
-    justify-content: center;
-  }
-
-  /* ═══════════════════════════════════════════════
-     04. FORM INPUTS
-     ═══════════════════════════════════════════════ */
-  .input-group {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
-  }
-
-  .input-label {
-    font-size: var(--text-xs);
-    text-transform: uppercase;
-    letter-spacing: var(--label-spacing);
-    color: var(--text-dim);
-  }
-
-  .input {
-    font-family: var(--font-mono);
-    font-size: var(--text-base);
-    color: var(--text);
-    background: var(--bg-input);
-    border: 1px solid var(--border-input);
-    padding: 10px 14px;
-    transition: border-color var(--transition);
-    outline: none;
-    width: 100%;
-  }
-
-  .input:focus {
-    border-color: var(--border-focus);
-  }
-
-  .input::placeholder {
-    color: var(--text-muted);
-  }
-
-  .input.error {
-    border-color: var(--red);
-  }
-
-  .input-hint {
-    font-size: var(--text-xs);
-    color: var(--text-dim);
-  }
-
-  .input-error {
-    font-size: var(--text-xs);
-    color: var(--red);
-  }
-
-  textarea.input {
-    min-height: 100px;
-    resize: vertical;
-    line-height: 1.5;
-  }
-
-  select.input {
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 14px center;
-    padding-right: 36px;
-    cursor: pointer;
-  }
-
-  /* Checkbox / Radio */
-  .check-group {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    cursor: pointer;
-    font-size: var(--text-sm);
-    color: var(--text-label);
-  }
-
-  .check-group input[type="checkbox"],
-  .check-group input[type="radio"] {
-    appearance: none;
-    width: 16px;
-    height: 16px;
-    border: 1px solid var(--border-input);
-    background: var(--bg-input);
-    cursor: pointer;
-    position: relative;
-    flex-shrink: 0;
-  }
-
-  .check-group input[type="radio"] { border-radius: 50%; }
-
-  .check-group input:checked {
-    border-color: var(--accent);
-    background: var(--accent);
-  }
-
-  .check-group input[type="checkbox"]:checked::after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 5px;
-    width: 4px;
-    height: 8px;
-    border: solid var(--bg);
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-  }
-
-  .check-group input[type="radio"]:checked::after {
-    content: '';
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    width: 6px;
-    height: 6px;
-    background: var(--bg);
-    border-radius: 50%;
-  }
-
-  /* Toggle */
-  .toggle {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    cursor: pointer;
-    font-size: var(--text-sm);
-    color: var(--text-label);
-  }
-
-  .toggle-track {
-    width: 36px;
-    height: 20px;
-    background: var(--border-input);
-    border-radius: 10px;
-    position: relative;
-    transition: background var(--transition);
-    flex-shrink: 0;
-  }
-
-  .toggle-track::after {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 14px;
-    height: 14px;
-    background: var(--text-dim);
-    border-radius: 50%;
-    transition: all var(--transition);
-  }
-
-  .toggle input { display: none; }
-
-  .toggle input:checked + .toggle-track {
-    background: var(--accent-dim);
-  }
-
-  .toggle input:checked + .toggle-track::after {
-    left: 19px;
-    background: var(--accent);
-  }
-
-  /* ═══════════════════════════════════════════════
-     05. TAGS / BADGES
-     ═══════════════════════════════════════════════ */
-  .tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: var(--text-xs);
-    font-family: var(--font-mono);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 4px 10px;
-    border: 1px solid var(--border-dim);
-    color: var(--text-label);
-  }
-
-  .tag-accent {
-    border-color: var(--border);
-    color: var(--accent);
-    background: var(--accent-bg);
-  }
-
-  .tag-green {
-    border-color: var(--green-dim);
-    color: var(--green);
-    background: rgba(34,197,94,0.06);
-  }
-
-  .tag-red {
-    border-color: var(--red-dim);
-    color: var(--red);
-    background: rgba(239,68,68,0.06);
-  }
-
-  .tag-blue {
-    border-color: var(--blue-dim);
-    color: var(--blue);
-    background: rgba(59,130,246,0.06);
-  }
-
-  /* Badge (numeric) */
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 22px;
-    height: 22px;
-    font-size: 10px;
-    font-family: var(--font-mono);
-    font-weight: 600;
-    padding: 0 6px;
-    background: var(--accent);
-    color: var(--bg);
-  }
-
-  .badge-outline {
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--accent);
-  }
-
-  .badge-dim {
-    background: var(--bg-hover);
-    color: var(--text-dim);
-  }
-
-  /* ═══════════════════════════════════════════════
-     06. PANELS & CARDS
-     ═══════════════════════════════════════════════ */
-  .panel {
-    border: 1px solid var(--border-dim);
-  }
-
-  .panel-header {
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: var(--text-bright);
-    padding: var(--space-md) var(--space-lg);
-    border-bottom: 1px solid var(--border-dim);
-    background: var(--bg-surface);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .panel-body {
-    padding: var(--space-lg);
-  }
-
-  .panel-footer {
-    padding: var(--space-md) var(--space-lg);
-    border-top: 1px solid var(--border-dim);
-    font-size: var(--text-sm);
-    color: var(--text-dim);
-  }
-
-  /* Card — lighter border, used for grouped content */
-  .card {
-    border: 1px solid var(--border-muted);
-    padding: var(--space-lg);
-    transition: border-color var(--transition);
-  }
-
-  .card:hover {
-    border-color: var(--border-dim);
-  }
-
-  .card-accent {
-    border-color: var(--border);
-  }
-
-  /* ═══════════════════════════════════════════════
-     07. TABLES
-     ═══════════════════════════════════════════════ */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .panel th {
-    font-size: var(--text-sm);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--text-bright);
-    text-align: left;
-    padding: 14px var(--space-lg);
-    font-weight: 500;
-    border-bottom: 1px solid var(--border-dim);
-    background: #0c0c0c;
-  }
-
-  .panel td {
-    padding: 14px var(--space-lg);
-    font-size: var(--text-base);
-    border-bottom: 1px solid var(--border-muted);
-    color: var(--text-label);
-  }
-
-  .panel tr:last-child td { border-bottom: none; }
-  .panel tr:hover td { background: var(--bg-hover); }
-
-  .text-accent { color: var(--accent); }
-  .text-bright { color: var(--text-bright); }
-  .text-dim { color: var(--text-dim); }
-  .text-green { color: var(--green); }
-  .text-red { color: var(--red); }
-
-  /* ═══════════════════════════════════════════════
-     08. METRIC CARDS
-     ═══════════════════════════════════════════════ */
-  .metric-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    border: 1px solid var(--border);
-  }
-
-  .metric {
-    padding: 28px var(--space-lg);
-    border-right: 1px solid var(--border-dim);
-  }
-
-  .metric:last-child { border-right: none; }
-
-  .metric-label {
-    font-size: var(--text-xs);
-    text-transform: uppercase;
-    letter-spacing: var(--label-spacing);
-    color: var(--text-dim);
-    margin-bottom: 10px;
-  }
-
-  .metric-value {
-    font-size: var(--text-2xl);
-    font-weight: 700;
-    line-height: 1;
-    color: var(--text-bright);
-  }
-
-  .metric-value.accent { color: var(--accent); }
-  .metric-value.green { color: var(--green); }
-
-  .metric-detail {
-    font-size: var(--text-sm);
-    color: var(--text-dim);
-    margin-top: var(--space-sm);
-  }
-
-  .metric-value span.frac {
-    font-size: 22px;
-    color: var(--text-dim);
-    font-weight: 400;
-  }
-
-  /* ═══════════════════════════════════════════════
-     09. BARS (Inline Data Viz)
-     ═══════════════════════════════════════════════ */
-  .bar-wrap {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .bar-val {
-    font-size: var(--text-base);
-    color: var(--text);
-    min-width: 24px;
-    flex-shrink: 0;
-  }
-
-  .bar-track {
-    flex: 1;
-    height: 5px;
-    background: var(--border-muted);
-  }
-
-  .bar-fill {
-    height: 100%;
-    background: var(--accent);
-    min-width: 3px;
-    transition: width 600ms ease;
-  }
-
-  .bar-fill.green { background: var(--green); }
-  .bar-fill.red { background: var(--red); }
-  .bar-fill.blue { background: var(--blue); }
-
-  /* Gradient bar variant */
-  .bar-fill.gradient {
-    background: linear-gradient(90deg, var(--accent-dim), var(--accent));
-  }
-
-  /* Thick bar */
-  .bar-track.thick { height: 8px; }
-  .bar-track.thin { height: 3px; }
-
-  /* ═══════════════════════════════════════════════
-     10. ALERTS / NOTICES
-     ═══════════════════════════════════════════════ */
-  .alert {
-    padding: var(--space-md) var(--space-lg);
-    font-size: var(--text-sm);
-    border-left: 2px solid var(--border);
-    color: var(--text-label);
-    line-height: 1.6;
-  }
-
-  .alert-info {
-    border-left-color: var(--blue);
-    background: rgba(59,130,246,0.04);
-  }
-
-  .alert-success {
-    border-left-color: var(--green);
-    background: rgba(34,197,94,0.04);
-  }
-
-  .alert-warning {
-    border-left-color: var(--accent);
-    background: var(--accent-bg);
-  }
-
-  .alert-danger {
-    border-left-color: var(--red);
-    background: rgba(239,68,68,0.04);
-  }
-
-  .alert strong {
-    color: var(--text-bright);
-    font-weight: 500;
-  }
-
-  /* ═══════════════════════════════════════════════
-     11. TABS
-     ═══════════════════════════════════════════════ */
-  .tabs {
-    display: flex;
-    border-bottom: 1px solid var(--border-dim);
-    gap: 0;
-  }
-
-  .tab {
-    font-family: var(--font-mono);
-    font-size: var(--text-sm);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--text-dim);
-    padding: 12px var(--space-lg);
-    cursor: pointer;
-    border: none;
-    background: none;
-    border-bottom: 2px solid transparent;
-    transition: all var(--transition);
-    margin-bottom: -1px;
-  }
-
-  .tab:hover {
-    color: var(--text);
-  }
-
-  .tab.active {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-  }
-
-  .tab-content {
-    padding: var(--space-lg) 0;
-  }
-
-  /* ═══════════════════════════════════════════════
-     12. STATUS INDICATORS
-     ═══════════════════════════════════════════════ */
-  .status {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-sm);
-    font-size: var(--text-sm);
-  }
-
-  .status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--text-dim);
-    flex-shrink: 0;
-  }
-
-  .status-dot.online { background: var(--green); box-shadow: 0 0 6px var(--green-dim); }
-  .status-dot.offline { background: var(--text-muted); }
-  .status-dot.warning { background: var(--accent); box-shadow: 0 0 6px var(--accent-dim); }
-  .status-dot.error { background: var(--red); box-shadow: 0 0 6px var(--red-dim); }
-
-  /* Pulsing variant */
-  .status-dot.pulse {
-    animation: pulse-dot 2s ease-in-out infinite;
-  }
-
-  @keyframes pulse-dot {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
-
-  /* ═══════════════════════════════════════════════
-     13. CODE BLOCKS
-     ═══════════════════════════════════════════════ */
-  .code-inline {
-    font-family: var(--font-mono);
-    font-size: 0.9em;
-    background: var(--bg-raised);
-    border: 1px solid var(--border-muted);
-    padding: 2px 6px;
-    color: var(--accent);
-  }
-
-  .code-block {
-    font-family: var(--font-mono);
-    font-size: 14px;
-    background: var(--bg-raised);
-    border: 1px solid var(--border-dim);
-    padding: var(--space-lg);
-    overflow-x: auto;
-    line-height: 1.6;
-    color: var(--text-label);
-    tab-size: 2;
-  }
-
-  .code-block .comment { color: var(--text-muted); }
-  .code-block .keyword { color: var(--accent); }
-  .code-block .string { color: var(--green); }
-  .code-block .number { color: var(--blue); }
-
-  /* ═══════════════════════════════════════════════
-     14. DIVIDERS
-     ═══════════════════════════════════════════════ */
-  .divider {
-    border: none;
-    border-top: 1px solid var(--border-muted);
-    margin: var(--space-lg) 0;
-  }
-
-  .divider-dotted {
-    border-top-style: dotted;
-    border-top-color: var(--border);
-  }
-
-  .divider-accent {
-    border-top-color: var(--border);
-  }
-
-  /* ═══════════════════════════════════════════════
-     15. LISTS
-     ═══════════════════════════════════════════════ */
-  .list {
-    list-style: none;
-  }
-
-  .list li {
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border-muted);
-    font-size: var(--text-base);
-    color: var(--text-label);
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-  }
-
-  .list li:last-child { border-bottom: none; }
-
-  .list li::before {
-    content: '›';
-    color: var(--accent);
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-
-  /* Numbered list */
-  .list-numbered {
-    counter-reset: item;
-  }
-
-  .list-numbered li::before {
-    counter-increment: item;
-    content: counter(item, decimal-leading-zero);
-    font-size: var(--text-xs);
-    color: var(--text-dim);
-    min-width: 24px;
-  }
-
-  /* ═══════════════════════════════════════════════
-     16. SUMMARY / BLOCKQUOTE
-     ═══════════════════════════════════════════════ */
-  .summary {
-    font-size: var(--text-md);
-    line-height: 1.7;
-    color: var(--text-label);
-    max-width: 900px;
-    border-left: 2px solid var(--border);
-    padding-left: var(--space-lg);
-  }
-
-  /* ═══════════════════════════════════════════════
-     17. KEY-VALUE (Header metadata pattern)
-     ═══════════════════════════════════════════════ */
-  .kv-grid {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 0 var(--space-lg);
-    font-size: 13px;
-    line-height: 1.8;
-  }
-
-  .kv-grid .kv-label {
-    text-align: right;
-    color: var(--text-dim);
-  }
-
-  .kv-grid .kv-value {
-    text-align: left;
-    color: var(--text-label);
-  }
-
-  /* ═══════════════════════════════════════════════
-     18. HEADER
-     ═══════════════════════════════════════════════ */
-  .page-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    border-bottom: 1px dotted var(--border);
-    padding-bottom: var(--space-lg);
-    margin-bottom: var(--space-xl);
-  }
-
-  .page-header .overline {
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: var(--title-spacing);
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: var(--space-xs);
-  }
-
-  .page-header .title {
-    font-size: var(--text-3xl);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--text-bright);
-    line-height: 1.1;
-  }
-
-  /* ═══════════════════════════════════════════════
-     19. FOOTER
-     ═══════════════════════════════════════════════ */
-  .page-footer {
-    border-top: 1px dotted var(--border);
-    padding-top: var(--space-lg);
-    display: flex;
-    justify-content: space-between;
-    font-size: var(--text-sm);
-    color: var(--text-dim);
-    letter-spacing: 0.05em;
-  }
-
-  /* ═══════════════════════════════════════════════
-     20. MODAL / DIALOG
-     ═══════════════════════════════════════════════ */
-  .modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: var(--bg-overlay);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-  }
-
-  .modal {
-    border: 1px solid var(--border);
-    background: var(--bg);
-    width: 100%;
-    max-width: 520px;
-    max-height: 80vh;
-    overflow-y: auto;
-  }
-
-  .modal-header {
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: var(--text-bright);
-    padding: var(--space-md) var(--space-lg);
-    border-bottom: 1px solid var(--border-dim);
-    background: var(--bg-surface);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .modal-body {
-    padding: var(--space-lg);
-  }
-
-  .modal-footer {
-    padding: var(--space-md) var(--space-lg);
-    border-top: 1px solid var(--border-dim);
-    display: flex;
-    justify-content: flex-end;
-    gap: var(--space-sm);
-  }
-
-  .modal-close {
-    background: none;
-    border: none;
-    color: var(--text-dim);
-    cursor: pointer;
-    font-size: 18px;
-    font-family: var(--font-mono);
-    transition: color var(--transition);
-  }
-
-  .modal-close:hover { color: var(--text); }
-
-  /* ═══════════════════════════════════════════════
-     21. SKELETON / LOADING
-     ═══════════════════════════════════════════════ */
-  .skeleton {
-    background: linear-gradient(90deg, var(--bg-raised) 25%, #1a1a1a 50%, var(--bg-raised) 75%);
-    background-size: 200% 100%;
-    animation: skeleton-shimmer 1.5s ease-in-out infinite;
-    height: 16px;
-  }
-
-  .skeleton-text { width: 80%; margin-bottom: var(--space-sm); }
-  .skeleton-text:last-child { width: 50%; }
-  .skeleton-heading { height: 28px; width: 40%; margin-bottom: var(--space-md); }
-  .skeleton-block { height: 100px; width: 100%; }
-
-  @keyframes skeleton-shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
-  }
-
-  /* ═══════════════════════════════════════════════
-     22. TOOLTIP
-     ═══════════════════════════════════════════════ */
-  .tooltip-wrap {
-    position: relative;
-    display: inline-block;
-  }
-
-  .tooltip-wrap .tooltip {
-    position: absolute;
-    bottom: calc(100% + 8px);
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--bg-raised);
-    border: 1px solid var(--border);
-    color: var(--text);
-    font-size: var(--text-xs);
-    padding: 6px 10px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity var(--transition);
-  }
-
-  .tooltip-wrap:hover .tooltip {
-    opacity: 1;
-  }
-
-  /* ═══════════════════════════════════════════════
-     23. VISION BLOCK (special component)
-     ═══════════════════════════════════════════════ */
-  .vision-block {
-    border: 1px solid var(--border);
-    padding: 28px;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: var(--space-lg);
-    align-items: center;
-  }
-
-  .vision-num {
-    font-size: var(--text-3xl);
-    font-weight: 700;
-    color: var(--accent);
-    line-height: 1;
-  }
-
-  .vision-info {
-    font-size: 14px;
-    color: var(--text-dim);
-    line-height: 1.8;
-  }
-
-  /* ═══════════════════════════════════════════════
-     24. EMPTY STATE
-     ═══════════════════════════════════════════════ */
-  .empty-state {
-    padding: var(--space-3xl) var(--space-lg);
-    text-align: center;
-    border: 1px dashed var(--border-dim);
-  }
-
-  .empty-state .empty-icon {
-    font-size: 32px;
-    color: var(--text-muted);
-    margin-bottom: var(--space-md);
-  }
-
-  .empty-state .empty-title {
-    font-size: var(--text-md);
-    color: var(--text-label);
-    margin-bottom: var(--space-sm);
-  }
-
-  .empty-state .empty-desc {
-    font-size: var(--text-sm);
-    color: var(--text-dim);
-    margin-bottom: var(--space-lg);
-  }
-
-  /* ═══════════════════════════════════════════════
-     25. PROGRESS
-     ═══════════════════════════════════════════════ */
-  .progress {
-    height: 4px;
-    background: var(--border-muted);
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .progress-fill {
-    height: 100%;
-    background: var(--accent);
-    transition: width 600ms ease;
-  }
-
-  .progress-fill.green { background: var(--green); }
-
-  /* Indeterminate */
-  .progress-indeterminate .progress-fill {
-    width: 30%;
-    animation: progress-slide 1.5s ease-in-out infinite;
-  }
-
-  @keyframes progress-slide {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(400%); }
-  }
-
-  /* ═══════════════════════════════════════════════
-     RESPONSIVE
-     ═══════════════════════════════════════════════ */
-  @media (max-width: 900px) {
-    .kit-nav { display: none; }
-    .kit-main { margin-left: 0; padding: var(--space-xl) var(--space-md); }
-    .metric-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  /* demo helpers */
-  .demo-modal { position: relative; }
-  .demo-modal .modal-overlay { position: relative; background: var(--bg-raised); padding: var(--space-xl); min-height: 300px; }
-</style>
+<link rel="stylesheet" href="style.css">
+<script defer src="foundation_tune.js"></script>
+<script defer src="nav_highlight.js"></script>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════
-     NAVIGATION
-     ═══════════════════════════════════════════ -->
 <nav class="kit-nav">
   <div class="nav-heading">Foundation</div>
   <a href="#typography">Typography</a>
@@ -1265,6 +37,11 @@
   <a href="#summary">Summary / Quote</a>
   <a href="#kv">Key-Value</a>
   <a href="#empty">Empty State</a>
+  <div class="nav-heading">Overlay</div>
+  <a href="#cmd">Command Palette</a>
+  <a href="#popover">Popover</a>
+  <a href="#toast">Toast</a>
+  <a href="#hovercard">Hover Card</a>
   <div class="nav-heading">Layout</div>
   <a href="#header">Header</a>
   <a href="#footer">Footer</a>
@@ -1272,8 +49,9 @@
   <a href="#dividers">Dividers</a>
   <a href="#skeleton">Skeleton</a>
   <a href="#tooltip">Tooltip</a>
-  <a href="#vision">Vision Block</a>
+
 </nav>
+
 
 <!-- ═══════════════════════════════════════════
      MAIN CONTENT
@@ -1293,7 +71,7 @@
     </div>
   </div>
 
-  <div class="summary" style="margin-bottom: 48px;">
+  <div class="summary" style="margin-bottom: 48px; font-size: 18px; line-height: 1.6; max-width: 65ch; color: var(--text);">
     Aerospace industrial design system. Amber on black. Geist Mono throughout. All-caps labels with generous letter-spacing. Data first, decoration after. No rounded corners. Borders over shadows. Left-aligned everything. Generous padding. This file is both documentation and live reference — open in a browser or read as source.
   </div>
 
@@ -1485,7 +263,7 @@
       <button class="tab active">Overview</button>
       <button class="tab">Sessions</button>
       <button class="tab">Tools</button>
-      <button class="tab">Vision</button>
+
     </div>
     <div class="tab-content">
       <span class="type-small">Tab content goes here. Active tab has amber underline.</span>
@@ -1533,40 +311,42 @@
 
     <div class="panel">
       <div class="panel-header">Session History</div>
-      <table>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Prompts</th>
-            <th>Tools</th>
-            <th>Duration</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="text-bright">2026-02-14 15:29</td>
-            <td>35</td>
-            <td>123</td>
-            <td>40m</td>
-            <td><span class="tag tag-green">Complete</span></td>
-          </tr>
-          <tr>
-            <td class="text-bright">2026-02-09 01:34</td>
-            <td>19</td>
-            <td>335</td>
-            <td>120m</td>
-            <td><span class="tag tag-green">Complete</span></td>
-          </tr>
-          <tr>
-            <td class="text-bright">2026-02-08 01:40</td>
-            <td>15</td>
-            <td>106</td>
-            <td>92m</td>
-            <td><span class="tag tag-accent">Reviewed</span></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Prompts</th>
+              <th>Tools</th>
+              <th>Duration</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-bright">2026-02-14 15:29</td>
+              <td>35</td>
+              <td>123</td>
+              <td>40m</td>
+              <td><span class="tag tag-green">Complete</span></td>
+            </tr>
+            <tr>
+              <td class="text-bright">2026-02-09 01:34</td>
+              <td>19</td>
+              <td>335</td>
+              <td>120m</td>
+              <td><span class="tag tag-green">Complete</span></td>
+            </tr>
+            <tr>
+              <td class="text-bright">2026-02-08 01:40</td>
+              <td>15</td>
+              <td>106</td>
+              <td>92m</td>
+              <td><span class="tag tag-accent">Reviewed</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
@@ -1656,7 +436,7 @@
 
     <div class="kit-group">
       <div class="kit-label">Tags</div>
-      <div class="kit-row">
+      <div class="tag-group">
         <span class="tag">Default</span>
         <span class="tag tag-accent">Accent</span>
         <span class="tag tag-green">Success</span>
@@ -1667,7 +447,7 @@
 
     <div class="kit-group">
       <div class="kit-label">Badges</div>
-      <div class="kit-row">
+      <div class="tag-group">
         <span class="badge">3</span>
         <span class="badge">42</span>
         <span class="badge-outline">7</span>
@@ -1695,10 +475,10 @@
     <h2>Status Indicators</h2>
 
     <div class="kit-row" style="gap: 32px;">
-      <span class="status"><span class="status-dot online pulse"></span> Online</span>
-      <span class="status"><span class="status-dot warning"></span> Processing</span>
-      <span class="status"><span class="status-dot error"></span> Failed</span>
-      <span class="status"><span class="status-dot offline"></span> Offline</span>
+      <span class="status"><span class="status-dot online"></span> Online</span>
+      <span class="status"><span class="status-dot away"></span> Away</span>
+      <span class="status"><span class="status-dot busy"></span> Busy</span>
+      <span class="status"><span class="status-dot"></span> Offline</span>
     </div>
   </section>
 
@@ -1775,11 +555,11 @@
     <div class="kit-section-title">20</div>
     <h2>Empty State</h2>
 
-    <div class="empty-state" style="max-width: 500px;">
+    <div class="empty-state-box" style="max-width: 500px;">
       <div class="empty-icon">◇</div>
-      <div class="empty-title">No images in this board</div>
-      <div class="empty-desc">Drag and drop images here, or paste from clipboard</div>
-      <button class="btn btn-secondary btn-sm">Browse Files</button>
+      <div class="type-subheading" style="color: var(--text-bright);">No images in this board</div>
+      <div class="type-body" style="color: var(--text-dim); text-align: center;">Drag and drop images here, or paste from clipboard<br>Supports PNG, JPG, WEBP</div>
+      <button class="btn btn-secondary btn-sm" style="margin-top: 16px;">Browse Files</button>
     </div>
   </section>
 
@@ -1817,17 +597,17 @@
     <h2>Modal</h2>
 
     <div class="demo-modal">
-      <div class="modal-overlay">
-        <div class="modal">
-          <div class="modal-header">
+      <div class="modal-backdrop">
+        <div class="modal-window">
+          <div style="padding: 16px 24px; border-bottom: 1px solid var(--border-dim); font-weight: 600; color: var(--text-bright); display: flex; justify-content: space-between;">
             Confirm Action
-            <button class="modal-close">×</button>
+            <button class="btn-icon" style="color: var(--text-dim);">×</button>
           </div>
-          <div class="modal-body">
-            <div class="type-body" style="margin-bottom: 16px;">Remove 3 images from the Aerospace board? This will not delete the files.</div>
-            <div class="type-small">Images can be re-added to any board later.</div>
+          <div style="padding: 24px;">
+            <div class="type-body" style="margin-bottom: 8px; color: var(--text);">Remove 3 images from the Aerospace board?</div>
+            <div class="type-small" style="color: var(--text-dim);">This action cannot be undone.</div>
           </div>
-          <div class="modal-footer">
+          <div style="padding: 16px 24px; border-top: 1px solid var(--border-dim); display: flex; justify-content: flex-end; gap: 12px; background: var(--bg-surface);">
             <button class="btn btn-ghost btn-sm">Cancel</button>
             <button class="btn btn-danger btn-sm">Remove</button>
           </div>
@@ -1842,9 +622,9 @@
     <h2>Dividers</h2>
 
     <div style="max-width: 500px; display: flex; flex-direction: column; gap: 24px;">
-      <div><div class="kit-label">Solid (default)</div><hr class="divider"></div>
-      <div><div class="kit-label">Dotted accent</div><hr class="divider divider-dotted"></div>
-      <div><div class="kit-label">Accent</div><hr class="divider divider-accent"></div>
+      <div><div class="kit-label">Solid</div><hr class="divider divider-solid"></div>
+      <div><div class="kit-label">Dashed</div><hr class="divider divider-dashed"></div>
+      <div><div class="kit-label">Dotted</div><hr class="divider divider-dotted"></div>
     </div>
   </section>
 
@@ -1853,13 +633,13 @@
     <div class="kit-section-title">25</div>
     <h2>Skeleton Loading</h2>
 
-    <div style="max-width: 400px; display: flex; flex-direction: column; gap: 0;">
-      <div class="skeleton skeleton-heading"></div>
-      <div class="skeleton skeleton-text"></div>
-      <div class="skeleton skeleton-text"></div>
-      <div class="skeleton skeleton-text" style="width: 50%;"></div>
-      <div style="height: 16px;"></div>
-      <div class="skeleton skeleton-block"></div>
+    <div style="max-width: 400px; display: flex; flex-direction: column; gap: 12px;">
+      <div class="skeleton" style="height: 32px; width: 60%;"></div>
+      <div class="skeleton" style="height: 16px; width: 100%;"></div>
+      <div class="skeleton" style="height: 16px; width: 90%;"></div>
+      <div class="skeleton" style="height: 16px; width: 40%;"></div>
+      <div style="height: 24px;"></div>
+      <div class="skeleton" style="height: 120px; width: 100%;"></div>
     </div>
   </section>
 
@@ -1868,29 +648,128 @@
     <div class="kit-section-title">26</div>
     <h2>Tooltip</h2>
 
-    <div class="kit-row" style="gap: 32px;">
-      <span class="tooltip-wrap">
-        <span class="btn btn-ghost btn-sm">Hover me</span>
-        <span class="tooltip">This is a tooltip</span>
-      </span>
-      <span class="tooltip-wrap">
-        <span class="tag tag-accent">Aerospace</span>
-        <span class="tooltip">12 images · 8 reviewed</span>
-      </span>
+    <div class="kit-row" style="gap: 32px; padding-bottom: 24px;">
+      <span class="tooltip" data-tooltip="This is a tooltip">Hover me (Text)</span>
+      <span class="tag tag-accent tooltip" data-tooltip="12 images · 8 reviewed">Hover me (Tag)</span>
     </div>
   </section>
 
-  <!-- ── 27. VISION BLOCK ── -->
-  <section class="kit-section" id="vision">
-    <div class="kit-section-title">27</div>
-    <h2>Vision Block</h2>
+  </section>
 
-    <div class="vision-block" style="max-width: 500px;">
-      <div class="vision-num">19<span class="frac">/30</span></div>
-      <div class="vision-info">
-        PRINCIPLES ENCODED<br>
-        Last reviewed: 2026-02-14 · Calibration #2<br>
-        SHARED ACROSS CLAUDE CODE + ANTIGRAVITY
+  <!-- ── 28. COMMAND PALETTE ── -->
+  <section class="kit-section" id="cmd">
+    <div class="kit-section-title">28</div>
+    <h2>Command Palette</h2>
+    <div class="demo-cmd">
+      <div class="cmd-dialog">
+        <div class="cmd-header">
+          <div class="cmd-icon">›</div>
+          <input type="text" class="cmd-input" placeholder="Type a command or search..." autofocus>
+        </div>
+        <div class="cmd-list">
+          <div class="cmd-group-heading">Suggestions</div>
+          <div class="cmd-item selected">
+            <span>Calendar</span>
+            <span class="cmd-shortcut">⌘ C</span>
+          </div>
+          <div class="cmd-item">
+            <span>Search Emoji</span>
+            <span class="cmd-shortcut">⌘ E</span>
+          </div>
+          <div class="cmd-item">
+            <span>Launch Calculator</span>
+          </div>
+          <div class="cmd-group-heading">Settings</div>
+          <div class="cmd-item">
+            <span>Profile</span>
+            <span class="cmd-shortcut">⌘ P</span>
+          </div>
+          <div class="cmd-item">
+            <span>Billing</span>
+            <span class="cmd-shortcut">⌘ B</span>
+          </div>
+          <div class="cmd-item">
+            <span>Settings</span>
+            <span class="cmd-shortcut">⌘ S</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 29. POPOVER ── -->
+  <section class="kit-section" id="popover" style="min-height: 250px;">
+    <div class="kit-section-title">29</div>
+    <h2>Popover</h2>
+    <div class="kit-row">
+      <div style="position: relative; display: inline-block;">
+        <button class="btn btn-secondary">Open Popover</button>
+        <div class="popover-content" style="position: absolute; top: calc(100% + 8px); left: 0; background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 16px; width: 200px; z-index: 10; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+          <div class="input-group" style="margin-bottom: 12px;">
+            <label class="input-label">Dimensions</label>
+            <div style="display: flex; gap: 8px;">
+              <input type="text" class="input" value="100%" style="width: 100%;">
+              <input type="text" class="input" value="auto" style="width: 100%;">
+            </div>
+          </div>
+          <div class="input-group">
+            <label class="input-label">Max. Width</label>
+            <input type="text" class="input" value="300px" style="width: 100%;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 30. TOAST ── -->
+  <section class="kit-section" id="toast">
+    <div class="kit-section-title">30</div>
+    <h2>Toast</h2>
+    <div class="kit-row">
+      <div class="toast-viewport" style="position: relative; right: auto; bottom: auto; transform: none; padding: 0;">
+        <div class="toast" data-state="open" style="transform: none;">
+          <div class="toast-title">Scheduled: Catch up</div>
+          <div class="toast-desc">Friday, February 10, 2023 at 5:57 PM</div>
+          <button class="toast-action btn btn-sm btn-secondary">Undo</button>
+          <div class="toast-close">✕</div>
+        </div>
+        <div class="toast destructive" data-state="open" style="transform: none;">
+          <div class="toast-title">Uh oh! Something went wrong.</div>
+          <div class="toast-desc">There was a problem with your request.</div>
+          <button class="toast-action btn btn-sm btn-danger">Try again</button>
+          <div class="toast-close">✕</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 31. HOVER CARD ── -->
+  <section class="kit-section" id="hovercard" style="min-height: 200px;">
+    <div class="kit-section-title">31</div>
+    <h2>Hover Card</h2>
+    <div class="kit-row">
+      <div style="position: relative; display: inline-block;">
+        <a href="#" style="color: var(--text-bright); text-decoration: none; border-bottom: 1px dotted var(--text-dim);">@nextjs</a>
+        <div class="hover-card-content" style="position: absolute; top: calc(100% + 8px); left: 0;">
+          <div style="display: flex; gap: 12px; margin-bottom: 12px;">
+            <div class="avatar">V</div>
+            <div>
+              <div style="font-weight: 600; color: var(--text-bright);">Vercel</div>
+              <div style="font-size: 13px; color: var(--text-dim);">@vercel</div>
+            </div>
+          </div>
+          <div style="font-size: 13px; line-height: 1.5; color: var(--text); margin-bottom: 12px;">
+            The React Framework – created and maintained by @vercel.
+          </div>
+          <div style="display: flex; gap: 16px; font-size: 12px; color: var(--text-dim);">
+            <div style="display: flex; align-items: center; gap: 4px;">
+              <span style="color: var(--text-bright);">270k</span> Followers
+            </div>
+            <div style="display: flex; align-items: center; gap: 4px;">
+              <span style="color: var(--text-bright);">112</span> Following
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
