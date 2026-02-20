@@ -1430,8 +1430,33 @@ ul.list.list-numbered li::before {
   padding: var(--space-md) var(--space-lg);
   background: var(--accent-bg);
   color: var(--text);
-  font-size: calc(var(--text-base) * 2);
+  font-size: var(--text-base);
   line-height: 1.7;
+}
+
+/* Hero variant — viewport-filling typography */
+.summary-hero {
+  font-size: clamp(2rem, 4.5vw, 6.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  border-left: 3px solid var(--accent);
+  padding: var(--space-xl) var(--space-2xl);
+  color: var(--text-bright);
+  background: none;
+}
+
+.summary-hero::after {
+  content: '\2588';
+  color: var(--accent);
+  animation: cursor-blink 1s step-end infinite;
+  font-size: 0.8em;
+  margin-left: 0.15em;
+  vertical-align: baseline;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 /* ═══════════════════════════════════════════════
