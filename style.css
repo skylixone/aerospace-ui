@@ -1417,7 +1417,7 @@ ul.list.list-numbered li::before {
   padding: var(--space-md) var(--space-lg);
   background: var(--accent-bg);
   color: var(--text);
-  font-size: var(--text-base);
+  font-size: calc(var(--text-base) * 2);
   line-height: 1.7;
 }
 
@@ -1615,4 +1615,225 @@ ul.list.list-numbered li::before {
   display: flex;
   justify-content: center;
   padding: var(--space-lg) 0;
+}
+
+/* ═══════════════════════════════════════════════
+   INTERACTION STATES — GLOBAL
+   ═══════════════════════════════════════════════ */
+
+/* Focus-visible ring for all interactive elements */
+.btn:focus-visible,
+.input:focus-visible,
+.tab:focus-visible,
+.check-group input:focus-visible,
+.toggle input:focus-visible + .toggle-track,
+.cmd-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Remove default outline when not keyboard-navigating */
+.btn:focus:not(:focus-visible),
+.input:focus:not(:focus-visible),
+.tab:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ── BUTTON STATES ── */
+
+/* Active / pressed */
+.btn-primary:active:not(:disabled) {
+  transform: scale(0.97);
+  background: var(--accent);
+  filter: brightness(0.85);
+}
+
+.btn-secondary:active:not(:disabled) {
+  transform: scale(0.97);
+  background: var(--accent-bg);
+}
+
+.btn-ghost:active:not(:disabled) {
+  transform: scale(0.97);
+  background: var(--bg-hover);
+}
+
+.btn-danger:active:not(:disabled) {
+  transform: scale(0.97);
+  background: var(--red-dim);
+}
+
+/* Loading state */
+.btn.loading {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.btn.loading::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: btn-spin 0.6s linear infinite;
+}
+
+.btn-primary.loading::after {
+  border-top-color: var(--bg);
+}
+.btn-secondary.loading::after {
+  border-top-color: var(--accent);
+}
+.btn-ghost.loading::after {
+  border-top-color: var(--text-label);
+}
+.btn-danger.loading::after {
+  border-top-color: var(--red);
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── INPUT STATES ── */
+
+/* Success state */
+.input.success {
+  border-color: var(--green);
+}
+
+.input-success {
+  font-size: var(--text-xs);
+  color: var(--green);
+}
+
+/* Disabled input visual */
+.input:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── TOGGLE & CHECK STATES ── */
+
+/* Disabled toggle */
+.toggle.disabled,
+.toggle:has(input:disabled) {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Disabled checkbox/radio */
+.check-group.disabled,
+.check-group:has(input:disabled) {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Focus-visible for checkbox/radio */
+.check-group input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ── TAB STATES ── */
+
+.tab:disabled,
+.tab.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── TABLE ROW STATES ── */
+
+.panel tr.selected td {
+  background: var(--accent-bg);
+  color: var(--text-bright);
+}
+
+/* ── ALERT DISMISS ── */
+
+.alert.dismissible {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.alert-close {
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: var(--text-sm);
+  flex-shrink: 0;
+  transition: color var(--transition);
+}
+
+.alert-close:hover {
+  color: var(--text);
+}
+
+/* ── METRIC TREND INDICATORS ── */
+
+.metric-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--text-xs);
+  margin-top: var(--space-sm);
+}
+
+.metric-trend.up {
+  color: var(--green);
+}
+.metric-trend.down {
+  color: var(--red);
+}
+.metric-trend.flat {
+  color: var(--text-dim);
+}
+
+/* ── TAG REMOVABLE ── */
+
+.tag-remove {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity var(--transition);
+  margin-left: 2px;
+}
+
+.tag-remove:hover {
+  opacity: 1;
+}
+
+/* ── BADGE VARIANTS ── */
+
+.badge-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  font-size: 10px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  padding: 0 6px;
+}
+
+.badge-dim {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  font-size: 10px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  padding: 0 6px;
 }

@@ -176,6 +176,8 @@
       <div class="kit-row">
         <button class="btn btn-primary" disabled>Disabled</button>
         <button class="btn btn-secondary" disabled>Disabled</button>
+        <button class="btn btn-primary loading">Loading</button>
+        <button class="btn btn-secondary loading">Loading</button>
         <button class="btn btn-ghost btn-icon">×</button>
         <button class="btn btn-secondary btn-icon">+</button>
       </div>
@@ -211,8 +213,14 @@
       </div>
 
       <div class="input-group">
+        <label class="input-label">Success State</label>
+        <input class="input success" type="text" value="aerospace-v2">
+        <span class="input-success">Board name available</span>
+      </div>
+
+      <div class="input-group">
         <label class="input-label">Disabled</label>
-        <input class="input" type="text" value="Read-only value" disabled style="opacity: 0.4;">
+        <input class="input" type="text" value="Read-only value" disabled>
       </div>
     </div>
 
@@ -239,6 +247,12 @@
         <div class="toggle-track"></div>
         Dark mode
       </label>
+
+      <label class="toggle disabled">
+        <input type="checkbox" disabled checked>
+        <div class="toggle-track"></div>
+        Locked setting
+      </label>
     </div>
 
     <div class="kit-row" style="gap: 24px; margin-top: 16px;">
@@ -263,7 +277,7 @@
       <button class="tab active">Overview</button>
       <button class="tab">Sessions</button>
       <button class="tab">Tools</button>
-
+      <button class="tab disabled" disabled>Archived</button>
     </div>
     <div class="tab-content">
       <span class="type-small">Tab content goes here. Active tab has amber underline.</span>
@@ -279,12 +293,12 @@
       <div class="metric" style="background: #0f0f0f;">
         <div class="metric-label">Chemistry</div>
         <div class="metric-value green">8.0</div>
-        <div class="metric-detail">/ 10 · stable</div>
+        <div class="metric-trend up">▲ 0.4</div>
       </div>
       <div class="metric">
         <div class="metric-label">Prompts / Session</div>
         <div class="metric-value">6.2</div>
-        <div class="metric-detail">lower = aligned</div>
+        <div class="metric-trend down">▼ 1.1</div>
       </div>
       <div class="metric">
         <div class="metric-label">Total Events</div>
@@ -442,6 +456,7 @@
         <span class="tag tag-green">Success</span>
         <span class="tag tag-red">Error</span>
         <span class="tag tag-blue">Info</span>
+        <span class="tag tag-accent">Removable <span class="tag-remove">×</span></span>
       </div>
     </div>
 
@@ -465,7 +480,7 @@
       <div class="alert alert-info"><strong>INFO</strong> — Board manifest updated. 12 images indexed across 3 boards.</div>
       <div class="alert alert-success"><strong>COMPLETE</strong> — Analysis finished. All tags extracted successfully.</div>
       <div class="alert alert-warning"><strong>ATTENTION</strong> — Gemini API rate limit approaching. 8/10 calls used this minute.</div>
-      <div class="alert alert-danger"><strong>FAILURE</strong> — Image analysis failed for 2 uploads. Retry available.</div>
+      <div class="alert alert-danger dismissible"><span><strong>FAILURE</strong> — Image analysis failed for 2 uploads. Retry available.</span><span class="alert-close">✕</span></div>
     </div>
   </section>
 
