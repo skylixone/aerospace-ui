@@ -673,6 +673,7 @@
   <section class="kit-section" id="cmd">
     <div class="kit-section-title">27</div>
     <h2>Command Palette</h2>
+    <div class="cmd-hint">Press <kbd class="kbd">⌘K</kbd> to open</div>
     <div class="demo-cmd">
       <div class="cmd-dialog">
         <div class="cmd-header">
@@ -716,8 +717,8 @@
     <h2>Popover</h2>
     <div class="kit-row">
       <div style="position: relative; display: inline-block;">
-        <button class="btn btn-secondary">Open Popover</button>
-        <div class="popover-content" style="position: absolute; top: calc(100% + 8px); left: 0; background: var(--bg-surface); border: 1px solid var(--border-dim); padding: 16px; width: 200px; z-index: 10; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+        <button class="btn btn-secondary" data-popover="pop-dimensions">Open Popover</button>
+        <div class="popover-content popover-hidden" id="pop-dimensions" style="position: absolute; top: calc(100% + 8px); left: 0; width: 220px; z-index: 10;">
           <div class="input-group" style="margin-bottom: 12px;">
             <label class="input-label">Dimensions</label>
             <div style="display: flex; gap: 8px;">
@@ -738,6 +739,10 @@
   <section class="kit-section" id="toast">
     <div class="kit-section-title">29</div>
     <h2>Toast</h2>
+    <div class="kit-row" style="margin-bottom: 16px;">
+      <button class="btn btn-secondary btn-sm" id="toast-trigger">Trigger Toast</button>
+      <button class="btn btn-ghost btn-sm" id="toast-trigger-err">Trigger Error</button>
+    </div>
     <div class="kit-row">
       <div class="toast-viewport" style="position: relative; right: auto; bottom: auto; transform: none; padding: 0;">
         <div class="toast" data-state="open" style="transform: none;">
@@ -761,9 +766,9 @@
     <div class="kit-section-title">30</div>
     <h2>Hover Card</h2>
     <div class="kit-row">
-      <div style="position: relative; display: inline-block;">
-        <a href="#" style="color: var(--text-bright); text-decoration: none; border-bottom: 1px dotted var(--text-dim);">@nextjs</a>
-        <div class="hover-card-content" style="position: absolute; top: calc(100% + 8px); left: 0;">
+      <div style="position: relative; display: inline-block;" data-hovercard-host>
+        <a href="#" data-hovercard style="color: var(--text-bright); text-decoration: none; border-bottom: 1px dotted var(--text-dim);">@nextjs</a>
+        <div class="hover-card-content hovercard-hidden" style="position: absolute; top: calc(100% + 8px); left: 0;">
           <div style="display: flex; gap: 12px; margin-bottom: 12px;">
             <div class="avatar">V</div>
             <div>
@@ -795,5 +800,9 @@
 
 </main>
 
+<!-- Live toast container -->
+<div class="toast-viewport" id="live-toast-viewport" aria-live="polite"></div>
+
+<script defer src="interactions.js"></script>
 </body>
 </html>

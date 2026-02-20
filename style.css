@@ -1022,7 +1022,13 @@ table {
   z-index: 50;
   font-size: var(--text-sm);
   color: var(--text);
-  animation: scale-in 0.15s ease-out;
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.popover-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px) scale(0.97);
 }
 
 @keyframes scale-in {
@@ -1046,7 +1052,13 @@ table {
   width: 320px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   z-index: 50;
-  animation: scale-in 0.15s ease-out;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.hovercard-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
 }
 
 .avatar {
@@ -1655,6 +1667,23 @@ ul.list.list-numbered li::before {
   padding: var(--space-lg) 0;
 }
 
+.cmd-hint {
+  font-size: var(--text-xs);
+  color: var(--text-dim);
+  margin-bottom: var(--space-lg);
+  letter-spacing: 0.05em;
+}
+
+.kbd {
+  background: var(--bg-hover);
+  border: 1px solid var(--border-dim);
+  padding: 2px 6px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-label);
+  border-radius: var(--radius-sm);
+}
+
 /* ═══════════════════════════════════════════════
    INTERACTION STATES — GLOBAL
    ═══════════════════════════════════════════════ */
@@ -1874,4 +1903,61 @@ ul.list.list-numbered li::before {
   font-family: var(--font-mono);
   font-weight: 600;
   padding: 0 6px;
+}
+
+/* ═══════════════════════════════════════════════
+   ANIMATIONS & AESTHETICS
+   ═══════════════════════════════════════════════ */
+
+/* Scanline overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.025) 2px,
+    rgba(0, 0, 0, 0.025) 4px
+  );
+  z-index: 9998;
+}
+
+/* Sidebar nav — accent accent bar on hover/active */
+.kit-nav a {
+  position: relative;
+}
+
+.kit-nav a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  bottom: 2px;
+  width: 0;
+  background: var(--accent-dim);
+  transition: width var(--transition);
+}
+
+.kit-nav a:hover::before {
+  width: 2px;
+}
+
+.kit-nav a.active::before {
+  width: 2px;
+  background: var(--accent);
+}
+
+/* Staggered section reveals */
+.kit-section {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.kit-section.revealed {
+  opacity: 1;
+  transform: none;
 }
