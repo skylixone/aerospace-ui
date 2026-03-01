@@ -41,6 +41,8 @@
   <a href="#cmd">Command Palette</a>
   <a href="#popover">Popover</a>
   <a href="#toast">Toast</a>
+  <a href="#mini-toast">Mini Toast</a>
+  <a href="#stepper">Stepper</a>
   <a href="#hovercard">Hover Card</a>
   <div class="nav-heading">Layout</div>
   <a href="#header">Header</a>
@@ -743,6 +745,54 @@
     </div>
   </section>
 
+  <!-- ── 30b. MINI TOAST ── -->
+  <section class="kit-section" id="mini-toast">
+    <div class="kit-section-title">30b</div>
+    <h2>Mini Toast (Centered)</h2>
+    <div class="kit-group">
+      <div class="kit-label">Success State</div>
+      <div class="mini-toast" style="position: relative; transform: none; opacity: 1; top: auto; left: auto;">
+        <div class="mini-toast-icon">✓</div>
+        <span>Saved</span>
+      </div>
+    </div>
+    <div class="kit-group">
+      <div class="kit-label">Updating State</div>
+      <div class="mini-toast updating" style="position: relative; transform: none; opacity: 1; top: auto; left: auto;">
+        <div class="mini-toast-icon">✓</div>
+        <span>Saving...</span>
+      </div>
+    </div>
+    <div class="code-block">.mini-toast-container { position: fixed; top: 80px; left: 50%; transform: translateX(-50%); }
+.mini-toast { background: var(--green); color: var(--bg); }
+.mini-toast.show { transform: translateY(0) scale(1); opacity: 1; }</div>
+  </section>
+
+  <!-- ── 30c. STEPPER ── -->
+  <section class="kit-section" id="stepper">
+    <div class="kit-section-title">30c</div>
+    <h2>Stepper Control</h2>
+    <div class="kit-group">
+      <div class="kit-label">Default</div>
+      <div class="stepper">
+        <button class="stepper-btn">−</button>
+        <span class="stepper-val">6.0</span>
+        <button class="stepper-btn">+</button>
+      </div>
+    </div>
+    <div class="kit-group">
+      <div class="kit-label">With Bounds</div>
+      <div class="stepper">
+        <button class="stepper-btn" disabled>−</button>
+        <span class="stepper-val">60</span>
+        <button class="stepper-btn">+</button>
+      </div>
+    </div>
+    <div class="code-block">.stepper { display: inline-flex; align-items: center; border: 1px solid var(--border-dim); }
+.stepper-btn { min-width: 36px; padding: 8px 12px; }
+.stepper-val { padding: 8px 16px; border-left: 1px solid var(--border-dim); border-right: 1px solid var(--border-dim); }</div>
+  </section>
+
   <!-- ── 31. HOVER CARD ── -->
   <section class="kit-section" id="hovercard" style="min-height: 260px;">
     <div class="kit-section-title">31</div>
@@ -777,7 +827,7 @@
   <!-- ── FOOTER ── -->
   <div class="page-footer" style="margin-top: 48px;">
     <span>AEROSPACE UI KIT · V1.0</span>
-    <span>27 COMPONENTS</span>
+    <span>29 COMPONENTS</span>
   </div>
 
 </main>
