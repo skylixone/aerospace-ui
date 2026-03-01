@@ -1,254 +1,211 @@
+<div align="center">
+
+<!-- Logo SVG -->
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="120" fill="#0a0a0a"/>
+  <rect x="10" y="50" width="100" height="20" fill="#f59e0b"/>
+  <rect x="50" y="10" width="20" height="100" fill="#f59e0b"/>
+  <rect x="30" y="30" width="60" height="60" fill="none" stroke="#0a0a0a" stroke-width="4"/>
+</svg>
+
 # AEROSPACE UI
 
-[![Version](https://img.shields.io/badge/version-1.0-0a0a0a?style=flat-square&color=f59e0b)](https://github.com/skylixone/aerospace-ui)
-[![License](https://img.shields.io/badge/license-Personal%20Use-0a0a0a?style=flat-square&color=666666)](LICENSE)
-[![Components](https://img.shields.io/badge/components-29-0a0a0a?style=flat-square&color=22c55e)](https://skylixone.github.io/aerospace-ui)
+### A systematic interface kit for data-dense applications
 
-> **A systematic interface design kit for data-dense applications.**  
-> Amber on black. Geist Mono throughout. No rounded corners. Borders over shadows.
+[Components](#components) · [Usage](#usage) · [Demo](https://skylixone.github.io/aerospace-ui)
 
-```
-╔══════════════════════════════════════════════════════════════════╗
-║  ▓▓▓  █████╗ ███████╗██████╗  ██████╗ ███████╗██████╗  █████╗   ║
-║ ▓   ▓ ██╔══██╗██╔════╝██╔══██╗██╔═══██╗██╔════╝██╔══██╗██╔══██╗  ║
-║ ▓   ▓ ███████║█████╗  ██████╔╝██║   ██║█████╗  ██████╔╝███████║  ║
-║ ▓   ▓ ██╔══██║██╔══╝  ██╔══██╗██║   ██║██╔══╝  ██╔══██╗██╔══██║  ║
-║  ▓▓▓  ██║  ██║███████╗██║  ██║╚██████╔╝██║     ██║  ██║██║  ██║  ║
-║       ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝  ║
-╠══════════════════════════════════════════════════════════════════╣
-║  SYSTEM STATUS: OPERATIONAL     │    THEME: DARK AEROSPACE       ║
-╚══════════════════════════════════════════════════════════════════╝
-```
+</div>
 
 ---
 
-## PHILOSOPHY
+## Design Language
 
-**Data first. Decoration after.**
+<div align="center">
 
-Aerospace UI is built on constraint-based design principles inspired by Karl Gerstner's *Designing Programmes* and Edward Tufte's data-ink theory. Every element serves a purpose. Every pixel carries information.
+<!-- Color Palette -->
+<table>
+<tr>
+<td align="center">
 
-| PRINCIPLE | IMPLEMENTATION |
-|-----------|----------------|
-| **Monospace Grid** | Geist Mono at all weights. Tabular alignment for data. |
-| **High Contrast** | Amber (#f59e0b) on pure black (#0a0a0a). No mid-tone ambiguity. |
-| **Generous Whitespace** | 8px base grid. Breathing room is not wasted space. |
-| **Zero Radius** | Sharp corners only. Industrial precision. |
-| **Borders Over Shadows** | Depth via line weight, not blur. |
+<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' fill='%230a0a0a'/%3E%3C/svg%3E" width="80">
 
----
+**BACKGROUND**  
+`#0a0a0a`
 
-## COMPONENT MATRIX
+</td>
+<td align="center">
 
-### FOUNDATION
-```
-TYPOGRAPHY │ COLORS    │ SPACING
-───────────┼───────────┼─────────
-Hero 56px  │ bg        │ 4px  xs
-Display 44 │ bg-raised │ 8px  sm
-Heading 28 │ accent    │ 16px md
-Subhead 20 │ text      │ 24px lg
-Body 15px  │ dim       │ 32px xl
-Small 12px │ muted     │ 48px 2xl
-Overline 11│ green     │ 64px 3xl
-           │ red       │
-           │ blue      │
-```
+<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' fill='%23f59e0b'/%3E%3C/svg%3E" width="80">
 
-### CONTROLS
-| Component | Purpose | Variants |
-|-----------|---------|----------|
-| **Button** | Primary actions | Primary, Secondary, Ghost, Danger |
-| **Input** | Data entry | Text, Select, Textarea, Error states |
-| **Toggle** | Binary states | Checked/Unchecked with animated track |
-| **Checkbox/Radio** | Multi/single select | Native-styled, accessible |
-| **Tabs** | View switching | Underline-active indicator |
-| **Stepper** | Numeric adjustment | +/- with bounds, integrated validation |
+**ACCENT**  
+`#f59e0b`
 
-### DATA DISPLAY
-| Component | Purpose | Features |
-|-----------|---------|----------|
-| **Metric Card** | KPI display | Value + label + detail, semantic colors |
-| **Table** | Structured data | Responsive wrapper, sortable headers |
-| **Bar** | Value comparison | Horizontal with fill percentage |
-| **Progress** | Completion status | Determinate, indeterminate, semantic |
-| **Tag/Badge** | Categorization | Default, accent, semantic variants |
+</td>
+<td align="center">
 
-### OVERLAY
-| Component | Purpose | Behavior |
-|-----------|---------|----------|
-| **Toast** | System feedback | Slide-in, actions, auto-dismiss |
-| **Mini Toast** | Confirmation | Centered, inverted (green/dark), debounced |
-| **Modal** | Critical decisions | Backdrop blur, focus trap |
-| **Command Palette** | Quick actions | Keyboard-navigable, search-filtered |
-| **Popover** | Contextual options | Anchor positioning, click-outside close |
-| **Tooltip** | Supplementary info | Hover-triggered, arrow indicator |
+<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' fill='%2322c55e'/%3E%3C/svg%3E" width="80">
 
-### CONTENT
-- **Panel** — Grouped data containers with header/body/footer
-- **Card** — Elevated content blocks, hover lift effect
-- **Alert** — System messages (info, success, warning, danger)
-- **Status Indicator** — Online/away/busy/offline dots
-- **List** — Bulleted or numbered with hexagon markers
-- **Code Block** — Syntax-highlighted monospace blocks
-- **Key-Value Grid** — Metadata display with label spacing
-- **Empty State** — Zero-data placeholder with action
+**SUCCESS**  
+`#22c55e`
 
-### LAYOUT
-- **Page Header** — Title + overline + metadata grid
-- **Page Footer** — System info + stats
-- **Skeleton** — Loading placeholder with shimmer
-- **Divider** — Solid, dashed, dotted separators
+</td>
+<td align="center">
+
+<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' fill='%23ef4444'/%3E%3C/svg%3E" width="80">
+
+**ERROR**  
+`#ef4444`
+
+</td>
+</tr>
+</table>
+
+**Geist Mono** · **Zero Radius** · **Borders Over Shadows**
+
+</div>
 
 ---
 
-## USAGE
+## Components
 
-### Installation
+### Controls
+
+<div align="center">
+
+<!-- Buttons -->
+<table><tr><td>
+
+**BUTTONS**
+
+<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='44'%3E%3Crect width='400' height='44' fill='%230a0a0a'/%3E%3Crect x='0' y='8' width='80' height='28' fill='%23f59e0b'/%3E%3Ctext x='40' y='26' font-family='monospace' font-size='11' fill='%230a0a0a' text-anchor='middle' font-weight='bold'%3EPRIMARY%3C/text%3E%3Crect x='92' y='8' width='80' height='28' fill='none' stroke='%23333' stroke-width='1'/%3E%3Ctext x='132' y='26' font-family='monospace' font-size='11' fill='%23e8e8e8' text-anchor='middle'%3ESECONDARY%3C/text%3E%3Crect x='184' y='8' width='60' height='28' fill='none' stroke='none'/%3E%3Ctext x='214' y='26' font-family='monospace' font-size='11' fill='%23666' text-anchor='middle'%3EGHOST%3C/text%3E%3Crect x='256' y='8' width='64' height='28' fill='%23ef4444'/%3E%3Ctext x='288' y='26' font-family='monospace' font-size='11' fill='%23fff' text-anchor='middle' font-weight='bold'%3EDANGER%3C/text%3E%3C/svg%3E" width="400">
+
+</td></tr></table>
+
+<!-- Stepper -->
+<table><tr><td>
+
+**STEPPER**
+
+<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='44'%3E%3Crect width='200' height='44' fill='%230a0a0a'/%3E%3Crect x='0' y='8' width='44' height='28' fill='none' stroke='%23222' stroke-width='1'/%3E%3Ctext x='22' y='26' font-family='monospace' font-size='14' fill='%23666' text-anchor='middle'%3E−%3C/text%3E%3Crect x='44' y='8' width='68' height='28' fill='none' stroke='%23222' stroke-width='1'/%3E%3Ctext x='78' y='26' font-family='monospace' font-size='14' fill='%23fff' text-anchor='middle' font-weight='500'%3E6.0%3C/text%3E%3Crect x='112' y='8' width='44' height='28' fill='none' stroke='%23222' stroke-width='1'/%3E%3Ctext x='134' y='26' font-family='monospace' font-size='14' fill='%23666' text-anchor='middle'%3E+%3C/text%3E%3C/svg%3E" width="200">
+
+</td></tr></table>
+
+</div>
+
+### Data Display
+
+<div align="center">
+
+<!-- Metric Cards -->
+<table><tr>
+<td>
+
+**METRIC CARD**
+
+<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='100'%3E%3Crect width='180' height='100' fill='%230d0d0d' stroke='%23222' stroke-width='1'/%3E%3Ctext x='16' y='28' font-family='monospace' font-size='10' fill='%23666' letter-spacing='0.1em'%3ESYSTEM LOAD%3C/text%3E%3Ctext x='16' y='64' font-family='monospace' font-size='32' fill='%23f59e0b' font-weight='600'%3E42%25%3C/text%3E%3Ctext x='16' y='84' font-family='monospace' font-size='10' fill='%23666'%3EWithin normal%3C/text%3E%3C/svg%3E" width="180">
+
+</td>
+<td>
+
+<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='100'%3E%3Crect width='180' height='100' fill='%230d0d0d' stroke='%23222' stroke-width='1'/%3E%3Ctext x='16' y='28' font-family='monospace' font-size='10' fill='%23666' letter-spacing='0.1em'%3EUPTIME%3C/text%3E%3Ctext x='16' y='64' font-family='monospace' font-size='32' fill='%2322c55e' font-weight='600'%3E99.9%3C/text%3E%3Ctext x='16' y='84' font-family='monospace' font-size='10' fill='%23666'%3EOperational%3C/text%3E%3C/svg%3E" width="180">
+
+</td>
+<td>
+
+<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='100'%3E%3Crect width='180' height='100' fill='%230d0d0d' stroke='%23222' stroke-width='1'/%3E%3Ctext x='16' y='28' font-family='monospace' font-size='10' fill='%23666' letter-spacing='0.1em'%3EERRORS%3C/text%3E%3Ctext x='16' y='64' font-family='monospace' font-size='32' fill='%23ef4444' font-weight='600'%3E3%3C/text%3E%3Ctext x='16' y='84' font-family='monospace' font-size='10' fill='%23666'%3EAction required%3C/text%3E%3C/svg%3E" width="180">
+
+</td>
+</tr></table>
+
+</div>
+
+### Overlay
+
+<div align="center">
+
+<!-- Toast comparison -->
+<table><tr>
+<td align="center">
+
+**STANDARD TOAST**
+
+<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='80'%3E%3Crect width='280' height='80' fill='%230a0a0a'/%3E%3Crect x='0' y='10' width='280' height='60' fill='%23111111' stroke='%23333' stroke-width='1'/%3E%3Ctext x='16' y='32' font-family='monospace' font-size='12' fill='%23fff' font-weight='600'%3EUpdate Complete%3C/text%3E%3Ctext x='16' y='52' font-family='monospace' font-size='10' fill='%23666'%3ESystem has been updated successfully%3C/text%3E%3Crect x='200' y='36' width='60' height='24' fill='none' stroke='%23333' stroke-width='1'/%3E%3Ctext x='230' y='51' font-family='monospace' font-size='9' fill='%23e8e8e8' text-anchor='middle'%3EUNDO%3C/text%3E%3C/svg%3E" width="280">
+
+</td>
+<td align="center">
+
+**MINI TOAST**
+
+<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='80'%3E%3Crect width='160' height='80' fill='%230a0a0a'/%3E%3Crect x='10' y='22' width='140' height='36' fill='%2322c55e' rx='2'/%3E%3Ccircle cx='36' cy='40' r='10' fill='%230a0a0a'/%3E%3Ctext x='36' y='44' font-family='monospace' font-size='10' fill='%2322c55e' text-anchor='middle' font-weight='bold'%3E✓%3C/text%3E%3Ctext x='88' y='44' font-family='monospace' font-size='11' fill='%230a0a0a' font-weight='600' letter-spacing='0.05em'%3ESAVED%3C/text%3E%3C/svg%3E" width="160">
+
+</td>
+</tr></table>
+
+</div>
+
+---
+
+## Component Index
+
+<details>
+<summary><b>29 Components — Click to view all</b></summary>
+
+| Category | Components |
+|----------|------------|
+| **Foundation** | Typography · Colors · Spacing |
+| **Controls** | Button · Input · Toggle · Checkbox · Radio · Tabs · **Stepper** |
+| **Data** | Metric Cards · Tables · Bars · Progress |
+| **Overlay** | Toast · **Mini Toast** · Modal · Command Palette · Popover · Tooltip · Hover Card |
+| **Content** | Panel · Card · Alert · Status · List · Code Block · Key-Value · Empty State |
+| **Layout** | Header · Footer · Skeleton · Divider |
+
+</details>
+
+---
+
+## Quick Start
 
 ```bash
-# Clone the repository
 git clone https://github.com/skylixone/aerospace-ui.git
-
-# Or download the latest release
-curl -L https://github.com/skylixone/aerospace-ui/archive/refs/heads/main.zip
 ```
-
-### Basic Setup
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your App</title>
-  
-  <!-- Geist Mono from Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Aerospace UI -->
-  <link rel="stylesheet" href="aerospace-ui/style.css">
-</head>
-<body>
-  <!-- Your application -->
-</body>
-</html>
-```
-
-### Component Examples
-
-**Primary Button**
-```html
-<button class="btn btn-primary">Deploy System</button>
-```
-
-**Metric Card**
-```html
-<div class="metric">
-  <div class="metric-label">SYSTEM LOAD</div>
-  <div class="metric-value accent">42%</div>
-  <div class="metric-detail">Within normal parameters</div>
-</div>
-```
-
-**Stepper Control**
-```html
-<div class="stepper">
-  <button class="stepper-btn" onclick="adjust(-1)">−</button>
-  <span class="stepper-val" id="value">6.0</span>
-  <button class="stepper-btn" onclick="adjust(1)">+</button>
-</div>
-```
-
-**Mini Toast (JavaScript)**
-```javascript
-// Show success confirmation
-Toast.show('Saved', 'success');
-
-// Show updating state
-Toast.show('Saving...', 'updating');
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="aerospace-ui/style.css">
 ```
 
 ---
 
-## DESIGN TOKENS
+## Design Tokens
 
 ```css
 :root {
   /* Background Layers */
-  --bg: #0a0a0a;
-  --bg-raised: #111111;
-  --bg-surface: #0d0d0d;
-  --bg-hover: #141414;
-  
-  /* Text Hierarchy */
-  --text-bright: #ffffff;
-  --text: #e8e8e8;
-  --text-label: #888888;
-  --text-dim: #666666;
-  --text-muted: #444444;
+  --bg: #0a0a0a;        /* Deepest layer */
+  --bg-raised: #111111; /* Elevated surfaces */
+  --bg-surface: #0d0d0d; /* Cards, panels */
   
   /* Accent & Semantic */
-  --accent: #f59e0b;
-  --accent-hover: #fbbf24;
-  --green: #22c55e;
-  --red: #ef4444;
-  --blue: #3b82f6;
-  
-  /* Borders */
-  --border: #333333;
-  --border-dim: #222222;
-  --border-input: #2a2a2a;
+  --accent: #f59e0b;    /* Amber primary */
+  --green: #22c55e;     /* Success states */
+  --red: #ef4444;       /* Error states */
+  --blue: #3b82f6;      /* Info states */
   
   /* Typography */
   --font-mono: 'Geist Mono', monospace;
-  
-  /* Spacing Scale */
-  --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 16px;
-  --space-lg: 24px;
-  --space-xl: 32px;
-  --space-2xl: 48px;
-  --space-3xl: 64px;
 }
 ```
 
 ---
 
-## ARCHITECTURE
+<div align="center">
 
-```
-aerospace-ui/
-├── index.html          # Live component reference
-├── style.css           # Complete design system
-├── foundation_tune.js  # Visual fine-tuning
-└── nav_highlight.js    # Interactive navigation
-```
+**[View Live Demo →](https://skylixone.github.io/aerospace-ui)**
 
-The kit is designed as a **single-file system**. `style.css` contains all 29 components, hardened for production use. No build step. No dependencies (except Geist Mono).
+<br>
 
----
+<img src="https://img.shields.io/badge/version-1.0-f59e0b?style=flat-square&color=0a0a0a&labelColor=0a0a0a">
+<img src="https://img.shields.io/badge/components-29-22c55e?style=flat-square&color=0a0a0a&labelColor=0a0a0a">
+<img src="https://img.shields.io/badge/license-Personal%20Use-666666?style=flat-square&color=0a0a0a&labelColor=0a0a0a">
 
-## DEMONSTRATION
-
-View the complete component reference at:  
-**https://skylixone.github.io/aerospace-ui**
-
----
-
-## LICENSE
-
-Personal Use Only.  
-For commercial licensing, contact: [your-email]
-
----
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  BUILT FOR PRECISION. DESIGNED FOR DATA. OPERATIONAL STATUS:│
-│                    [ ALL SYSTEMS NOMINAL ]                  │
-└─────────────────────────────────────────────────────────────┘
-```
+</div>
