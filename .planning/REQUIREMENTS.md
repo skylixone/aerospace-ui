@@ -52,19 +52,19 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| REQ-LAY-01 | Phase 1 | Pending |
-| REQ-LAY-02 | Phase 1 | Pending |
-| REQ-TYP-01 | Phase 2 | Pending |
-| REQ-TYP-02 | Phase 2 | Pending |
-| REQ-TYP-03 | Phase 2 | Pending |
-| REQ-DAT-01 | Phase 3 | Pending |
-| REQ-DAT-02 | Phase 3 | Pending |
-| REQ-DAT-03 | Phase 3 | Pending |
-| REQ-MON-01 | Phase 4 | Pending |
-| REQ-MON-02 | Phase 4 | Pending |
-| REQ-MON-03 | Phase 4 | Pending |
-| REQ-DOC-01 | Phase 5 | Pending |
-| REQ-DOC-02 | Phase 5 | Pending |
+| REQ-LAY-01 | Phase 1 (Foundation) | Pending |
+| REQ-LAY-02 | Phase 1 (Foundation) | Pending |
+| REQ-TYP-01 | Phase 1 (Foundation) | Pending |
+| REQ-TYP-02 | Phase 1 (Foundation) | Pending |
+| REQ-TYP-03 | Phase 1 (Foundation) | Pending |
+| REQ-DAT-01 | Phase 2 (Components) | Pending |
+| REQ-DAT-02 | Phase 2 (Components) | Pending |
+| REQ-DAT-03 | Phase 2 (Components) | Pending |
+| REQ-MON-01 | Phase 2 (Components) | Pending |
+| REQ-MON-02 | Phase 2 (Components) | Pending |
+| REQ-MON-03 | Phase 2 (Components) | Pending |
+| REQ-DOC-01 | Phase 3 (Interactivity/Polishing) | Pending |
+| REQ-DOC-02 | Phase 3 (Interactivity/Polishing) | Pending |
 
 **Coverage:**
 - v1 requirements: 13 total
