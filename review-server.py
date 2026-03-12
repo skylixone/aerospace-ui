@@ -19,8 +19,8 @@ COMMENTS_FILE = Path("comments.json")
 CLIENT_SCRIPT = """
 <style>
     .review-overlay { position: fixed; bottom: 20px; right: 20px; background: #09090b; border: 1px solid #27272a; padding: 12px; border-radius: 8px; z-index: 2147483647; color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.5); font-family: sans-serif; display: flex; gap: 8px; align-items: center; }
-    .review-mode-active * { cursor: crosshair !important; }
-    .review-mode-active *:hover { outline: 2px solid #a855f7 !important; outline-offset: -2px; }
+    .review-mode-active *:not(.review-overlay):not(.review-overlay *):not(#comment-dialog):not(#comment-dialog *):not(.review-marker) { cursor: crosshair !important; }
+    .review-mode-active *:not(.review-overlay):not(.review-overlay *):not(#comment-dialog):not(#comment-dialog *):not(.review-marker):hover { outline: 2px solid #a855f7 !important; outline-offset: -2px; }
     .review-marker { position: absolute; width: 20px; height: 20px; background: #a855f7; border-radius: 50%; border: 2px solid white; transform: translate(-50%, -50%); z-index: 2147483646; pointer-events: none; }
     
     #comment-dialog { position: fixed; display: none; background: #18181b; border: 1px solid #3f3f46; padding: 16px; border-radius: 8px; width: 300px; z-index: 2147483647; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
@@ -38,9 +38,9 @@ CLIENT_SCRIPT = """
 
 <div id="comment-dialog">
     <h4 style="margin: 0 0 8px 0; font-size: 14px; font-weight: 600; color: white;">Add Comment</h4>
-    <textarea id="comment-text" placeholder="What should be changed?"></textarea>
+    <textarea id="comment-text" placeholder="What should be changed? (Cmd/Ctrl + Enter to save)"></textarea>
     <div style="display: flex; justify-content: flex-end; gap: 8px;">
-        <button class="btn-secondary" onclick="closeDialog()">Cancel</button>
+        <button class="btn-secondary" onclick="closeDialog()">Cancel (Esc)</button>
         <button class="btn-primary" onclick="submitComment()">Save</button>
     </div>
 </div>
@@ -59,6 +59,18 @@ CLIENT_SCRIPT = """
         toggleBtn.textContent = isReviewMode ? "ON" : "OFF";
         toggleBtn.style.backgroundColor = isReviewMode ? "#22c55e" : "#a855f7";
         document.body.classList.toggle('review-mode-active', isReviewMode);
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (dialog.style.display === 'block') {
+            if (e.key === 'Escape') {
+                e.preventDefault();
+                closeDialog();
+            } else if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) {
+                e.preventDefault();
+                submitComment();
+            }
+        }
     });
 
     document.addEventListener('click', (e) => {

@@ -42,6 +42,7 @@
 | 2026-03-12 | Moved review tool toggle to bottom left to fix UI collision. |
 | 2026-03-12 | Reverted review tool toggle to bottom right. |
 | 2026-03-12 | Moved "Tune Kit" button and dialog to top right. Added README.md. |
+| 2026-03-12 | Improved Review UI: exempt from selection outline, Esc dismisses popup, Cmd/Ctrl+Enter saves comment. |
 
 ---
 *Last updated: 2026-03-12*
