@@ -22,11 +22,14 @@
   <a href="#inputs">Form Inputs</a>
   <a href="#toggles">Toggles & Checks</a>
   <a href="#tabs">Tabs</a>
+  <a href="#steppers">Steppers</a>
+  <a href="#sliders">Range Sliders</a>
   <div class="nav-heading">Data</div>
   <a href="#metrics">Metric Cards</a>
   <a href="#tables">Tables</a>
   <a href="#bars">Bars</a>
   <a href="#progress">Progress</a>
+  <a href="#timeline">Adherence Timeline</a>
   <div class="nav-heading">Content</div>
   <a href="#panels">Panels & Cards</a>
   <a href="#tags">Tags & Badges</a>
@@ -78,7 +81,7 @@
   <!-- ── 01. TYPOGRAPHY ── -->
   <section class="kit-section" id="typography">
     <div class="kit-section-title">01</div>
-    <h2>Typography</h2>
+    <h2>Typography <a href="#code" class="kit-doc-link">Usage</a></h2>
     <div class="kit-group">
       <div class="kit-label">Scale</div>
       <div style="display: flex; flex-direction: column; gap: 16px;">
@@ -102,7 +105,7 @@
   <!-- ── 02. COLORS ── -->
   <section class="kit-section" id="colors">
     <div class="kit-section-title">02</div>
-    <h2>Colors</h2>
+    <h2>Colors <a href="#code" class="kit-doc-link">Usage</a></h2>
 
     <div class="kit-label">Core Palette</div>
     <div class="swatch-grid" style="margin-bottom: 24px;">
@@ -489,11 +492,24 @@
     <div class="kit-section-title">15</div>
     <h2>Status Indicators</h2>
 
-    <div class="kit-row" style="gap: 32px;">
-      <span class="status"><span class="status-dot online"></span> Online</span>
-      <span class="status"><span class="status-dot away"></span> Away</span>
-      <span class="status"><span class="status-dot busy"></span> Busy</span>
-      <span class="status"><span class="status-dot"></span> Offline</span>
+    <div class="kit-group">
+      <div class="kit-label">Status Dots</div>
+      <div class="kit-row" style="gap: 32px;">
+        <span class="status"><span class="status-dot online"></span> Online</span>
+        <span class="status"><span class="status-dot away"></span> Away</span>
+        <span class="status"><span class="status-dot busy"></span> Busy</span>
+        <span class="status"><span class="status-dot"></span> Offline</span>
+      </div>
+    </div>
+
+    <div class="kit-group">
+      <div class="kit-label">RAG Status Tags (REQ-MON-02)</div>
+      <div class="tag-group">
+        <span class="tag sg">SG — NOMINAL</span>
+        <span class="tag sa">SA — WARNING</span>
+        <span class="tag sr">SR — CRITICAL</span>
+        <span class="tag sd">SD — INACTIVE</span>
+      </div>
     </div>
   </section>
 
@@ -741,6 +757,7 @@
     <h2>Toast</h2>
     <div class="kit-row" style="margin-bottom: 16px;">
       <button class="btn btn-secondary btn-sm" id="toast-trigger">Trigger Toast</button>
+      <button class="btn btn-secondary btn-sm" id="toast-trigger-mini">Trigger Mini</button>
       <button class="btn btn-ghost btn-sm" id="toast-trigger-err">Trigger Error</button>
     </div>
     <div class="kit-row">
@@ -758,6 +775,142 @@
           <div class="toast-close">✕</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ── 31. STEPPERS ── -->
+  <section class="kit-section" id="steppers">
+    <div class="kit-section-title">31</div>
+    <h2>Interactive Steppers <a href="#code" class="kit-doc-link">Usage</a></h2>
+    
+    <div class="kit-group">
+      <div class="kit-label">Phased Operations (Horizontal)</div>
+      <div class="stepper">
+        <div class="step complete">
+          <div class="step-indicator"></div>
+          <div class="step-label">Ignition</div>
+          <div class="step-info">T-minus 10s</div>
+        </div>
+        <div class="step active">
+          <div class="step-indicator"></div>
+          <div class="step-label">Lift-off</div>
+          <div class="step-info">Ascent active</div>
+        </div>
+        <div class="step">
+          <div class="step-indicator"></div>
+          <div class="step-label">Stage 1 Sep</div>
+          <div class="step-info">Pending altitude</div>
+        </div>
+        <div class="step">
+          <div class="step-indicator"></div>
+          <div class="step-label">Orbit Entry</div>
+          <div class="step-info">Target Met</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kit-group">
+      <div class="kit-label">Checklist (Vertical)</div>
+      <div class="stepper stepper-vertical" style="max-width: 300px;">
+        <div class="step complete">
+          <div class="step-indicator"></div>
+          <div>
+            <div class="step-label">Pre-flight check</div>
+            <div class="step-info">All systems nominal</div>
+          </div>
+        </div>
+        <div class="step active">
+          <div class="step-indicator"></div>
+          <div>
+            <div class="step-label">Fueling</div>
+            <div class="step-info">45% Complete</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-indicator"></div>
+          <div>
+            <div class="step-label">Crew Ingress</div>
+            <div class="step-info">Awaiting confirmation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 32. RANGE SLIDERS ── -->
+  <section class="kit-section" id="sliders">
+    <div class="kit-section-title">32</div>
+    <h2>Range Sliders <a href="#code" class="kit-doc-link">Usage</a></h2>
+    
+    <div style="max-width: 500px; display: flex; flex-direction: column; gap: 32px;">
+      <div class="input-group">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <label class="input-label">Thrust Intensity</label>
+          <span class="type-small accent">85%</span>
+        </div>
+        <div class="slider-wrap">
+          <input type="range" class="slider" min="0" max="100" value="85">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <label class="input-label">Oxygen Levels</label>
+          <span class="type-small text-green">92%</span>
+        </div>
+        <div class="slider-wrap">
+          <input type="range" class="slider slider-green" min="0" max="100" value="92">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <label class="input-label">Fuel Warning</label>
+          <span class="type-small text-red">12%</span>
+        </div>
+        <div class="slider-wrap">
+          <input type="range" class="slider slider-red" min="0" max="100" value="12">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 33. ADHERENCE TIMELINE ── -->
+  <section class="kit-section" id="timeline">
+    <div class="kit-section-title">33</div>
+    <h2>Adherence Timeline <a href="#code" class="kit-doc-link">Usage</a></h2>
+    
+    <div class="panel">
+      <div class="panel-header">Mission Schedule vs Actual</div>
+      <div class="panel-body">
+        <div class="timeline">
+          <div class="timeline-row">
+            <div class="timeline-label">Telemetry Sync</div>
+            <div class="timeline-track">
+              <div class="timeline-planned" style="left: 10%; width: 40%;"></div>
+              <div class="timeline-actual" style="left: 12%; width: 35%;"></div>
+            </div>
+            <div class="timeline-status text-green">OK</div>
+          </div>
+          <div class="timeline-row">
+            <div class="timeline-label">Core Stability</div>
+            <div class="timeline-track">
+              <div class="timeline-planned" style="left: 30%; width: 50%;"></div>
+              <div class="timeline-actual" style="left: 35%; width: 60%;"></div>
+            </div>
+            <div class="timeline-status text-accent">LATE</div>
+          </div>
+          <div class="timeline-row">
+            <div class="timeline-label">Uplink Heartbeat</div>
+            <div class="timeline-track">
+              <div class="timeline-planned" style="left: 0%; width: 100%;"></div>
+              <div class="timeline-actual" style="left: 0%; width: 95%;"></div>
+            </div>
+            <div class="timeline-status text-red">FAIL</div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer">Legend: ░ Planned · █ Actual</div>
     </div>
   </section>
 
@@ -795,7 +948,7 @@
   <!-- ── FOOTER ── -->
   <div class="page-footer" style="margin-top: 48px;">
     <span>AEROSPACE UI KIT · V1.0</span>
-    <span>30 COMPONENTS</span>
+    <span>33 COMPONENTS</span>
   </div>
 
 </main>

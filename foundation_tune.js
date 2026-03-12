@@ -7,7 +7,7 @@
     const tunerHTML = `
     <div id="foundation-tuner" style="
         position: fixed;
-        bottom: 20px;
+        top: 20px;
         right: 20px;
         background: var(--bg-surface);
         border: 1px solid var(--border);
@@ -46,8 +46,8 @@
     
     <button id="tuner-toggle" style="
         position: fixed;
-        bottom: 20px;
-        right: 150px;
+        top: 20px;
+        right: 20px;
         background: var(--bg-surface);
         border: 1px solid var(--border-dim);
         color: var(--text-dim);

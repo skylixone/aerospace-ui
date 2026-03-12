@@ -105,6 +105,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const triggerMiniBtn = document.getElementById('toast-trigger-mini');
+  if (triggerMiniBtn) {
+    triggerMiniBtn.addEventListener('click', () => {
+      showToast({
+        title: 'System check complete',
+        variant: 'toast-mini',
+      });
+    });
+  }
+
   const triggerErrBtn = document.getElementById('toast-trigger-err');
   if (triggerErrBtn) {
     triggerErrBtn.addEventListener('click', () => {
