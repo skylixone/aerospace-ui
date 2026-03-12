@@ -43,6 +43,7 @@
 | 2026-03-12 | Reverted review tool toggle to bottom right. |
 | 2026-03-12 | Moved "Tune Kit" button and dialog to top right. Added README.md. |
 | 2026-03-12 | Improved Review UI: exempt from selection outline, Esc dismisses popup, Cmd/Ctrl+Enter saves comment. |
+| 2026-03-12 | Made ESC key toggle off review mode when no dialog is open. |
 
 ---
 *Last updated: 2026-03-12*

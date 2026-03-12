@@ -70,6 +70,12 @@ CLIENT_SCRIPT = """
                 e.preventDefault();
                 submitComment();
             }
+        } else if (isReviewMode && e.key === 'Escape') {
+            e.preventDefault();
+            isReviewMode = false;
+            toggleBtn.textContent = "OFF";
+            toggleBtn.style.backgroundColor = "#a855f7";
+            document.body.classList.remove('review-mode-active');
         }
     });
 
