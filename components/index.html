@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AEROSPACE UI KIT — Component Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<script defer src="../foundation_tune.js"></script>
+<script defer src="../nav_highlight.js"></script>
+</head>
+<body>
+
+<nav class="kit-nav">
+  <div class="nav-heading">Foundation</div>
+  <a href="#typography">Typography</a>
+  <a href="#colors">Colors</a>
+  <a href="#spacing">Spacing</a>
+  <div class="nav-heading">Controls</div>
+  <a href="#buttons">Buttons</a>
+  <a href="#inputs">Form Inputs</a>
+  <a href="#toggles">Toggles & Checks</a>
+  <a href="#tabs">Tabs</a>
+  <a href="#steppers">Steppers</a>
+  <a href="#sliders">Range Sliders</a>
+  <div class="nav-heading">Data</div>
+  <a href="#metrics">Metric Cards</a>
+  <a href="#tables">Tables</a>
+  <a href="#bars">Bars</a>
+  <a href="#progress">Progress</a>
+  <a href="#timeline">Adherence Timeline</a>
+  <div class="nav-heading">Content</div>
+  <a href="#panels">Panels & Cards</a>
+  <a href="#tags">Tags & Badges</a>
+  <a href="#alerts">Alerts</a>
+  <a href="#status">Status Indicators</a>
+  <a href="#lists">Lists</a>
+  <a href="#code">Code</a>
+  <a href="#summary">Summary / Quote</a>
+  <a href="#kv">Key-Value</a>
+  <a href="#empty">Empty State</a>
+  <div class="nav-heading">Overlay</div>
+  <a href="#cmd">Command Palette</a>
+  <a href="#popover">Popover</a>
+  <a href="#toast">Toast</a>
+  <a href="#mini-toast">Mini Toast</a>
+  <a href="#stepper">Stepper</a>
+  <a href="#hovercard">Hover Card</a>
+  <div class="nav-heading">Layout</div>
+  <a href="#header">Header</a>
+  <a href="#footer">Footer</a>
+  <a href="#modal">Modal</a>
+  <a href="#dividers">Dividers</a>
+  <a href="#skeleton">Skeleton</a>
+  <a href="#tooltip">Tooltip</a>
+
+</nav>
+
+
+<!-- ═══════════════════════════════════════════
+     MAIN CONTENT
+     ═══════════════════════════════════════════ -->
+<main class="kit-main">
+
+  <div class="page-header">
+    <div>
+      <div class="overline">Aerospace UI Kit</div>
+      <div class="title">Component<br>Reference</div>
+    </div>
+    <div class="kv-grid">
+      <div class="kv-cell"><span class="kv-label">VERSION</span><span class="kv-value">1.0</span></div>
+      <div class="kv-cell"><span class="kv-label">FONT</span><span class="kv-value">GEIST MONO</span></div>
+      <div class="kv-cell"><span class="kv-label">THEME</span><span class="kv-value">DARK AEROSPACE</span></div>
+      <div class="kv-cell"><span class="kv-label">LICENSE</span><span class="kv-value">PERSONAL USE</span></div>
+    </div>
+  </div>
+
+  <div class="summary" style="margin-bottom: 48px; font-size: 18px; line-height: 1.6; max-width: 65ch; color: var(--text);">
+    Aerospace industrial design system. Amber on black. Geist Mono throughout. All-caps labels with generous letter-spacing. Data first, decoration after. No rounded corners. Borders over shadows. Left-aligned everything. Generous padding. This file is both documentation and live reference — open in a browser or read as source.
+  </div>
+
+  <!-- ── 01. TYPOGRAPHY ── -->
+  <section class="kit-section" id="typography">
+    <div class="kit-section-title">01</div>
+    <h2>Typography <a href="#code" class="kit-doc-link">Usage</a></h2>
+    <div class="kit-group">
+      <div class="kit-label">Scale</div>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="type-hero">Hero — 56px 700</div>
+        <div class="type-display">Display — 44px 700</div>
+        <div class="type-heading">Heading — 28px 700</div>
+        <div class="type-subheading">Subheading — 20px 500</div>
+        <div class="type-body">Body — 15px 400 regular text for content</div>
+        <div class="type-small">Small — 12px label text, metadata, captions</div>
+        <div class="type-overline">Overline — 11px uppercase · spaced</div>
+        <div class="type-overline bright">Overline Accent — 11px uppercase · wide</div>
+      </div>
+    </div>
+    <div class="kit-group">
+      <div class="kit-label">Classes</div>
+      <div class="code-block">.type-hero · .type-display · .type-heading · .type-subheading
+.type-body · .type-small · .type-overline · .type-overline.bright</div>
+    </div>
+  </section>
+
+  <!-- ── 02. COLORS ── -->
+  <section class="kit-section" id="colors">
+    <div class="kit-section-title">02</div>
+    <h2>Colors <a href="#code" class="kit-doc-link">Usage</a></h2>
+
+    <div class="kit-label">Core Palette</div>
+    <div class="swatch-grid" style="margin-bottom: 24px;">
+      <div class="swatch"><div class="swatch-color" style="background: #0a0a0a;"></div><div class="swatch-info"><strong>bg</strong>#0a0a0a</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: #111111;"></div><div class="swatch-info"><strong>bg-raised</strong>#111111</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: #0d0d0d;"></div><div class="swatch-info"><strong>bg-surface</strong>#0d0d0d</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: #141414;"></div><div class="swatch-info"><strong>bg-hover</strong>#141414</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: #f59e0b;"></div><div class="swatch-info"><strong>accent</strong>#f59e0b</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: #fbbf24;"></div><div class="swatch-info"><strong>accent-hover</strong>#fbbf24</div></div>
+    </div>
+
+    <div class="kit-label">Text</div>
+    <div class="swatch-grid" style="margin-bottom: 24px;">
+      <div class="swatch"><div class="swatch-color" style="background: #ffffff;"></div><div class="swatch-info"><strong>bright</strong>#ffffff</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: #e8e8e8;"></div><div class="swatch-info"><strong>text</strong>#e8e8e8</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: #888888;"></div><div class="swatch-info"><strong>label</strong>#888888</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: #666666;"></div><div class="swatch-info"><strong>dim</strong>#666666</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: #444444;"></div><div class="swatch-info"><strong>muted</strong>#444444</div></div>
+    </div>
+
+    <div class="kit-label">Semantic</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background: #22c55e;"></div><div class="swatch-info"><strong>green</strong>#22c55e</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: #ef4444;"></div><div class="swatch-info"><strong>red</strong>#ef4444</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: #3b82f6;"></div><div class="swatch-info"><strong>blue</strong>#3b82f6</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: #f59e0b;"></div><div class="swatch-info"><strong>yellow</strong>#f59e0b</div></div>
+    </div>
+  </section>
+
+  <!-- ── 03. SPACING ── -->
+  <section class="kit-section" id="spacing">
+    <div class="kit-section-title">03</div>
+    <h2>Spacing</h2>
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div style="display: flex; align-items: center; gap: 16px;"><span class="type-small" style="min-width: 80px;">--space-xs</span><div style="width: 4px; height: 16px; background: var(--accent);"></div><span class="type-small">4px</span></div>
+      <div style="display: flex; align-items: center; gap: 16px;"><span class="type-small" style="min-width: 80px;">--space-sm</span><div style="width: 8px; height: 16px; background: var(--accent);"></div><span class="type-small">8px</span></div>
+      <div style="display: flex; align-items: center; gap: 16px;"><span class="type-small" style="min-width: 80px;">--space-md</span><div style="width: 16px; height: 16px; background: var(--accent);"></div><span class="type-small">16px</span></div>
+      <div style="display: flex; align-items: center; gap: 16px;"><span class="type-small" style="min-width: 80px;">--space-lg</span><div style="width: 24px; height: 16px; background: var(--accent);"></div><span class="type-small">24px</span></div>
+      <div style="display: flex; align-items: center; gap: 16px;"><span class="type-small" style="min-width: 80px;">--space-xl</span><div style="width: 32px; height: 16px; background: var(--accent);"></div><span class="type-small">32px</span></div>
+      <div style="display: flex; align-items: center; gap: 16px;"><span class="type-small" style="min-width: 80px;">--space-2xl</span><div style="width: 48px; height: 16px; background: var(--accent);"></div><span class="type-small">48px</span></div>
+      <div style="display: flex; align-items: center; gap: 16px;"><span class="type-small" style="min-width: 80px;">--space-3xl</span><div style="width: 64px; height: 16px; background: var(--accent);"></div><span class="type-small">64px</span></div>
+    </div>
+  </section>
+
+  <!-- ── 04. BUTTONS ── -->
+  <section class="kit-section" id="buttons">
+    <div class="kit-section-title">04</div>
+    <h2>Buttons</h2>
+
+    <div class="kit-group">
+      <div class="kit-label">Variants</div>
+      <div class="kit-row">
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-ghost">Ghost</button>
+        <button class="btn btn-danger">Danger</button>
+      </div>
+    </div>
+
+    <div class="kit-group">
+      <div class="kit-label">Sizes</div>
+      <div class="kit-row">
+        <button class="btn btn-primary btn-sm">Small</button>
+        <button class="btn btn-primary">Default</button>
+        <button class="btn btn-primary btn-lg">Large</button>
+      </div>
+    </div>
+
+    <div class="kit-group">
+      <div class="kit-label">States</div>
+      <div class="kit-row">
+        <button class="btn btn-primary" disabled>Disabled</button>
+        <button class="btn btn-secondary" disabled>Disabled</button>
+        <button class="btn btn-primary loading">Loading</button>
+        <button class="btn btn-secondary loading">Loading</button>
+        <button class="btn btn-ghost btn-icon">×</button>
+        <button class="btn btn-secondary btn-icon">+</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 05. FORM INPUTS ── -->
+  <section class="kit-section" id="inputs">
+    <div class="kit-section-title">05</div>
+    <h2>Form Inputs</h2>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 700px;">
+      <div class="input-group">
+        <label class="input-label">Board Name</label>
+        <input class="input" type="text" placeholder="e.g. aerospace">
+        <span class="input-hint">Lowercase, no spaces</span>
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">Error State</label>
+        <input class="input error" type="text" value="invalid entry">
+        <span class="input-error">Board name already exists</span>
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">Category</label>
+        <select class="input">
+          <option>Select category...</option>
+          <option>Aerospace</option>
+          <option>Editorial</option>
+          <option>Brutalist</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">Success State</label>
+        <input class="input success" type="text" value="aerospace-v2">
+        <span class="input-success">Board name available</span>
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">Disabled</label>
+        <input class="input" type="text" value="Read-only value" disabled>
+      </div>
+    </div>
+
+    <div class="input-group" style="max-width: 700px; margin-top: 24px;">
+      <label class="input-label">Description</label>
+      <textarea class="input" placeholder="Describe the design direction for this board..."></textarea>
+    </div>
+  </section>
+
+  <!-- ── 06. TOGGLES & CHECKS ── -->
+  <section class="kit-section" id="toggles">
+    <div class="kit-section-title">06</div>
+    <h2>Toggles & Checks</h2>
+
+    <div class="kit-row" style="gap: 32px;">
+      <label class="toggle">
+        <input type="checkbox" checked>
+        <div class="toggle-track"></div>
+        Auto-analyze on upload
+      </label>
+
+      <label class="toggle">
+        <input type="checkbox">
+        <div class="toggle-track"></div>
+        Dark mode
+      </label>
+
+      <label class="toggle disabled">
+        <input type="checkbox" disabled checked>
+        <div class="toggle-track"></div>
+        Locked setting
+      </label>
+    </div>
+
+    <div class="kit-row" style="gap: 24px; margin-top: 16px;">
+      <label class="check-group"><input type="checkbox" checked> Monospace grid</label>
+      <label class="check-group"><input type="checkbox" checked> Amber on black</label>
+      <label class="check-group"><input type="checkbox"> Generous whitespace</label>
+    </div>
+
+    <div class="kit-row" style="gap: 24px; margin-top: 16px;">
+      <label class="check-group"><input type="radio" name="layout" checked> Grid view</label>
+      <label class="check-group"><input type="radio" name="layout"> List view</label>
+      <label class="check-group"><input type="radio" name="layout"> Detail view</label>
+    </div>
+  </section>
+
+  <!-- ── 07. TABS ── -->
+  <section class="kit-section" id="tabs">
+    <div class="kit-section-title">07</div>
+    <h2>Tabs</h2>
+
+    <div class="tabs">
+      <button class="tab active">Overview</button>
+      <button class="tab">Sessions</button>
+      <button class="tab">Tools</button>
+      <button class="tab disabled" disabled>Archived</button>
+    </div>
+    <div class="tab-content">
+      <span class="type-small">Tab content goes here. Active tab has amber underline.</span>
+    </div>
+  </section>
+
+  <!-- ── 08. METRIC CARDS ── -->
+  <section class="kit-section" id="metrics">
+    <div class="kit-section-title">08</div>
+    <h2>Metric Cards</h2>
+
+    <div class="metric-grid">
+      <div class="metric" style="background: #0f0f0f;">
+        <div class="metric-label">Chemistry</div>
+        <div class="metric-value green">8.0</div>
+        <div class="metric-trend up">▲ 0.4</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Prompts / Session</div>
+        <div class="metric-value">6.2</div>
+        <div class="metric-trend down">▼ 1.1</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Total Events</div>
+        <div class="metric-value">2,814</div>
+        <div class="metric-detail">across all sessions</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Parallel Rate</div>
+        <div class="metric-value accent">40%</div>
+        <div class="metric-detail">8/20 used subagents</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Entries</div>
+        <div class="metric-value">19<span class="frac">/30</span></div>
+        <div class="metric-detail">principles encoded</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 09. TABLES ── -->
+  <section class="kit-section" id="tables">
+    <div class="kit-section-title">09</div>
+    <h2>Tables</h2>
+
+    <div class="panel">
+      <div class="panel-header">Session History</div>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Prompts</th>
+              <th>Tools</th>
+              <th>Duration</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-bright">2026-02-14 15:29</td>
+              <td>35</td>
+              <td>123</td>
+              <td>40m</td>
+              <td><span class="tag tag-green">Complete</span></td>
+            </tr>
+            <tr>
+              <td class="text-bright">2026-02-09 01:34</td>
+              <td>19</td>
+              <td>335</td>
+              <td>120m</td>
+              <td><span class="tag tag-green">Complete</span></td>
+            </tr>
+            <tr>
+              <td class="text-bright">2026-02-08 01:40</td>
+              <td>15</td>
+              <td>106</td>
+              <td>92m</td>
+              <td><span class="tag tag-accent">Reviewed</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 10. BARS ── -->
+  <section class="kit-section" id="bars">
+    <div class="kit-section-title">10</div>
+    <h2>Bars</h2>
+
+    <div class="kit-group">
+      <div class="kit-label">Standard (value → bar)</div>
+      <div style="max-width: 500px; display: flex; flex-direction: column; gap: 12px;">
+        <div class="bar-wrap"><span class="bar-val">250</span><div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div></div>
+        <div class="bar-wrap"><span class="bar-val">159</span><div class="bar-track"><div class="bar-fill gradient" style="width: 63.6%;"></div></div></div>
+        <div class="bar-wrap"><span class="bar-val">63</span><div class="bar-track"><div class="bar-fill" style="width: 25.2%;"></div></div></div>
+      </div>
+    </div>
+
+    <div class="kit-group">
+      <div class="kit-label">Semantic colors</div>
+      <div style="max-width: 500px; display: flex; flex-direction: column; gap: 12px;">
+        <div class="bar-wrap"><span class="bar-val text-green">92%</span><div class="bar-track"><div class="bar-fill green" style="width: 92%;"></div></div></div>
+        <div class="bar-wrap"><span class="bar-val text-red">18%</span><div class="bar-track"><div class="bar-fill red" style="width: 18%;"></div></div></div>
+        <div class="bar-wrap"><span class="bar-val" style="color: var(--blue);">67%</span><div class="bar-track"><div class="bar-fill blue" style="width: 67%;"></div></div></div>
+      </div>
+    </div>
+
+    <div class="kit-group">
+      <div class="kit-label">Thick / Thin variants</div>
+      <div style="max-width: 500px; display: flex; flex-direction: column; gap: 12px;">
+        <div class="bar-wrap"><span class="bar-val">Thick</span><div class="bar-track thick"><div class="bar-fill" style="width: 75%;"></div></div></div>
+        <div class="bar-wrap"><span class="bar-val">Thin</span><div class="bar-track thin"><div class="bar-fill" style="width: 45%;"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 11. PROGRESS ── -->
+  <section class="kit-section" id="progress">
+    <div class="kit-section-title">11</div>
+    <h2>Progress</h2>
+
+    <div style="max-width: 500px; display: flex; flex-direction: column; gap: 24px;">
+      <div>
+        <div class="kit-label">Determinate — 72%</div>
+        <div class="progress"><div class="progress-fill" style="width: 72%;"></div></div>
+      </div>
+      <div>
+        <div class="kit-label">Complete</div>
+        <div class="progress"><div class="progress-fill green" style="width: 100%;"></div></div>
+      </div>
+      <div>
+        <div class="kit-label">Indeterminate</div>
+        <div class="progress progress-indeterminate"><div class="progress-fill"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 12. PANELS & CARDS ── -->
+  <section class="kit-section" id="panels">
+    <div class="kit-section-title">12</div>
+    <h2>Panels & Cards</h2>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+      <div class="panel">
+        <div class="panel-header">Panel Header <span class="badge">3</span></div>
+        <div class="panel-body">
+          <span class="type-body">Panel body content. Used for grouped data like tables, tool distributions, comprehension signals.</span>
+        </div>
+        <div class="panel-footer">Panel footer — metadata or actions</div>
+      </div>
+
+      <div class="card">
+        <div class="type-overline" style="margin-bottom: 8px;">Card</div>
+        <div class="type-body">Lighter variant with muted border. Elevates on hover. Use for individual items in grids.</div>
+      </div>
+    </div>
+
+    <div class="card card-accent" style="max-width: 350px;">
+      <div class="type-overline bright" style="margin-bottom: 8px;">Card Accent</div>
+      <div class="type-body">Amber border variant for featured items.</div>
+    </div>
+  </section>
+
+  <!-- ── 13. TAGS & BADGES ── -->
+  <section class="kit-section" id="tags">
+    <div class="kit-section-title">13</div>
+    <h2>Tags & Badges</h2>
+
+    <div class="kit-group">
+      <div class="kit-label">Tags</div>
+      <div class="tag-group">
+        <span class="tag">Default</span>
+        <span class="tag tag-accent">Accent</span>
+        <span class="tag tag-green">Success</span>
+        <span class="tag tag-red">Error</span>
+        <span class="tag tag-blue">Info</span>
+        <span class="tag tag-accent">Removable <span class="tag-remove">×</span></span>
+      </div>
+    </div>
+
+    <div class="kit-group">
+      <div class="kit-label">Badges</div>
+      <div class="tag-group">
+        <span class="badge">3</span>
+        <span class="badge">42</span>
+        <span class="badge-outline">7</span>
+        <span class="badge-dim">0</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 14. ALERTS ── -->
+  <section class="kit-section" id="alerts">
+    <div class="kit-section-title">14</div>
+    <h2>Alerts</h2>
+
+    <div style="display: flex; flex-direction: column; gap: 16px; max-width: 700px;">
+      <div class="alert alert-info"><strong>INFO</strong> — Board manifest updated. 12 images indexed across 3 boards.</div>
+      <div class="alert alert-success"><strong>COMPLETE</strong> — Analysis finished. All tags extracted successfully.</div>
+      <div class="alert alert-warning"><strong>ATTENTION</strong> — Gemini API rate limit approaching. 8/10 calls used this minute.</div>
+      <div class="alert alert-danger dismissible"><span><strong>FAILURE</strong> — Image analysis failed for 2 uploads. Retry available.</span><span class="alert-close">✕</span></div>
+    </div>
+  </section>
+
+  <!-- ── 15. STATUS INDICATORS ── -->
+  <section class="kit-section" id="status">
+    <div class="kit-section-title">15</div>
+    <h2>Status Indicators</h2>
+
+    <div class="kit-group">
+      <div class="kit-label">Status Dots</div>
+      <div class="kit-row" style="gap: 32px;">
+        <span class="status"><span class="status-dot online"></span> Online</span>
+        <span class="status"><span class="status-dot away"></span> Away</span>
+        <span class="status"><span class="status-dot busy"></span> Busy</span>
+        <span class="status"><span class="status-dot"></span> Offline</span>
+      </div>
+    </div>
+
+    <div class="kit-group">
+      <div class="kit-label">RAG Status Tags (REQ-MON-02)</div>
+      <div class="tag-group">
+        <span class="tag sg">SG — NOMINAL</span>
+        <span class="tag sa">SA — WARNING</span>
+        <span class="tag sr">SR — CRITICAL</span>
+        <span class="tag sd">SD — INACTIVE</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 16. LISTS ── -->
+  <section class="kit-section" id="lists">
+    <div class="kit-section-title">16</div>
+    <h2>Lists</h2>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 700px;">
+      <div>
+        <div class="kit-label">Default</div>
+        <ul class="list">
+          <li>Monospace grid</li>
+          <li>Amber on black</li>
+          <li>Data-first hierarchy</li>
+          <li>Generous padding</li>
+        </ul>
+      </div>
+      <div>
+        <div class="kit-label">Numbered</div>
+        <ul class="list list-numbered">
+          <li>Upload image</li>
+          <li>AI analysis runs</li>
+          <li>Tags appear</li>
+          <li>User reviews</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 17. CODE ── -->
+  <section class="kit-section" id="code">
+    <div class="kit-section-title">17</div>
+    <h2>Code</h2>
+
+    <div class="kit-group">
+      <div class="kit-label">Inline</div>
+      <div class="type-body">Run <span class="code-inline">GEMINI_API_KEY=xxx node server.js</span> to start the moodboard.</div>
+    </div>
+
+    <div class="kit-group">
+      <div class="kit-label">Block</div>
+      <pre class="code-block"><span class="keyword">const</span> board = <span class="keyword">await</span> readJSON(<span class="string">'boards/aerospace.json'</span>);
+<span class="keyword">const</span> images = board.images.filter(i => i.reviewed);
+<span class="keyword">const</span> refs = images.slice(<span class="number">0</span>, <span class="number">5</span>); <span class="comment">// top 5 reviewed refs</span></pre>
+    </div>
+  </section>
+
+  <!-- ── 18. SUMMARY / QUOTE ── -->
+  <section class="kit-section" id="summary">
+    <div class="kit-section-title">18</div>
+    <h2>Summary / Quote</h2>
+
+    <div class="summary summary-hero">
+      Across 20 sessions, chemistry scores 8.0/10. Parallel execution active in 40%&nbsp;—&nbsp;fork-don't-queue applied.
+    </div>
+  </section>
+
+  <!-- ── 19. KEY-VALUE ── -->
+  <section class="kit-section" id="kv">
+    <div class="kit-section-title">19</div>
+    <h2>Key-Value Grid</h2>
+
+    <div class="kv-grid">
+      <div class="kv-cell"><span class="kv-label">REPORT GENERATED</span><span class="kv-value">2026-02-14 16:09</span></div>
+      <div class="kv-cell"><span class="kv-label">EVENT SOURCE</span><span class="kv-value">VIBECRAFT JSONL</span></div>
+      <div class="kv-cell"><span class="kv-label">SESSIONS ANALYZED</span><span class="kv-value">20</span></div>
+      <div class="kv-cell"><span class="kv-label">CLASSIFICATION</span><span class="kv-value">UNCLASSIFIED</span></div>
+    </div>
+  </section>
+
+  <!-- ── 20. EMPTY STATE ── -->
+  <section class="kit-section" id="empty">
+    <div class="kit-section-title">20</div>
+    <h2>Empty State</h2>
+
+    <div class="empty-state-box" style="max-width: 500px;">
+      <div class="empty-icon">◇</div>
+      <div class="type-subheading" style="color: var(--text-bright);">No images in this board</div>
+      <div class="type-body" style="color: var(--text-dim); text-align: center;">Drag and drop images here, or paste from clipboard<br>Supports PNG, JPG, WEBP</div>
+      <button class="btn btn-secondary btn-sm" style="margin-top: 16px;">Browse Files</button>
+    </div>
+  </section>
+
+  <!-- ── 21. HEADER ── -->
+  <section class="kit-section" id="header">
+    <div class="kit-section-title">21</div>
+    <h2>Page Header</h2>
+
+    <div class="page-header">
+      <div>
+        <div class="overline">System Name</div>
+        <div class="title">Page<br>Title</div>
+      </div>
+      <div class="kv-grid">
+        <div class="kv-cell"><span class="kv-label">META KEY</span><span class="kv-value">META VALUE</span></div>
+        <div class="kv-cell"><span class="kv-label">ANOTHER KEY</span><span class="kv-value">ANOTHER VALUE</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 22. FOOTER ── -->
+  <section class="kit-section" id="footer">
+    <div class="kit-section-title">22</div>
+    <h2>Page Footer</h2>
+
+    <div class="page-footer">
+      <span>SYSTEM-NAME · MODULE</span>
+      <span>2,814 EVENTS PROCESSED</span>
+    </div>
+  </section>
+
+  <!-- ── 23. MODAL ── -->
+  <section class="kit-section" id="modal">
+    <div class="kit-section-title">23</div>
+    <h2>Modal</h2>
+
+    <div class="demo-modal">
+      <div class="modal-backdrop">
+        <div class="modal-window">
+          <div style="padding: 16px 24px; border-bottom: 1px solid var(--border-dim); font-weight: 600; color: var(--text-bright); display: flex; justify-content: space-between;">
+            Confirm Action
+            <button class="btn-icon" style="color: var(--text-dim);">×</button>
+          </div>
+          <div style="padding: 24px;">
+            <div class="type-body" style="margin-bottom: 8px; color: var(--text);">Remove 3 images from the Aerospace board?</div>
+            <div class="type-small" style="color: var(--text-dim);">This action cannot be undone.</div>
+          </div>
+          <div style="padding: 16px 24px; border-top: 1px solid var(--border-dim); display: flex; justify-content: flex-end; gap: 12px; background: var(--bg-surface);">
+            <button class="btn btn-ghost btn-sm">Cancel</button>
+            <button class="btn btn-danger btn-sm">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 24. DIVIDERS ── -->
+  <section class="kit-section" id="dividers">
+    <div class="kit-section-title">24</div>
+    <h2>Dividers</h2>
+
+    <div style="max-width: 500px; display: flex; flex-direction: column; gap: 24px;">
+      <div><div class="kit-label">Solid</div><hr class="divider divider-solid"></div>
+      <div><div class="kit-label">Dashed</div><hr class="divider divider-dashed"></div>
+      <div><div class="kit-label">Dotted</div><hr class="divider divider-dotted"></div>
+    </div>
+  </section>
+
+  <!-- ── 25. SKELETON ── -->
+  <section class="kit-section" id="skeleton">
+    <div class="kit-section-title">25</div>
+    <h2>Skeleton Loading</h2>
+
+    <div style="max-width: 400px; display: flex; flex-direction: column; gap: 12px;">
+      <div class="skeleton" style="height: 32px; width: 60%;"></div>
+      <div class="skeleton" style="height: 16px; width: 100%;"></div>
+      <div class="skeleton" style="height: 16px; width: 90%;"></div>
+      <div class="skeleton" style="height: 16px; width: 40%;"></div>
+      <div style="height: 24px;"></div>
+      <div class="skeleton" style="height: 120px; width: 100%;"></div>
+    </div>
+  </section>
+
+  <!-- ── 26. TOOLTIP ── -->
+  <section class="kit-section" id="tooltip">
+    <div class="kit-section-title">26</div>
+    <h2>Tooltip</h2>
+
+    <div class="kit-row" style="gap: 32px; padding-bottom: 24px;">
+      <span class="tooltip" data-tooltip="This is a tooltip">Hover me (Text)</span>
+      <span class="tag tag-accent tooltip" data-tooltip="12 images · 8 reviewed">Hover me (Tag)</span>
+    </div>
+  </section>
+
+  <!-- ── 27. COMMAND PALETTE ── -->
+  <section class="kit-section" id="cmd">
+    <div class="kit-section-title">27</div>
+    <h2>Command Palette</h2>
+    <div class="cmd-hint">Press <kbd class="kbd">⌘K</kbd> to open</div>
+    <div class="demo-cmd">
+      <div class="cmd-dialog">
+        <div class="cmd-header">
+          <div class="cmd-icon">›</div>
+          <input type="text" class="cmd-input" placeholder="Type a command or search..." autofocus>
+        </div>
+        <div class="cmd-list">
+          <div class="cmd-group-heading">Suggestions</div>
+          <div class="cmd-item selected">
+            <span>Calendar</span>
+            <span class="cmd-shortcut">⌘ C</span>
+          </div>
+          <div class="cmd-item">
+            <span>Search Emoji</span>
+            <span class="cmd-shortcut">⌘ E</span>
+          </div>
+          <div class="cmd-item">
+            <span>Launch Calculator</span>
+          </div>
+          <div class="cmd-group-heading">Settings</div>
+          <div class="cmd-item">
+            <span>Profile</span>
+            <span class="cmd-shortcut">⌘ P</span>
+          </div>
+          <div class="cmd-item">
+            <span>Billing</span>
+            <span class="cmd-shortcut">⌘ B</span>
+          </div>
+          <div class="cmd-item">
+            <span>Settings</span>
+            <span class="cmd-shortcut">⌘ S</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 28. POPOVER ── -->
+  <section class="kit-section" id="popover" style="min-height: 350px;">
+    <div class="kit-section-title">28</div>
+    <h2>Popover</h2>
+    <div class="kit-row">
+      <div style="position: relative; display: inline-block;">
+        <button class="btn btn-secondary" data-popover="pop-dimensions">Open Popover</button>
+        <div class="popover-content popover-hidden" id="pop-dimensions" style="position: absolute; top: calc(100% + 8px); left: 0; width: 220px; z-index: 10;">
+          <div class="input-group" style="margin-bottom: 12px;">
+            <label class="input-label">Dimensions</label>
+            <div style="display: flex; gap: 8px;">
+              <input type="text" class="input" value="100%" style="width: 100%;">
+              <input type="text" class="input" value="auto" style="width: 100%;">
+            </div>
+          </div>
+          <div class="input-group">
+            <label class="input-label">Max. Width</label>
+            <input type="text" class="input" value="300px" style="width: 100%;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 29. TOAST ── -->
+  <section class="kit-section" id="toast">
+    <div class="kit-section-title">29</div>
+    <h2>Toast</h2>
+    <div class="kit-row" style="margin-bottom: 16px;">
+      <button class="btn btn-secondary btn-sm" id="toast-trigger">Trigger Toast</button>
+      <button class="btn btn-secondary btn-sm" id="toast-trigger-mini">Trigger Mini</button>
+      <button class="btn btn-ghost btn-sm" id="toast-trigger-err">Trigger Error</button>
+    </div>
+    <div class="kit-row">
+      <div class="toast-viewport" style="position: relative; right: auto; bottom: auto; transform: none; padding: 0;">
+        <div class="toast" data-state="open" style="transform: none;">
+          <div class="toast-title">Scheduled: Catch up</div>
+          <div class="toast-desc">Friday, February 10, 2023 at 5:57 PM</div>
+          <button class="toast-action btn btn-sm btn-secondary">Undo</button>
+          <div class="toast-close">✕</div>
+        </div>
+        <div class="toast destructive" data-state="open" style="transform: none;">
+          <div class="toast-title">Uh oh! Something went wrong.</div>
+          <div class="toast-desc">There was a problem with your request.</div>
+          <button class="toast-action btn btn-sm btn-danger">Try again</button>
+          <div class="toast-close">✕</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 30b. MINI TOAST ── -->
+  <section class="kit-section" id="mini-toast">
+    <div class="kit-section-title">30b</div>
+    <h2>Mini Toast (Centered)</h2>
+    <div class="kit-group">
+      <div class="kit-label">Success State</div>
+      <div class="mini-toast" style="position: relative; transform: none; opacity: 1; top: auto; left: auto;">
+        <div class="mini-toast-icon">✓</div>
+        <span>Saved</span>
+      </div>
+    </div>
+    <div class="kit-group">
+      <div class="kit-label">Updating State</div>
+      <div class="mini-toast updating" style="position: relative; transform: none; opacity: 1; top: auto; left: auto;">
+        <div class="mini-toast-icon">✓</div>
+        <span>Saving...</span>
+      </div>
+    </div>
+    <div class="code-block">.mini-toast-container { position: fixed; top: 80px; left: 50%; transform: translateX(-50%); }
+.mini-toast { background: var(--green); color: var(--bg); }
+.mini-toast.show { transform: translateY(0) scale(1); opacity: 1; }</div>
+  </section>
+
+  <!-- ── 30c. STEPPER CONTROL ── -->
+  <section class="kit-section" id="stepper">
+    <div class="kit-section-title">30c</div>
+    <h2>Stepper Control</h2>
+    <div class="kit-group">
+      <div class="kit-label">Default</div>
+      <div class="stepper-control">
+        <button class="stepper-btn">−</button>
+        <span class="stepper-val">6.0</span>
+        <button class="stepper-btn">+</button>
+      </div>
+    </div>
+    <div class="kit-group">
+      <div class="kit-label">With Bounds</div>
+      <div class="stepper-control">
+        <button class="stepper-btn" disabled>−</button>
+        <span class="stepper-val">60</span>
+        <button class="stepper-btn">+</button>
+      </div>
+    </div>
+    <div class="code-block">.stepper-control { display: inline-flex; align-items: center; border: 1px solid var(--border-dim); }
+.stepper-btn { min-width: 36px; padding: 8px 12px; }
+.stepper-val { padding: 8px 16px; border-left: 1px solid var(--border-dim); border-right: 1px solid var(--border-dim); }</div>
+  </section>
+
+  <!-- ── 31. STEPPERS ── -->
+  <section class="kit-section" id="steppers">
+    <h2>Interactive Steppers <a href="#code" class="kit-doc-link">Usage</a></h2>
+    
+    <div class="kit-group">
+      <div class="kit-label">Phased Operations (Horizontal)</div>
+      <div class="stepper">
+        <div class="step complete">
+          <div class="step-indicator"></div>
+          <div class="step-label">Ignition</div>
+          <div class="step-info">T-minus 10s</div>
+        </div>
+        <div class="step active">
+          <div class="step-indicator"></div>
+          <div class="step-label">Lift-off</div>
+          <div class="step-info">Ascent active</div>
+        </div>
+        <div class="step">
+          <div class="step-indicator"></div>
+          <div class="step-label">Stage 1 Sep</div>
+          <div class="step-info">Pending altitude</div>
+        </div>
+        <div class="step">
+          <div class="step-indicator"></div>
+          <div class="step-label">Orbit Entry</div>
+          <div class="step-info">Target Met</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kit-group">
+      <div class="kit-label">Checklist (Vertical)</div>
+      <div class="stepper stepper-vertical" style="max-width: 300px;">
+        <div class="step complete">
+          <div class="step-indicator"></div>
+          <div>
+            <div class="step-label">Pre-flight check</div>
+            <div class="step-info">All systems nominal</div>
+          </div>
+        </div>
+        <div class="step active">
+          <div class="step-indicator"></div>
+          <div>
+            <div class="step-label">Fueling</div>
+            <div class="step-info">45% Complete</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-indicator"></div>
+          <div>
+            <div class="step-label">Crew Ingress</div>
+            <div class="step-info">Awaiting confirmation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 32. RANGE SLIDERS ── -->
+  <section class="kit-section" id="sliders">
+    <div class="kit-section-title">32</div>
+    <h2>Range Sliders <a href="#code" class="kit-doc-link">Usage</a></h2>
+    
+    <div style="max-width: 500px; display: flex; flex-direction: column; gap: 32px;">
+      <div class="input-group">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <label class="input-label">Thrust Intensity</label>
+          <span class="type-small accent">85%</span>
+        </div>
+        <div class="slider-wrap">
+          <input type="range" class="slider" min="0" max="100" value="85">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <label class="input-label">Oxygen Levels</label>
+          <span class="type-small text-green">92%</span>
+        </div>
+        <div class="slider-wrap">
+          <input type="range" class="slider slider-green" min="0" max="100" value="92">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <label class="input-label">Fuel Warning</label>
+          <span class="type-small text-red">12%</span>
+        </div>
+        <div class="slider-wrap">
+          <input type="range" class="slider slider-red" min="0" max="100" value="12">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 33. ADHERENCE TIMELINE ── -->
+  <section class="kit-section" id="timeline">
+    <div class="kit-section-title">33</div>
+    <h2>Adherence Timeline <a href="#code" class="kit-doc-link">Usage</a></h2>
+    
+    <div class="panel">
+      <div class="panel-header">Mission Schedule vs Actual</div>
+      <div class="panel-body">
+        <div class="timeline">
+          <div class="timeline-row">
+            <div class="timeline-label">Telemetry Sync</div>
+            <div class="timeline-track">
+              <div class="timeline-planned" style="left: 10%; width: 40%;"></div>
+              <div class="timeline-actual" style="left: 12%; width: 35%;"></div>
+            </div>
+            <div class="timeline-status text-green">OK</div>
+          </div>
+          <div class="timeline-row">
+            <div class="timeline-label">Core Stability</div>
+            <div class="timeline-track">
+              <div class="timeline-planned" style="left: 30%; width: 50%;"></div>
+              <div class="timeline-actual" style="left: 35%; width: 60%;"></div>
+            </div>
+            <div class="timeline-status text-accent">LATE</div>
+          </div>
+          <div class="timeline-row">
+            <div class="timeline-label">Uplink Heartbeat</div>
+            <div class="timeline-track">
+              <div class="timeline-planned" style="left: 0%; width: 100%;"></div>
+              <div class="timeline-actual" style="left: 0%; width: 95%;"></div>
+            </div>
+            <div class="timeline-status text-red">FAIL</div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer">Legend: ░ Planned · █ Actual</div>
+    </div>
+  </section>
+
+  <!-- ── 30. HOVER CARD ── -->
+  <section class="kit-section" id="hovercard" style="min-height: 260px;">
+    <div class="kit-section-title">30</div>
+    <h2>Hover Card</h2>
+    <div class="kit-row">
+      <div style="position: relative; display: inline-block;" data-hovercard-host>
+        <a href="#" data-hovercard style="color: var(--text-bright); text-decoration: none; border-bottom: 1px dotted var(--text-dim);">@nextjs</a>
+        <div class="hover-card-content hovercard-hidden" style="position: absolute; top: calc(100% + 8px); left: 0;">
+          <div style="display: flex; gap: 12px; margin-bottom: 12px;">
+            <div class="avatar">V</div>
+            <div>
+              <div style="font-weight: 600; color: var(--text-bright);">Vercel</div>
+              <div style="font-size: 13px; color: var(--text-dim);">@vercel</div>
+            </div>
+          </div>
+          <div style="font-size: 13px; line-height: 1.5; color: var(--text); margin-bottom: 12px;">
+            The React Framework – created and maintained by @vercel.
+          </div>
+          <div style="display: flex; gap: 16px; font-size: 12px; color: var(--text-dim);">
+            <div style="display: flex; align-items: center; gap: 4px;">
+              <span style="color: var(--text-bright);">270k</span> Followers
+            </div>
+            <div style="display: flex; align-items: center; gap: 4px;">
+              <span style="color: var(--text-bright);">112</span> Following
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <div class="page-footer" style="margin-top: 48px;">
+    <span>AEROSPACE UI KIT · V1.0</span>
+    <span>33 COMPONENTS</span>
+  </div>
+
+</main>
+
+<!-- Live toast container -->
+<div class="toast-viewport" id="live-toast-viewport" aria-live="polite"></div>
+
+<script defer src="../interactions.js"></script>
+</body>
+</html>
