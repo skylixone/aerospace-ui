@@ -92,7 +92,7 @@
         <div class="type-display">Display — 44px 700</div>
         <div class="type-heading">Heading — 28px 700</div>
         <div class="type-subheading">Subheading — 20px 500</div>
-        <div class="type-body">Body — 15px 400 regular text for content</div>
+        <div class="type-body">Body — 16px 400 regular text for content</div>
         <div class="type-small">Small — 12px label text, metadata, captions</div>
         <div class="type-overline">Overline — 11px uppercase · spaced</div>
         <div class="type-overline bright">Overline Accent — 11px uppercase · wide</div>
@@ -867,6 +867,15 @@
           <li>Propose, don't ask</li>
         </ul>
       </div>
+      <div>
+        <div class="kit-label">Triple Dash</div>
+        <ul class="list list-triple-dash">
+          <li>First principles always</li>
+          <li>Evidence-based pushback</li>
+          <li>Corrections are data</li>
+          <li>Each session more aligned</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -897,8 +906,29 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
     <div class="kit-section-title">18</div>
     <h2>Summary / Quote</h2>
 
-    <div class="summary summary-hero">
-      Across 20 sessions, chemistry scores 8.0/10. Parallel execution active in 40%&nbsp;—&nbsp;fork-don't-queue applied.
+    <div class="kit-group">
+      <div class="kit-label">L — var(--text-xl)</div>
+      <div class="summary summary-lg">
+        Build for today. Three similar lines &gt; premature abstraction. No speculative flexibility.
+      </div>
+    </div>
+    <div class="kit-group">
+      <div class="kit-label">M — var(--text-lg)</div>
+      <div class="summary summary-md">
+        Boring infra, novel value. Proven tools for plumbing. Innovate only where it creates differentiated value.
+      </div>
+    </div>
+    <div class="kit-group">
+      <div class="kit-label">S — var(--text-md)</div>
+      <div class="summary summary-sm">
+        Close every loop. Every tool opened gets closed. Every resource freed. No orphans.
+      </div>
+    </div>
+    <div class="kit-group">
+      <div class="kit-label">Hero — clamp(2rem, 4.5vw, 6.5rem)</div>
+      <div class="summary summary-hero">
+        Across 20 sessions, chemistry scores 8.0/10. Parallel execution active in 40%&nbsp;—&nbsp;fork-don't-queue applied.
+      </div>
     </div>
   </section>
 

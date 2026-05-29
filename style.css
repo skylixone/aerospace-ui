@@ -1469,9 +1469,6 @@ h1 {
   border: 1px solid var(--border-muted);
 }
 
-.kv-grid .kv-cell:first-child {
-  padding-left: 0;
-}
 .kv-cell {
   display: flex;
   flex-direction: column;
@@ -1657,6 +1654,7 @@ ul.list.list-numbered {
 }
 ul.list.list-numbered li {
   counter-increment: list-counter;
+  padding-left: 28px;
 }
 ul.list.list-numbered li::before {
   content: counter(list-counter, decimal-leading-zero);
@@ -1670,7 +1668,7 @@ ul.list.list-numbered li::before {
 
 /* Dashed list variant */
 ul.list.list-dashed li::before {
-  content: "2014";
+  content: "—";
   color: var(--accent);
   font-size: var(--text-sm);
   font-weight: 600;
@@ -1679,12 +1677,31 @@ ul.list.list-dashed li::before {
 
 /* Triangle list variant */
 ul.list.list-triangle li::before {
-  content: "25B8";
+  content: "▸";
   color: var(--accent);
   font-size: var(--text-sm);
   top: 0;
   font-weight: 600;
 }
+
+/* Triple em dash variant — oversized, bold marker */
+ul.list.list-triple-dash li::before {
+  content: "———";
+  color: var(--accent);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  top: -2px;
+  letter-spacing: -3px;
+}
+
+ul.list.list-triple-dash li {
+  padding-left: 52px;
+  margin-bottom: 14px;
+  color: var(--text-bright);
+  font-size: var(--text-lg);
+  line-height: 1.3;
+}
+
 /* ═══════════════════════════════════════════════
    STATUS INDICATORS
    ═══════════════════════════════════════════════ */
@@ -1801,6 +1818,26 @@ ul.list.list-triangle li::before {
   font-size: 0.8em;
   margin-left: 0.15em;
   vertical-align: baseline;
+}
+
+/* Size variants */
+.summary-lg {
+  font-size: var(--text-xl);
+  line-height: 1.2;
+  padding: var(--space-lg) var(--space-xl);
+}
+
+.summary-md {
+  font-size: var(--text-lg);
+  line-height: 1.4;
+  padding: var(--space-md) var(--space-lg);
+}
+
+.summary-sm {
+  font-size: var(--text-md);
+  line-height: 1.5;
+  padding: var(--space-md);
+  max-width: 60ch;
 }
 
 @keyframes cursor-blink {

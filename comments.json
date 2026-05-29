@@ -628,5 +628,35 @@
     "text": "previuous was cooler",
     "snippet": "<section class=\"kit-section revealed\" id=\"skeleton\">\n    <div class=\"kit-section-title\">25</div>\n   ",
     "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "li",
+    "text": "still fucked",
+    "snippet": "<li>Build for today</li>",
+    "url": "http://localhost:8000/components/#lists"
+  },
+  {
+    "selector": "div",
+    "text": "numbered bullets must have larger right padding",
+    "snippet": "<div>\n        <div class=\"kit-label\">Numbered</div>\n        <ul class=\"list list-numbered\">\n        ",
+    "url": "http://localhost:8000/components/#lists"
+  },
+  {
+    "selector": "input.slider.slider-red",
+    "text": "make like progress bars but vertically taller and with a handle on the right end of infill with a square grabbing vert handle",
+    "snippet": "<input type=\"range\" class=\"slider slider-red\" min=\"0\" max=\"100\" value=\"12\">",
+    "url": "http://localhost:8000/components/#steppers"
+  },
+  {
+    "selector": "div",
+    "text": "first three children go into a single 50% content width cell, triple dash goes into right 50%; scale fontsize to match visual weight of left side (slightly smaller)",
+    "snippet": "<div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 700px;\">\n      <div",
+    "url": "http://localhost:8000/components/#lists"
+  },
+  {
+    "selector": "#summary",
+    "text": "shorter lines for all but hero, increase their line-heights too considerably",
+    "snippet": "<section class=\"kit-section revealed\" id=\"summary\">\n    <div class=\"kit-section-title\">18</div>\n    ",
+    "url": "http://localhost:8000/components/#lists"
   }
 ]
