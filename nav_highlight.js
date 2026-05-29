@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const observerOptions = {
         root: null,
         // Active zone: trigger when section hits 20% from top, leave when 80% gone
-        rootMargin: '-20% 0px -60% 0px', 
-        threshold: 0
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0.01 // >0 reduces callback frequency in Firefox vs threshold:0
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -85,16 +85,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const linkTop = link.offsetTop;
         const linkBottom = linkTop + link.offsetHeight;
 
+        // 'smooth' fired during main-view scroll caused a second scroll animation mid-frame — instant only
         if (linkTop < navTop + 20) {
-           nav.scrollTo({ top: linkTop - 20, behavior: 'smooth' });
+           nav.scrollTo({ top: linkTop - 20, behavior: 'instant' });
         } else if (linkBottom > navBottom - 20) {
-           nav.scrollTo({ top: linkBottom - nav.clientHeight + 20, behavior: 'smooth' });
+           nav.scrollTo({ top: linkBottom - nav.clientHeight + 20, behavior: 'instant' });
         }
     }
 
-    // Handle resize
+    // Handle resize — debounced to avoid DOM thrash on every pixel change
+    let resizeTimer;
     window.addEventListener('resize', () => {
-        const active = nav.querySelector('a.active');
-        if (active) updateHighlightPosition(active);
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            const active = nav.querySelector('a.active');
+            if (active) updateHighlightPosition(active);
+        }, 150);
     });
 });

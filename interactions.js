@@ -162,8 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.05 });
 
-  sections.forEach((section, i) => {
-    section.style.transitionDelay = `${i * 20}ms`;
+  sections.forEach(section => {
     revealObserver.observe(section);
   });
 

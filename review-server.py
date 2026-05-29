@@ -18,7 +18,7 @@ COMMENTS_FILE = Path("comments.json")
 
 CLIENT_SCRIPT = """
 <style>
-    .review-overlay { position: fixed; bottom: 20px; right: 20px; background: #09090b; border: 1px solid #27272a; padding: 12px; border-radius: 8px; z-index: 2147483647; color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.5); font-family: sans-serif; display: flex; gap: 8px; align-items: center; }
+    .review-overlay { position: fixed; bottom: 20px; right: 20px; transform: translateZ(0); will-change: transform; background: #09090b; border: 1px solid #27272a; padding: 12px; border-radius: 8px; z-index: 2147483647; color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.5); font-family: sans-serif; display: flex; gap: 8px; align-items: center; }
     .review-mode-active *:not(.review-overlay):not(.review-overlay *):not(#comment-dialog):not(#comment-dialog *):not(.review-marker) { cursor: crosshair !important; }
     .review-mode-active *:not(.review-overlay):not(.review-overlay *):not(#comment-dialog):not(#comment-dialog *):not(.review-marker):hover { outline: 2px solid #a855f7 !important; outline-offset: -2px; }
     .review-marker { position: absolute; width: 20px; height: 20px; background: #a855f7; border-radius: 50%; border: 2px solid white; transform: translate(-50%, -50%); z-index: 2147483646; pointer-events: none; }

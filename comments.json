@@ -214,5 +214,419 @@
     "text": "all identical",
     "snippet": "<div class=\"kit-row\" style=\"gap: 32px;\">\n      <span class=\"status\"><span class=\"status-dot online p",
     "url": "http://localhost:8000/"
+  },
+  {
+    "selector": "a",
+    "text": "sidebar a:active has an extra border-left with border radius in firefox",
+    "snippet": "<a href=\"#empty\" class=\"\">Empty State</a>",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "div.type-body",
+    "text": "should be 16px",
+    "snippet": "<div class=\"type-body\">Body \u2014 15px 400 regular text for content</div>",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.code-block",
+    "text": "arrange in 2 columns of 4 items",
+    "snippet": "<div class=\"code-block\">.type-hero \u00b7 .type-display \u00b7 .type-heading \u00b7 .type-subheading\n.type-body \u00b7 .",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.type-overline",
+    "text": "include letter-spacing explicitly in description for all variants that have it",
+    "snippet": "<div class=\"type-overline\">Overline \u2014 11px uppercase \u00b7 spaced</div>",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "a.kit-doc-link",
+    "text": "\"usage\" anchors throughout are not needed",
+    "snippet": "<a href=\"#code\" class=\"kit-doc-link\">Usage</a>",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "strong",
+    "text": "color var names should be in  body text size var",
+    "snippet": "<strong>bg</strong>",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "#buttons",
+    "text": "should be: every variant in every size at every state laid out in rows",
+    "snippet": "<section class=\"kit-section revealed\" id=\"buttons\">\n    <div class=\"kit-section-title\">04</div>\n    ",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div",
+    "text": "lacks active state",
+    "snippet": "<div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 700px;\">\n      <div",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "#toggles",
+    "text": "same treatment as buttons section",
+    "snippet": "<section class=\"kit-section revealed\" id=\"toggles\">\n    <div class=\"kit-section-title\">06</div>\n    ",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "span.type-small",
+    "text": "body font size",
+    "snippet": "<span class=\"type-small\">Tab content goes here. Active tab has amber underline.</span>",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.step-label",
+    "text": "step caption > body size",
+    "snippet": "<div class=\"step-label\">Ignition</div>",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div",
+    "text": "filled portion of slider must be of accent color",
+    "snippet": "<div style=\"max-width: 500px; display: flex; flex-direction: column; gap: 32px;\">\n      <div class=\"",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.metric-label",
+    "text": "make parent container hug contents rather than force line break; that way the large numbers in neighboring cells can remain on a single visual baseline",
+    "snippet": "<div class=\"metric-label\">Prompts / Session</div>",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "td.text-bright",
+    "text": "table cell text must be high-contrast white",
+    "snippet": "<td class=\"text-bright\">2026-02-14 15:29</td>",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div",
+    "text": "1. make thick default for all bars in \"bars\" section; 2. right now starting point of bar depends on length of caption thus creating a jagged left edge for multiple bars stacked vertically. ensure the left edge is aligned for bars (thing about optimal robust approach)",
+    "snippet": "<div style=\"max-width: 500px; display: flex; flex-direction: column; gap: 12px;\">\n        <div class",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div",
+    "text": "use thick bars",
+    "snippet": "<div style=\"max-width: 500px; display: flex; flex-direction: column; gap: 24px;\">\n      <div>\n      ",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.panel-body",
+    "text": "make bars thick; make table 60% of width; also increase contrast for planned/actual both in bars and legend (btw legend section must match color to bars)",
+    "snippet": "<div class=\"panel-body\">\n        <div class=\"timeline\">\n          <div class=\"timeline-row\">\n       ",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.panel-footer",
+    "text": "include panel footer metadata or action examples instead of just stating them",
+    "snippet": "<div class=\"panel-footer\">Panel footer \u2014 metadata or actions</div>",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "span.tag",
+    "text": "increase contrast for default \u2014 white caption, muted border",
+    "snippet": "<span class=\"tag\">Default</span>",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.tag-group",
+    "text": "let's kick badge sizes up a notch",
+    "snippet": "<div class=\"tag-group\">\n        <span class=\"badge\">3</span>\n        <span class=\"badge\">42</span>\n ",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div",
+    "text": "use badges instead of \"info\", \"complete\" etc: \"i\" for info, checkmark for \"complete\", \"!\" for attention and \"!\" on filled error badge",
+    "snippet": "<div style=\"display: flex; flex-direction: column; gap: 16px; max-width: 700px;\">\n      <div class=\"",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.kit-group",
+    "text": "update badge demos according to alerts section",
+    "snippet": "<div class=\"kit-group\">\n      <div class=\"kit-label\">Badges</div>\n      <div class=\"tag-group\">\n    ",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.kit-row",
+    "text": "status text must have same color as dot",
+    "snippet": "<div class=\"kit-row\" style=\"gap: 32px;\">\n        <span class=\"status\"><span class=\"status-dot online",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.tag-group",
+    "text": "fill in status tags and make text black",
+    "snippet": "<div class=\"tag-group\">\n        <span class=\"tag sg\">SG \u2014 NOMINAL</span>\n        <span class=\"tag sa",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "#lists",
+    "text": "rename default to \"bullets\", add two list variants: m-dashed and right-pointing outlined unicode triangle, both \naccent color",
+    "snippet": "<section class=\"kit-section revealed\" id=\"lists\">\n    <div class=\"kit-section-title\">16</div>\n    <h",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "pre.code-block",
+    "text": "let's have a larger code block with some tabulated code; also make code block 65% of parent width",
+    "snippet": "<pre class=\"code-block\"><span class=\"keyword\">const</span> board = <span class=\"keyword\">await</span",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "#summary",
+    "text": "this is XL size quote \u2014 suggest L, M and S sizes according to text size vars",
+    "snippet": "<section class=\"kit-section revealed\" id=\"summary\">\n    <div class=\"kit-section-title\">18</div>\n    ",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "#empty",
+    "text": "this is \"file upload\" rather than just empty state. rename to file upload and include \"file uploaded\" and \"upload in progress\" states",
+    "snippet": "<section class=\"kit-section revealed\" id=\"empty\">\n    <div class=\"kit-section-title\">20</div>\n    <h",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.cmd-item.selected",
+    "text": "selection must be same as sidebar links on hover",
+    "snippet": "<div class=\"cmd-item selected\">\n            <span>Calendar</span>\n            <span class=\"cmd-short",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.kit-row",
+    "text": "X to close must be in upper right corner always on the same baseline as toast title. also include variants of toast: brief (as shown) and in-depth (with error code and some details)",
+    "snippet": "<div class=\"kit-row\">\n      <div class=\"toast-viewport\" style=\"position: relative; right: auto; bott",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.code-block",
+    "text": "this is rendered as a .class for some reason?",
+    "snippet": "<div class=\"code-block\">.mini-toast-container { position: fixed; top: 80px; left: 50%; transform: tr",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "#mini-toast",
+    "text": "mini toasts should not be 100% width, they should be fixed",
+    "snippet": "<section class=\"kit-section revealed\" id=\"mini-toast\">\n    <div class=\"kit-section-title\">30b</div>\n",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.mini-toast-icon",
+    "text": "remove the fill below checkmark, increase checkmark size for both toasts. for updating: let's use some unicode-based spinner (leave this for lated in todo: remember to ask me to look those up and pick a nice one)",
+    "snippet": "<div class=\"mini-toast-icon\">\u2713</div>",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.code-block",
+    "text": "rendered as .css selector for some reason",
+    "snippet": "<div class=\"code-block\">.stepper-control { display: inline-flex; align-items: center; border: 1px so",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.stepper-control",
+    "text": "should be horizontal \u2014 like three ghost buttons in a row: - VALUE +",
+    "snippet": "<div class=\"stepper-control\">\n        <button class=\"stepper-btn\">\u2212</button>\n        <span class=\"st",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div",
+    "text": "body size",
+    "snippet": "<div style=\"font-size: 13px; line-height: 1.5; color: var(--text); margin-bottom: 12px;\">\n          ",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.kv-cell",
+    "text": "first cell does not need left padding, must align with h1",
+    "snippet": "<div class=\"kv-cell\"><span class=\"kv-label\">META KEY</span><span class=\"kv-value\">META VALUE</span><",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.title",
+    "text": "try a longer realistic page title, 3 words; don't force linebreak",
+    "snippet": "<div class=\"title\">Page<br>Title</div>",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.page-footer",
+    "text": "include timestamp and some status indicators here",
+    "snippet": "<div class=\"page-footer\">\n      <span>SYSTEM-NAME \u00b7 MODULE</span>\n      <span>2,814 EVENTS PROCESSED",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "button.btn-icon",
+    "text": "close button is broken (rounded grey rectangle), also breaks the header of modal",
+    "snippet": "<button class=\"btn-icon\" style=\"color: var(--text-dim);\">\u00d7</button>",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.type-body",
+    "text": "too small",
+    "snippet": "<div class=\"type-body\" style=\"margin-bottom: 8px; color: var(--text);\">Remove 3 images from the Aero",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.type-small",
+    "text": "a size up pls",
+    "snippet": "<div class=\"type-small\" style=\"color: var(--text-dim);\">This action cannot be undone.</div>",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "#dividers",
+    "text": "the contrast here is wack, use accent and thick stroke; also show examples of use",
+    "snippet": "<section class=\"kit-section revealed\" id=\"dividers\">\n    <div class=\"kit-section-title\">24</div>\n   ",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "#skeleton",
+    "text": "also write this down for me to think of a cooler way to animate skeleton loading",
+    "snippet": "<section class=\"kit-section revealed\" id=\"skeleton\">\n    <div class=\"kit-section-title\">25</div>\n   ",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "#typography",
+    "text": "also mark for later: we forgot different link types",
+    "snippet": "<section class=\"kit-section revealed\" id=\"typography\">\n    <div class=\"kit-section-title\">01</div>\n ",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "td",
+    "text": "all spinners here are f'd, diag onal down right instead of rotate)",
+    "snippet": "<td><button class=\"btn btn-primary loading\">Filled</button></td>",
+    "url": "http://localhost:8000/components/#buttons"
+  },
+  {
+    "selector": "div.metric-trend.down",
+    "text": "remind me to wire in pretext.js to scale sub line font size according to the how tall the tallest sub line is in all of neighboring cards",
+    "snippet": "<div class=\"metric-trend down\">\u25bc 1.1</div>",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "span.bar-val",
+    "text": "left align titles here",
+    "snippet": "<span class=\"bar-val\">Thick</span>",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "#progress",
+    "text": "thick variants",
+    "snippet": "<section class=\"kit-section revealed\" id=\"progress\">\n    <div class=\"kit-section-title\">11</div>\n   ",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "div.panel-body",
+    "text": "add value scale along the bottom w vertical guides",
+    "snippet": "<div class=\"panel-body\">\n        <div class=\"timeline\">\n          <div class=\"timeline-row\">\n       ",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "div.timeline",
+    "text": "also make bars 3x as fat",
+    "snippet": "<div class=\"timeline\">\n          <div class=\"timeline-row\">\n            <div class=\"timeline-label\">",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "a",
+    "text": "shouldn't these be btns?",
+    "snippet": "<a href=\"#\">Edit</a>",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "div.type-body",
+    "text": "backlog: wire in pretext.js for fontsize scaling driven by card size vs amt of text",
+    "snippet": "<div class=\"type-body\">Lighter variant with muted border. Elevates on hover. Use for individual item",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "div.tag-group",
+    "text": "32px square each",
+    "snippet": "<div class=\"tag-group\">\n        <span class=\"badge\">8</span>\n        <span class=\"badge badge-green\"",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "div.tag-group",
+    "text": "32px square each",
+    "snippet": "<div class=\"tag-group\">\n        <span class=\"badge\">8</span>\n        <span class=\"badge badge-green\"",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "span.badge.badge-green.badge-icon",
+    "text": "there's gotta be a better checkmark in unicode somewhere. or maybe an svg of iso-correct geometric checkmark",
+    "snippet": "<span class=\"badge badge-green badge-icon\">\u2713</span>",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "span.tag.sd-filled",
+    "text": "diagonal strokes would be nice on disabled stuff - backlog",
+    "snippet": "<span class=\"tag sd-filled\">SD \u2014 INACTIVE</span>",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "li",
+    "text": "mdash got fucked",
+    "snippet": "<li>Build for today</li>",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "div.kv-cell",
+    "text": "same left padding as other cells",
+    "snippet": "<div class=\"kv-cell\"><span class=\"kv-label\">REPORT GENERATED</span><span class=\"kv-value\">2026-02-14",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "#kv",
+    "text": "show a multi-line ver",
+    "snippet": "<section class=\"kit-section revealed\" id=\"kv\">\n    <div class=\"kit-section-title\">19</div>\n    <h2>K",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "div.empty-state-box",
+    "text": "could be a gradually filling bg from down upwards (100% vert fill = upload completed), make the upper side of filled-in animated part move in a slow but noticeable sine",
+    "snippet": "<div class=\"empty-state-box\">\n        <div class=\"empty-icon\" style=\"color: var(--accent); animation",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "span.cmd-shortcut",
+    "text": "cmd+k-invoked focus state should not fade away until manually defocused via click somewhere or cmd+k; make arrow keys change selected entry",
+    "snippet": "<span class=\"cmd-shortcut\">\u2318 C</span>",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "span.cmd-shortcut",
+    "text": "invert the hotkey hint in highlighted item; also generally make these hints 1.6 times larger",
+    "snippet": "<span class=\"cmd-shortcut\">\u2318 C</span>",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "button.btn.btn-secondary",
+    "text": "maka it nice, single-line, popout to righht; bg of popover = active and make the popover realistic",
+    "snippet": "<button class=\"btn btn-secondary\" data-popover=\"pop-dimensions\">Open Popover</button>",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "button.btn.btn-secondary",
+    "text": "popover input items: add an indicator of numerical values by placing a \"slide handle\" on bottom border depending on current val (determine nice-looking maxvalues)",
+    "snippet": "<button class=\"btn btn-secondary\" data-popover=\"pop-dimensions\">Open Popover</button>",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "#toast",
+    "text": "toasts should pop up in viewport bottom centre",
+    "snippet": "<section class=\"kit-section revealed\" id=\"toast\">\n    <div class=\"kit-section-title\">29</div>\n    <h",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "div.code-block",
+    "text": "is a selector supposed to be there plaintext?",
+    "snippet": "<div class=\"code-block\">.mini-toast-container { position: fixed; top: 80px; left: 50%; transform: tr",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "#dividers",
+    "text": "fit components in a row",
+    "snippet": "<section class=\"kit-section revealed\" id=\"dividers\">\n    <div class=\"kit-section-title\">24</div>\n   ",
+    "url": "http://localhost:8000/components/"
+  },
+  {
+    "selector": "#skeleton",
+    "text": "previuous was cooler",
+    "snippet": "<section class=\"kit-section revealed\" id=\"skeleton\">\n    <div class=\"kit-section-title\">25</div>\n   ",
+    "url": "http://localhost:8000/components/"
   }
 ]

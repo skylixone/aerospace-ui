@@ -9,6 +9,8 @@
         position: fixed;
         top: 20px;
         right: 20px;
+        transform: translateZ(0);
+        will-change: transform;
         background: var(--bg-surface);
         border: 1px solid var(--border);
         padding: 16px;
@@ -48,6 +50,8 @@
         position: fixed;
         top: 20px;
         right: 20px;
+        transform: translateZ(0);
+        will-change: transform;
         background: var(--bg-surface);
         border: 1px solid var(--border-dim);
         color: var(--text-dim);
