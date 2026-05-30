@@ -658,5 +658,35 @@
     "text": "shorter lines for all but hero, increase their line-heights too considerably",
     "snippet": "<section class=\"kit-section revealed\" id=\"summary\">\n    <div class=\"kit-section-title\">18</div>\n    ",
     "url": "http://localhost:8000/components/#lists"
+  },
+  {
+    "selector": "div.kit-group",
+    "text": "move each class right after each example, class name into inline code block;",
+    "snippet": "<div class=\"kit-group\">\n      <div class=\"kit-label\">Classes</div>\n      <div class=\"code-block typo",
+    "url": "http://localhost:8000/components/#stepper"
+  },
+  {
+    "selector": "div.kit-label",
+    "text": "use subheading instead for this and all others in this section",
+    "snippet": "<div class=\"kit-label\">Core Palette</div>",
+    "url": "http://localhost:8000/components/#stepper"
+  },
+  {
+    "selector": "div.kit-label",
+    "text": "use subheadsings in all sections everywhere",
+    "snippet": "<div class=\"kit-label\">Matrix \u2014 Every Variant \u00d7 Size \u00d7 State</div>",
+    "url": "http://localhost:8000/components/#stepper"
+  },
+  {
+    "selector": "#inputs",
+    "text": "forgot the active state",
+    "snippet": "<section class=\"kit-section revealed\" id=\"inputs\">\n    <div class=\"kit-section-title\">05</div>\n    <",
+    "url": "http://localhost:8000/components/#stepper"
+  },
+  {
+    "selector": "#tabs",
+    "text": "control demos should have interactive tabs",
+    "snippet": "<section class=\"kit-section revealed\" id=\"tabs\">\n    <div class=\"kit-section-title\">07</div>\n    <h2",
+    "url": "http://localhost:8000/components/#stepper"
   }
 ]

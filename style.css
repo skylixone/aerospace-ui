@@ -426,6 +426,12 @@ body {
   gap: 4px 24px;
 }
 
+.typo-class-ref {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 24px;
+}
+
 
 /* ═══════════════════════════════════════════════
    04. FORM INPUTS
@@ -815,9 +821,6 @@ table {
   text-transform: uppercase;
   letter-spacing: var(--label-spacing);
   color: var(--text-dim);
-  min-height: 2.5em;
-  display: flex;
-  align-items: flex-end;
 }
 
 .metric-value {
@@ -859,13 +862,13 @@ table {
   font-size: var(--text-base);
   color: var(--text);
   min-width: 56px;
-  text-align: right;
+  text-align: left;
   flex-shrink: 0;
 }
 
 .bar-track {
   flex: 1;
-  height: 8px;
+  height: 16px;
   background: var(--border-muted);
 }
 
@@ -893,10 +896,10 @@ table {
 
 /* Thick bar */
 .bar-track.thick {
-  height: 8px;
+  height: 16px;
 }
 .bar-track.thin {
-  height: 3px;
+  height: 4px;
 }
 
 /* ═══════════════════════════════════════════════
@@ -1193,19 +1196,20 @@ table {
   font-weight: 600;
   color: var(--text-dim);
   background: transparent;
-  border: none;
-  padding: 8px 12px;
+  border: 1px solid var(--border-dim);
+  padding: 8px 14px;
   cursor: pointer;
-  transition: color var(--transition), background var(--transition);
+  transition: all var(--transition-fast);
   line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 36px;
+  min-width: 40px;
 }
 
 .stepper-btn:hover:not(:disabled) {
-  color: var(--accent);
+  color: var(--text-bright);
+  border-color: var(--text-bright);
   background: var(--bg-hover);
 }
 
@@ -1516,6 +1520,7 @@ pre.code-block {
   max-width: 65%;
 }
 
+.prop { color: var(--text-dim); }
 .keyword {
   color: var(--accent);
 }
@@ -1619,6 +1624,12 @@ pre.code-block {
   width: 100%;
   border-radius: var(--radius-sm);
   overflow: hidden;
+}
+.progress.thick {
+  height: 12px;
+}
+.progress.thin {
+  height: 2px;
 }
 .progress-fill {
   height: 100%;
@@ -2048,7 +2059,7 @@ ul.list.list-triple-dash li {
 }
 
 .step-label {
-  font-size: var(--text-md);
+  font-size: var(--text-lg);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: var(--label-spacing);
@@ -2164,7 +2175,7 @@ ul.list.list-triple-dash li {
 
 .timeline-track {
   flex: 1;
-  height: 12px;
+  height: 36px;
   background: var(--bg-hover);
   position: relative;
   border: 1px solid var(--border-muted);
@@ -2177,17 +2188,17 @@ ul.list.list-triple-dash li {
   background: repeating-linear-gradient(
     45deg,
     transparent,
-    transparent 2px,
-    var(--border-dim) 2px,
-    var(--border-dim) 4px
+    transparent 3px,
+    var(--text-dim) 3px,
+    var(--text-dim) 6px
   );
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .timeline-actual {
   position: absolute;
-  top: 3px;
-  bottom: 3px;
+  top: 4px;
+  bottom: 4px;
   background: var(--accent);
   min-width: 2px;
 }

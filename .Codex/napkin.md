@@ -27,3 +27,19 @@
 - CSS `:has()` works for status dot color matching (modern browsers)
 - Badge-outline/badge-dim had duplicate definitions at end of CSS file — updated both
 - When inserting into grid layouts, ensure new children are inside the grid container, not after its closing `</div>`
+
+## Session 2026-05-29 — Review Comments Batches A-B
+- Batch A: #39 overline tracking values, #46 step-label font-size → --text-lg
+- Batch B: #38 typo code-block 2-col grid, #44 toggles restructured w/ kit-labels, #66/#69 div→pre code blocks, #70 stepper ghost btn styling
+- #43 (btn active) already satisfied — pseudo-active states existed
+-  CSS class added for code-block property highlighting
+## Session 2026-05-30 — Review Comments Batch C
+- #48 metric-label: removed flex+min-height, now hugs contents
+- #49 panel td: added color: var(--text-bright) for high-contrast white
+- #50/#51 bars: default track height 8px→16px (thick), thin 3px→4px
+- #83 bar-val: text-align right→left
+- #84 progress: added .thick (12px) and .thin (2px) variants + HTML demos
+- #85 bars: added value scale with vertical guides (0–250) under first bar group
+- #86 timeline: track height 12px→36px (3× fatter)
+- #52 timeline: planned stripes brighter (var(--text-dim)), actual padding adjusted
+- #52 timeline panel: max-width 60%, legend uses matching colors

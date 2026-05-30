@@ -94,14 +94,16 @@
         <div class="type-subheading">Subheading — 20px 500</div>
         <div class="type-body">Body — 16px 400 regular text for content</div>
         <div class="type-small">Small — 12px label text, metadata, captions</div>
-        <div class="type-overline">Overline — 11px uppercase · spaced</div>
-        <div class="type-overline bright">Overline Accent — 11px uppercase · wide</div>
+        <div class="type-overline">Overline — 11px uppercase · 0.15em tracking</div>
+        <div class="type-overline bright">Overline Accent — 11px uppercase · 0.5em tracking</div>
       </div>
     </div>
     <div class="kit-group">
       <div class="kit-label">Classes</div>
-      <div class="code-block">.type-hero · .type-display · .type-heading · .type-subheading
-.type-body · .type-small · .type-overline · .type-overline.bright</div>
+      <div class="code-block typo-class-ref">
+        <div>.type-hero</div><div>.type-display</div><div>.type-heading</div><div>.type-subheading</div>
+        <div>.type-body</div><div>.type-small</div><div>.type-overline</div><div>.type-overline.bright</div>
+      </div>
     </div>
   </section>
 
@@ -381,28 +383,43 @@
     <div class="kit-section-title">06</div>
     <h2>Toggles & Checks</h2>
 
-    <div class="toggles-grid">
-      <label class="toggle toggle-cell">
-        <input type="checkbox" checked>
-        <div class="toggle-track"></div>
-        <span>Auto-analyze on upload</span>
-      </label>
-      <label class="toggle toggle-cell">
-        <input type="checkbox">
-        <div class="toggle-track"></div>
-        <span>Dark mode</span>
-      </label>
-      <label class="toggle toggle-cell disabled">
-        <input type="checkbox" disabled checked>
-        <div class="toggle-track"></div>
-        <span>Locked setting</span>
-      </label>
-      <label class="check-group toggle-cell"><input type="checkbox" checked> <span>Monospace grid</span></label>
-      <label class="check-group toggle-cell"><input type="checkbox" checked> <span>Amber on black</span></label>
-      <label class="check-group toggle-cell"><input type="checkbox"> <span>Generous whitespace</span></label>
-      <label class="check-group toggle-cell"><input type="radio" name="layout" checked> <span>Grid view</span></label>
-      <label class="check-group toggle-cell"><input type="radio" name="layout"> <span>List view</span></label>
-      <label class="check-group toggle-cell"><input type="radio" name="layout"> <span>Detail view</span></label>
+    <div class="kit-group">
+      <div class="kit-label">Toggle Switches</div>
+      <div class="toggles-grid">
+        <label class="toggle toggle-cell">
+          <input type="checkbox" checked>
+          <div class="toggle-track"></div>
+          <span>Auto-analyze on upload</span>
+        </label>
+        <label class="toggle toggle-cell">
+          <input type="checkbox">
+          <div class="toggle-track"></div>
+          <span>Dark mode</span>
+        </label>
+        <label class="toggle toggle-cell disabled">
+          <input type="checkbox" disabled checked>
+          <div class="toggle-track"></div>
+          <span>Locked setting</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="kit-group">
+      <div class="kit-label">Checkboxes</div>
+      <div class="toggles-grid">
+        <label class="check-group toggle-cell"><input type="checkbox" checked> <span>Monospace grid</span></label>
+        <label class="check-group toggle-cell"><input type="checkbox" checked> <span>Amber on black</span></label>
+        <label class="check-group toggle-cell"><input type="checkbox"> <span>Generous whitespace</span></label>
+      </div>
+    </div>
+
+    <div class="kit-group">
+      <div class="kit-label">Radio Buttons</div>
+      <div class="toggles-grid">
+        <label class="check-group toggle-cell"><input type="radio" name="layout" checked> <span>Grid view</span></label>
+        <label class="check-group toggle-cell"><input type="radio" name="layout"> <span>List view</span></label>
+        <label class="check-group toggle-cell"><input type="radio" name="layout"> <span>Detail view</span></label>
+      </div>
     </div>
   </section>
 <section class="kit-section" id="tabs">
@@ -655,6 +672,10 @@
         <div class="bar-wrap"><span class="bar-val">159</span><div class="bar-track"><div class="bar-fill gradient" style="width: 63.6%;"></div></div></div>
         <div class="bar-wrap"><span class="bar-val">63</span><div class="bar-track"><div class="bar-fill" style="width: 25.2%;"></div></div></div>
       </div>
+      <div class="bar-scale" style="margin-left: 68px; margin-top: 8px; display: flex; justify-content: space-between; font-size: var(--text-xs); color: var(--text-dim); position: relative;">
+        <span>0</span><span>50</span><span>100</span><span>150</span><span>200</span><span>250</span>
+        <div style="position: absolute; top: -4px; left: 0; right: 0; height: 4px; background: repeating-linear-gradient(90deg, var(--border-dim) 0 1px, transparent 1px 20.16%);"></div>
+      </div>
     </div>
 
     <div class="kit-group">
@@ -681,12 +702,16 @@
 
     <div style="max-width: 500px; display: flex; flex-direction: column; gap: 24px;">
       <div>
-        <div class="kit-label">Determinate — 72%</div>
+        <div class="kit-label">Default — 72%</div>
         <div class="progress"><div class="progress-fill" style="width: 72%;"></div></div>
       </div>
       <div>
-        <div class="kit-label">Complete</div>
-        <div class="progress"><div class="progress-fill green" style="width: 100%;"></div></div>
+        <div class="kit-label">Thick — 72%</div>
+        <div class="progress thick"><div class="progress-fill" style="width: 72%;"></div></div>
+      </div>
+      <div>
+        <div class="kit-label">Thin — Complete</div>
+        <div class="progress thin"><div class="progress-fill green" style="width: 100%;"></div></div>
       </div>
       <div>
         <div class="kit-label">Indeterminate</div>
@@ -699,7 +724,7 @@
     <div class="kit-section-title">33</div>
     <h2>Adherence Timeline</h2>
     
-    <div class="panel">
+    <div class="panel" style="max-width: 60%;">
       <div class="panel-header">Mission Schedule vs Actual</div>
       <div class="panel-body">
         <div class="timeline">
@@ -729,7 +754,7 @@
           </div>
         </div>
       </div>
-      <div class="panel-footer">Legend: ░ Planned · █ Actual</div>
+      <div class="panel-footer">Legend: <span style="color: var(--text-dim);">░ Planned</span> · <span style="color: var(--accent);">█ Actual</span></div>
     </div>
   </section>
 
@@ -1088,9 +1113,9 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
         <span>Saving...</span>
       </div>
     </div>
-    <div class="code-block">.mini-toast-container { position: fixed; top: 80px; left: 50%; transform: translateX(-50%); }
-.mini-toast { background: var(--green); color: var(--bg); }
-.mini-toast.show { transform: translateY(0) scale(1); opacity: 1; }</div>
+    <pre class="code-block"><span class="keyword">.mini-toast-container</span> { <span class="prop">position</span>: fixed; <span class="prop">top</span>: 80px; <span class="prop">left</span>: 50%; <span class="prop">transform</span>: translateX(-50%); }
+<span class="keyword">.mini-toast</span> { <span class="prop">background</span>: <span class="keyword">var</span>(--green); <span class="prop">color</span>: <span class="keyword">var</span>(--bg); }
+<span class="keyword">.mini-toast.show</span> { <span class="prop">transform</span>: translateY(0) scale(1); <span class="prop">opacity</span>: 1; }</pre>
   </section>
 
 <section class="kit-section" id="stepper">
@@ -1112,9 +1137,9 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
         <button class="stepper-btn">+</button>
       </div>
     </div>
-    <div class="code-block">.stepper-control { display: inline-flex; align-items: center; border: 1px solid var(--border-dim); }
-.stepper-btn { min-width: 36px; padding: 8px 12px; }
-.stepper-val { padding: 8px 16px; border-left: 1px solid var(--border-dim); border-right: 1px solid var(--border-dim); }</div>
+    <pre class="code-block"><span class="keyword">.stepper-control</span> { <span class="prop">display</span>: inline-flex; <span class="prop">align-items</span>: center; <span class="prop">border</span>: 1px solid <span class="keyword">var</span>(--border-dim); }
+<span class="keyword">.stepper-btn</span> { <span class="prop">min-width</span>: 36px; <span class="prop">padding</span>: 8px 12px; }
+<span class="keyword">.stepper-val</span> { <span class="prop">padding</span>: 8px 16px; <span class="prop">border-left</span>: 1px solid <span class="keyword">var</span>(--border-dim); <span class="prop">border-right</span>: 1px solid <span class="keyword">var</span>(--border-dim); }</pre>
   </section>
 
 <section class="kit-section" id="hovercard" style="min-height: 260px;">
