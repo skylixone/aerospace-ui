@@ -1022,6 +1022,7 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
           </div>
           <div class="cmd-item">
             <span>Launch Calculator</span>
+            <span class="cmd-shortcut" style="visibility: hidden;">⌘</span>
           </div>
           <div class="cmd-group-heading">Settings</div>
           <div class="cmd-item">
@@ -1094,7 +1095,7 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
           if (!wrap) return;
           const pop = wrap.querySelector('.popover-content');
           const btn = wrap.querySelector('button');
-          btn.addEventListener('click', () => pop.classList.toggle('popover-hidden'));
+          btn.addEventListener('click', e => { e.stopPropagation(); pop.classList.toggle('popover-hidden'); });
           document.addEventListener('click', e => { if (!wrap.contains(e.target)) pop.classList.add('popover-hidden'); });
           wrap.querySelectorAll('.popover-input').forEach(inp => {
             const handle = inp.parentElement.querySelector('.input-handle');
@@ -1135,19 +1136,19 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
     </div>
     <div class="kit-row">
       <div class="toast-viewport" style="position: relative; padding: 0;">
-        <div class="toast" data-state="open" style="transform: none;">
+        <div class="toast" data-state="open">
           <div class="toast-title">Scheduled: Catch up</div>
           <div class="toast-desc">Friday, February 10, 2023 at 5:57 PM</div>
           <button class="toast-action btn btn-sm btn-secondary">Undo</button>
           <div class="toast-close">✕</div>
         </div>
-        <div class="toast destructive" data-state="open" style="transform: none;">
+        <div class="toast destructive" data-state="open">
           <div class="toast-title">Uh oh! Something went wrong.</div>
           <div class="toast-desc">There was a problem with your request.</div>
           <button class="toast-action btn btn-sm btn-danger">Try again</button>
           <div class="toast-close">✕</div>
         </div>
-        <div class="toast destructive" data-state="open" style="transform: none;">
+        <div class="toast destructive" data-state="open">
           <div class="toast-title">Upload Failed — ERR_UPLOAD_412</div>
           <div class="toast-desc">Payload exceeds 25MB limit. Compress or split into multiple uploads. <a href="#" style="color: var(--accent);">Learn more →</a></div>
           <button class="toast-action btn btn-sm btn-secondary">Retry</button>

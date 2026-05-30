@@ -1019,6 +1019,8 @@ table {
   cursor: pointer;
   border-radius: var(--radius-sm);
   transition: background var(--transition);
+  min-height: 36px;
+  box-sizing: border-box;
 }
 
 .cmd-item:hover,
