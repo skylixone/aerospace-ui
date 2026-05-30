@@ -43,3 +43,10 @@
 - #86 timeline: track height 12px→36px (3× fatter)
 - #52 timeline: planned stripes brighter (var(--text-dim)), actual padding adjusted
 - #52 timeline panel: max-width 60%, legend uses matching colors
+## Session 2026-05-30 — Review Comments Batch D
+- #97 cmd palette: added inline JS for arrow-key navigation (↑/↓ cycles .selected)
+- #98 cmd shortcut: inverted on .selected (accent bg, dark text), 1.6× larger (10px→16px)
+- #99 popover: pops right instead of below, single-line feel, bg→var(--bg), border→var(--border-bright)
+- #100 popover inputs: added .input-handle slide indicators on bottom border
+- #101 toast viewport: fixed bottom-center (left:50%, translateX(-50%), align-items:center)
+- #102 mini-toast code block: already pre.code-block from Batch B

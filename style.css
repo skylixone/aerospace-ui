@@ -1031,6 +1031,12 @@ table {
   padding: 2px 4px;
   border-radius: 2px;
 }
+.cmd-item.selected .cmd-shortcut {
+  font-size: 16px;
+  color: var(--bg);
+  background: var(--accent);
+  border-color: var(--accent);
+}
 
 /* ═══════════════════════════════════════════════
    27. TOAST NOTIFICATIONS
@@ -1038,7 +1044,8 @@ table {
 .toast-viewport {
   position: fixed;
   bottom: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   will-change: transform;
   padding: var(--space-lg);
   display: flex;
@@ -1048,6 +1055,7 @@ table {
   max-width: 420px;
   width: 100%;
   pointer-events: none;
+  align-items: center;
 }
 
 .toast {
@@ -1121,11 +1129,11 @@ table {
    28. POPOVER
    ═══════════════════════════════════════════════ */
 .popover-content {
-  background: var(--bg-raised);
-  border: 1px solid var(--border);
+  background: var(--bg);
+  border: 1px solid var(--border-bright);
   padding: var(--space-md);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  width: 300px;
+  width: 280px;
   z-index: 50;
   font-size: var(--text-sm);
   color: var(--text);

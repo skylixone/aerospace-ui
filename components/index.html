@@ -1040,6 +1040,23 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
       </div>
     </div>
   </section>
+  <script>
+    (function() {
+      const list = document.querySelector('.cmd-list');
+      if (!list) return;
+      const items = Array.from(list.querySelectorAll('.cmd-item'));
+      let selected = items.findIndex(i => i.classList.contains('selected'));
+      if (selected < 0) selected = 0;
+      list.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowDown') { e.preventDefault(); selected = (selected + 1) % items.length; update(); }
+        if (e.key === 'ArrowUp') { e.preventDefault(); selected = (selected - 1 + items.length) % items.length; update(); }
+      });
+      list.setAttribute('tabindex', '0');
+      function update() {
+        items.forEach((it, i) => it.classList.toggle('selected', i === selected));
+      }
+    })();
+  </script>
 
 <section class="kit-section" id="popover" style="min-height: 350px;">
     <div class="kit-section-title">28</div>
@@ -1047,17 +1064,27 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
     <div class="kit-row">
       <div style="position: relative; display: inline-block;">
         <button class="btn btn-secondary" data-popover="pop-dimensions">Open Popover</button>
-        <div class="popover-content popover-hidden" id="pop-dimensions" style="position: absolute; top: calc(100% + 8px); left: 0; width: 220px; z-index: 10;">
+        <div class="popover-content popover-hidden" id="pop-dimensions" style="position: absolute; top: 0; left: calc(100% + 8px); width: 220px; z-index: 10; white-space: nowrap;">
           <div class="input-group" style="margin-bottom: 12px;">
-            <label class="input-label">Dimensions</label>
-            <div style="display: flex; gap: 8px;">
+            <label class="input-label">Width</label>
+            <div style="position: relative;">
               <input type="text" class="input" value="100%" style="width: 100%;">
+              <div class="input-handle" style="position: absolute; bottom: 0; left: 75%; width: 8px; height: 3px; background: var(--accent); border-radius: 2px; transform: translateX(-50%);"></div>
+            </div>
+          </div>
+          <div class="input-group" style="margin-bottom: 12px;">
+            <label class="input-label">Height</label>
+            <div style="position: relative;">
               <input type="text" class="input" value="auto" style="width: 100%;">
+              <div class="input-handle" style="position: absolute; bottom: 0; left: 40%; width: 8px; height: 3px; background: var(--accent); border-radius: 2px; transform: translateX(-50%);"></div>
             </div>
           </div>
           <div class="input-group">
             <label class="input-label">Max. Width</label>
-            <input type="text" class="input" value="300px" style="width: 100%;">
+            <div style="position: relative;">
+              <input type="text" class="input" value="300px" style="width: 100%;">
+              <div class="input-handle" style="position: absolute; bottom: 0; left: 60%; width: 8px; height: 3px; background: var(--accent); border-radius: 2px; transform: translateX(-50%);"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -1073,7 +1100,7 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
       <button class="btn btn-ghost btn-sm" id="toast-trigger-err">Trigger Error</button>
     </div>
     <div class="kit-row">
-      <div class="toast-viewport" style="position: relative; right: auto; bottom: auto; transform: none; padding: 0;">
+      <div class="toast-viewport" style="position: relative; padding: 0;">
         <div class="toast" data-state="open" style="transform: none;">
           <div class="toast-title">Scheduled: Catch up</div>
           <div class="toast-desc">Friday, February 10, 2023 at 5:57 PM</div>
