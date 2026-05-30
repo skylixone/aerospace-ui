@@ -963,6 +963,12 @@ table {
   display: flex;
   flex-direction: column;
 }
+.cmd-dialog:focus-within {
+  border-color: var(--accent);
+  box-shadow:
+    0 0 0 1px var(--accent),
+    0 20px 40px -10px rgba(0, 0, 0, 0.5);
+}
 
 .cmd-header {
   border-bottom: 1px solid var(--border-muted);
@@ -1019,7 +1025,7 @@ table {
 .cmd-item.selected {
   background: var(--bg-hover);
   color: var(--text-bright);
-  border-left: 2px solid var(--accent);
+  box-shadow: inset 2px 0 0 var(--accent);
   padding-left: 10px;
 }
 
@@ -1069,12 +1075,14 @@ table {
   grid-template-columns: 1fr auto;
   gap: 4px;
   align-items: start;
-  transform: translateX(100%);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
 }
 
 .toast[data-state="open"] {
-  transform: translateX(0);
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .toast-title {
@@ -1138,6 +1146,22 @@ table {
   font-size: var(--text-sm);
   color: var(--text);
   transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.input-handle {
+  position: absolute;
+  bottom: -1px;
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 2px;
+  cursor: grab;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.input-handle:active {
+  cursor: grabbing;
+  background: var(--accent-hover);
 }
 
 .popover-hidden {

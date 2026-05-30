@@ -1062,32 +1062,66 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
     <div class="kit-section-title">28</div>
     <h2>Popover</h2>
     <div class="kit-row">
-      <div style="position: relative; display: inline-block;">
+      <div style="position: relative; display: inline-block;" class="popover-wrap">
         <button class="btn btn-secondary" data-popover="pop-dimensions">Open Popover</button>
         <div class="popover-content popover-hidden" id="pop-dimensions" style="position: absolute; top: 0; left: calc(100% + 8px); width: 220px; z-index: 10; white-space: nowrap;">
           <div class="input-group" style="margin-bottom: 12px;">
             <label class="input-label">Width</label>
             <div style="position: relative;">
-              <input type="text" class="input" value="100%" style="width: 100%;">
-              <div class="input-handle" style="position: absolute; bottom: 0; left: 75%; width: 8px; height: 3px; background: var(--accent); border-radius: 2px; transform: translateX(-50%);"></div>
+              <input type="text" class="input popover-input" value="100%" data-min="0" data-max="100" data-unit="%" style="width: 100%;">
+              <div class="input-handle" style="left: 75%;"></div>
             </div>
           </div>
           <div class="input-group" style="margin-bottom: 12px;">
             <label class="input-label">Height</label>
             <div style="position: relative;">
-              <input type="text" class="input" value="auto" style="width: 100%;">
-              <div class="input-handle" style="position: absolute; bottom: 0; left: 40%; width: 8px; height: 3px; background: var(--accent); border-radius: 2px; transform: translateX(-50%);"></div>
+              <input type="text" class="input popover-input" value="auto" data-min="0" data-max="500" data-unit="px" style="width: 100%;">
+              <div class="input-handle" style="left: 40%;"></div>
             </div>
           </div>
           <div class="input-group">
             <label class="input-label">Max. Width</label>
             <div style="position: relative;">
-              <input type="text" class="input" value="300px" style="width: 100%;">
-              <div class="input-handle" style="position: absolute; bottom: 0; left: 60%; width: 8px; height: 3px; background: var(--accent); border-radius: 2px; transform: translateX(-50%);"></div>
+              <input type="text" class="input popover-input" value="300px" data-min="0" data-max="500" data-unit="px" style="width: 100%;">
+              <div class="input-handle" style="left: 60%;"></div>
             </div>
           </div>
         </div>
       </div>
+      <script>
+        (function() {
+          const wrap = document.querySelector('.popover-wrap');
+          if (!wrap) return;
+          const pop = wrap.querySelector('.popover-content');
+          const btn = wrap.querySelector('button');
+          btn.addEventListener('click', () => pop.classList.toggle('popover-hidden'));
+          document.addEventListener('click', e => { if (!wrap.contains(e.target)) pop.classList.add('popover-hidden'); });
+          wrap.querySelectorAll('.popover-input').forEach(inp => {
+            const handle = inp.parentElement.querySelector('.input-handle');
+            if (!handle) return;
+            function sync() {
+              const v = parseFloat(inp.value) || 0;
+              const min = +inp.dataset.min, max = +inp.dataset.max;
+              const pct = Math.max(0, Math.min(100, (v - min) / (max - min) * 100));
+              handle.style.left = pct + '%';
+            }
+            inp.addEventListener('input', sync);
+            let dragging = false;
+            handle.addEventListener('mousedown', e => { dragging = true; e.preventDefault(); });
+            document.addEventListener('mousemove', e => {
+              if (!dragging) return;
+              const rect = inp.getBoundingClientRect();
+              const pct = Math.max(0, Math.min(100, (e.clientX - rect.left) / rect.width * 100));
+              const min = +inp.dataset.min, max = +inp.dataset.max;
+              const val = Math.round(min + (max - min) * pct / 100);
+              inp.value = val + inp.dataset.unit;
+              handle.style.left = pct + '%';
+            });
+            document.addEventListener('mouseup', () => dragging = false);
+            sync();
+          });
+        })();
+      </script>
     </div>
   </section>
 
