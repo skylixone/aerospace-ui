@@ -50,3 +50,60 @@
 - #100 popover inputs: added .input-handle slide indicators on bottom border
 - #101 toast viewport: fixed bottom-center (left:50%, translateX(-50%), align-items:center)
 - #102 mini-toast code block: already pre.code-block from Batch B
+
+## Session 2026-05-31 — Batch F
+- Bumped `--text-sm: 13px → 14px` per TODO + comment
+- Updated typography demo: `.type-body` example now has `background: var(--bg-raised)` for containment
+- Updated `.type-small` description text 12px → 14px
+- Colors: swatch blocks taller `clamp(100px, 10vw, 160px)`, grid minmax `220px` for proportional large-screen layout
+- Spacing: demo bars taller (28px), row gap increased (20px)
+- Careful: Python string replace can break HTML tag boundaries when matching across lines; always verify tag closure after multi-line replacements
+
+## Session 2026-05-31 — Sidebar Revert
+- Reverted `.nav-heading` border-left and padding-left (was overdone)
+- Removed `.nav-highlight` floating div + CSS block; `.active` class on links is sufficient
+- Cleaned up unused `updateHighlightPosition` / `keepLinkInView` from nav_highlight.js
+- Deduplicated `.kit-nav .nav-heading:first-child` rule in CSS
+
+## Session 2026-05-31 — Batch G
+- Ghost button: border-color now matches text-color (`var(--text-dim)`)
+- Danger button: swapped default/hover — default is transparent, hover gains `var(--red-dim)` bg
+- Fixed loading spinner animation: keyframes now include `translate(-50%,-50%)` alongside `rotate`, preventing diagonal drift
+- Ghost loading spinner color updated to match new ghost text color
+
+## Session 2026-05-31 — Batch H
+- `.stepper-control` CSS: renamed selector from `.stepper` (was overriding phased stepper rule)
+- Tabs: added multi-panel HTML for both Underline (4 panels) and Segmented (3 panels) demos
+- Tabs: added JS click handler in interactions.js — cycles `.active` on tabs + panels, respects `disabled`
+- Tab panels: added `display: none` default + `.tab-panel.active { display: block; }` in CSS
+- Slider fill: added JS in interactions.js — sets `--slider-fill` custom property on each `input` event
+- Review server: restarted with nohup after finding it down (curl returned 000)
+- Headless Chrome screenshots confirmed non-functional on this Mac — rely on user verification in their Chrome
+
+## Session 2026-05-31 — Batch I
+- Cards: strengthened hover — `border-color: var(--accent)`, `translateY(-2px)`, added `box-shadow: 0 8px 24px rgba(0,0,0,0.4)`
+- Bars: switched `.bar-wrap` from flex to `grid-template-columns: 72px 1fr` — ensures all bar tracks start at same X regardless of caption length
+- Bars: updated `.bar-scale` margin-left `68px` → `84px` to align with new grid gutter
+- Timeline: `.timeline-planned` stripes changed from `var(--text-dim) opacity:0.5` to `var(--text-bright) opacity:0.35` for higher contrast
+- Timeline: legend color updated from `var(--text-dim)` to `var(--text-bright)` to match planned stripe color
+
+## Session 2026-06-04 — Batch J
+- Badges: 26px → 32px square across all variants (badge, badge-outline, badge-dim, badge-icon)
+- Badge icon font-size: 14px → 16px
+- Badge demos: reorganized to alert semantics — i (info), ✓ (success), ! (warning), ! (error) + numeric/outline/dim
+- Default tag border: `var(--border-muted)` → `var(--border-dim)` for slightly more visibility
+- Status offline: added `.status:has(.status-dot:not(.online):not(.away):not(.busy))` → `color: var(--text-muted)`
+- Cleaned up duplicate `.badge-outline` / `.badge-dim` rules at end of CSS (leftover from earlier batch)
+- Panel footers already had real metadata/actions — no changes needed
+- Lists already had Bullets/Dashed/Triangle/Triple Dash variants — no changes needed
+- RAG filled status tags already had black text on solid bg — no changes needed
+
+## Session 2026-06-04 — Batch K
+- CSS `.kv-grid` gap-trick (`gap: 1px` + `background: border-color`) breaks when increasing gaps; switched to explicit cell borders
+- `.kv-cell:first-child { padding-left: 0 }` aligns first cell content with h1 text when grid container has no left padding/border
+- Summary label strings in HTML must be updated alongside CSS font-size changes to stay accurate
+
+## Session 2026-06-04 — Batch K Corrections
+- KV grid: user prefers table-like (gap-trick + outer border) over separate tile cards; reverted tile approach
+- Section `#steppers` had been missing `kit-section-title` for multiple batches — only caught now during numbering audit
+- Renumbering sections: always count section titles against sidebar links to catch missing/extra titles

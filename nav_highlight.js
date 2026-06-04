@@ -1,6 +1,6 @@
 /**
  * Sidebar Minimap / Scroll Tracker
- * Tracks the active section in the viewport and moves the highlight in the sidebar.
+ * Tracks the active section in the viewport and sets .active on the corresponding sidebar link.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,11 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const sections = document.querySelectorAll('section[id], .kit-heading[id]'); 
     
-    // Create highlight element
-    const highlight = document.createElement('div');
-    highlight.className = 'nav-highlight';
-    nav.prepend(highlight);
-
     // Intersection Observer for scroll spying
     const observerOptions = {
         root: null,
@@ -61,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (activeLink) {
             activeLink.classList.add('active');
-            updateHighlightPosition(activeLink);
         }
     }
 
@@ -93,13 +87,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Handle resize — debounced to avoid DOM thrash on every pixel change
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            const active = nav.querySelector('a.active');
-            if (active) updateHighlightPosition(active);
-        }, 150);
-    });
+
 });

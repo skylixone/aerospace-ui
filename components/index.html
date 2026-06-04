@@ -92,8 +92,8 @@
         <div class="type-display">Display — 44px 700</div>
         <div class="type-heading">Heading — 28px 700</div>
         <div class="type-subheading">Subheading — 20px 500</div>
-        <div class="type-body">Body — 16px 400 regular text for content</div>
-        <div class="type-small">Small — 12px label text, metadata, captions</div>
+        <div class="type-body" style="background: var(--bg-raised); padding: 10px 14px;">Body — 16px 400 regular text for content</div>
+        <div class="type-small">Small — 14px label text, metadata, captions</div>
         <div class="type-overline">Overline — 11px uppercase · 0.15em tracking</div>
         <div class="type-overline bright">Overline Accent — 11px uppercase · 0.5em tracking</div>
       </div>
@@ -143,14 +143,14 @@
     <div class="kit-section-title">03</div>
     <h2>Spacing</h2>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: start;">
-      <div style="display: flex; flex-direction: column; gap: 14px;">
-        <div style="display: flex; align-items: center; gap: 20px;"><span class="type-small" style="min-width: 96px; text-align: right;">--space-xs</span><div style="width: 4px; height: 22px; background: var(--accent);"></div><span class="type-small">4px</span></div>
-        <div style="display: flex; align-items: center; gap: 20px;"><span class="type-small" style="min-width: 96px; text-align: right;">--space-sm</span><div style="width: 8px; height: 22px; background: var(--accent);"></div><span class="type-small">8px</span></div>
-        <div style="display: flex; align-items: center; gap: 20px;"><span class="type-small" style="min-width: 96px; text-align: right;">--space-md</span><div style="width: 16px; height: 22px; background: var(--accent);"></div><span class="type-small">16px</span></div>
-        <div style="display: flex; align-items: center; gap: 20px;"><span class="type-small" style="min-width: 96px; text-align: right;">--space-lg</span><div style="width: 24px; height: 22px; background: var(--accent);"></div><span class="type-small">24px</span></div>
-        <div style="display: flex; align-items: center; gap: 20px;"><span class="type-small" style="min-width: 96px; text-align: right;">--space-xl</span><div style="width: 32px; height: 22px; background: var(--accent);"></div><span class="type-small">32px</span></div>
-        <div style="display: flex; align-items: center; gap: 20px;"><span class="type-small" style="min-width: 96px; text-align: right;">--space-2xl</span><div style="width: 48px; height: 22px; background: var(--accent);"></div><span class="type-small">48px</span></div>
-        <div style="display: flex; align-items: center; gap: 20px;"><span class="type-small" style="min-width: 96px; text-align: right;">--space-3xl</span><div style="width: 64px; height: 22px; background: var(--accent);"></div><span class="type-small">64px</span></div>
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: flex; align-items: center; gap: 20px;"><span class="type-small" style="min-width: 96px; text-align: right;">--space-xs</span><div style="width: 4px; height: 28px; background: var(--accent);"></div><span class="type-small">4px</span></div>
+        <div style="display: flex; align-items: center; gap: 20px;"><span class="type-small" style="min-width: 96px; text-align: right;">--space-sm</span><div style="width: 8px; height: 28px; background: var(--accent);"></div><span class="type-small">8px</span></div>
+        <div style="display: flex; align-items: center; gap: 20px;"><span class="type-small" style="min-width: 96px; text-align: right;">--space-md</span><div style="width: 16px; height: 28px; background: var(--accent);"></div><span class="type-small">16px</span></div>
+        <div style="display: flex; align-items: center; gap: 20px;"><span class="type-small" style="min-width: 96px; text-align: right;">--space-lg</span><div style="width: 24px; height: 28px; background: var(--accent);"></div><span class="type-small">24px</span></div>
+        <div style="display: flex; align-items: center; gap: 20px;"><span class="type-small" style="min-width: 96px; text-align: right;">--space-xl</span><div style="width: 32px; height: 28px; background: var(--accent);"></div><span class="type-small">32px</span></div>
+        <div style="display: flex; align-items: center; gap: 20px;"><span class="type-small" style="min-width: 96px; text-align: right;">--space-2xl</span><div style="width: 48px; height: 28px; background: var(--accent);"></div><span class="type-small">48px</span></div>
+        <div style="display: flex; align-items: center; gap: 20px;"><span class="type-small" style="min-width: 96px; text-align: right;">--space-3xl</span><div style="width: 64px; height: 28px; background: var(--accent);"></div><span class="type-small">64px</span></div>
       </div>
       <div style="border: 1px solid var(--border-dim); background: var(--bg-surface); padding: var(--space-xl);">
         <div style="display: flex; flex-direction: column; gap: var(--space-lg);">
@@ -433,8 +433,17 @@
       <button class="tab">Tools</button>
       <button class="tab" disabled>Archived</button>
     </div>
-    <div class="tab-panel">
+    <div class="tab-panel active">
       <span class="type-body">Overview panel — this tab is active with amber underline indicator.</span>
+    </div>
+    <div class="tab-panel">
+      <span class="type-body">Sessions panel — review past interaction sessions and their metrics.</span>
+    </div>
+    <div class="tab-panel">
+      <span class="type-body">Tools panel — manage connected integrations and API endpoints.</span>
+    </div>
+    <div class="tab-panel">
+      <span class="type-body">Archived panel — inactive projects and read-only historical data.</span>
     </div>
 
     <div class="kit-label" style="margin-top: var(--space-2xl);">Segmented</div>
@@ -443,12 +452,19 @@
       <button class="tab">Weekly</button>
       <button class="tab">Monthly</button>
     </div>
-    <div class="tab-panel" style="margin-top: var(--space-md);">
+    <div class="tab-panel active" style="margin-top: var(--space-md);">
       <span class="type-body">Daily metrics panel content.</span>
+    </div>
+    <div class="tab-panel" style="margin-top: var(--space-md);">
+      <span class="type-body">Weekly metrics panel content.</span>
+    </div>
+    <div class="tab-panel" style="margin-top: var(--space-md);">
+      <span class="type-body">Monthly metrics panel content.</span>
     </div>
   </section>
 
 <section class="kit-section" id="steppers">
+    <div class="kit-section-title">08</div>
     <h2>Interactive Steppers</h2>
     
     <div class="kit-group">
@@ -506,7 +522,7 @@
   </section>
 
 <section class="kit-section" id="sliders">
-    <div class="kit-section-title">32</div>
+    <div class="kit-section-title">09</div>
     <h2>Range Sliders</h2>
     
     <div style="max-width: 500px; display: flex; flex-direction: column; gap: 32px;">
@@ -543,7 +559,7 @@
   </section>
 
 <section class="kit-section" id="metrics">
-    <div class="kit-section-title">08</div>
+    <div class="kit-section-title">10</div>
     <h2>Metric Cards</h2>
 
     <div class="metric-grid">
@@ -576,7 +592,7 @@
   </section>
 
 <section class="kit-section" id="tables">
-    <div class="kit-section-title">09</div>
+    <div class="kit-section-title">11</div>
     <h2>Tables</h2>
 
     <div class="panel">
@@ -662,7 +678,7 @@
   </section>
 
 <section class="kit-section" id="bars">
-    <div class="kit-section-title">10</div>
+    <div class="kit-section-title">12</div>
     <h2>Bars</h2>
 
     <div class="kit-group">
@@ -672,7 +688,7 @@
         <div class="bar-wrap"><span class="bar-val">159</span><div class="bar-track"><div class="bar-fill gradient" style="width: 63.6%;"></div></div></div>
         <div class="bar-wrap"><span class="bar-val">63</span><div class="bar-track"><div class="bar-fill" style="width: 25.2%;"></div></div></div>
       </div>
-      <div class="bar-scale" style="margin-left: 68px; margin-top: 8px; display: flex; justify-content: space-between; font-size: var(--text-xs); color: var(--text-dim); position: relative;">
+      <div class="bar-scale" style="margin-left: 84px; margin-top: 8px; display: flex; justify-content: space-between; font-size: var(--text-xs); color: var(--text-dim); position: relative;">
         <span>0</span><span>50</span><span>100</span><span>150</span><span>200</span><span>250</span>
         <div style="position: absolute; top: -4px; left: 0; right: 0; height: 4px; background: repeating-linear-gradient(90deg, var(--border-dim) 0 1px, transparent 1px 20.16%);"></div>
       </div>
@@ -697,7 +713,7 @@
   </section>
 
 <section class="kit-section" id="progress">
-    <div class="kit-section-title">11</div>
+    <div class="kit-section-title">13</div>
     <h2>Progress</h2>
 
     <div style="max-width: 500px; display: flex; flex-direction: column; gap: 24px;">
@@ -721,7 +737,7 @@
   </section>
 
 <section class="kit-section" id="timeline">
-    <div class="kit-section-title">33</div>
+    <div class="kit-section-title">14</div>
     <h2>Adherence Timeline</h2>
     
     <div class="panel" style="max-width: 60%;">
@@ -754,12 +770,12 @@
           </div>
         </div>
       </div>
-      <div class="panel-footer">Legend: <span style="color: var(--text-dim);">░ Planned</span> · <span style="color: var(--accent);">█ Actual</span></div>
+      <div class="panel-footer">Legend: <span style="color: var(--text-bright);">░ Planned</span> · <span style="color: var(--accent);">█ Actual</span></div>
     </div>
   </section>
 
 <section class="kit-section" id="panels">
-    <div class="kit-section-title">12</div>
+    <div class="kit-section-title">15</div>
     <h2>Panels & Cards</h2>
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
@@ -784,7 +800,7 @@
   </section>
 
 <section class="kit-section" id="tags">
-    <div class="kit-section-title">13</div>
+    <div class="kit-section-title">16</div>
     <h2>Tags & Badges</h2>
 
     <div class="kit-group">
@@ -800,22 +816,21 @@
     </div>
 
     <div class="kit-group">
-      <div class="kit-label">Badges</div>
+      <div class="kit-label">Badges — Alert Semantics</div>
       <div class="tag-group">
+        <span class="badge badge-icon" title="Info">i</span>
+        <span class="badge badge-green badge-icon" title="Success">✓</span>
+        <span class="badge badge-icon" title="Warning" style="background: var(--yellow); color: var(--bg);">!</span>
+        <span class="badge badge-red badge-icon" title="Error">!</span>
         <span class="badge">8</span>
-        <span class="badge badge-green">42</span>
-        <span class="badge badge-red">!</span>
-        <span class="badge badge-dim">0</span>
         <span class="badge-outline">7</span>
-        <span class="badge badge-icon" title="Info">ⓘ</span>
-        <span class="badge badge-green badge-icon">✓</span>
-        <span class="badge badge-red badge-icon">◉</span>
+        <span class="badge badge-dim">0</span>
       </div>
     </div>
   </section>
 
 <section class="kit-section" id="alerts">
-    <div class="kit-section-title">14</div>
+    <div class="kit-section-title">17</div>
     <h2>Alerts</h2>
 
     <div style="display: flex; flex-direction: column; gap: 16px; max-width: 700px;">
@@ -827,7 +842,7 @@
   </section>
 
 <section class="kit-section" id="status">
-    <div class="kit-section-title">15</div>
+    <div class="kit-section-title">18</div>
     <h2>Status Indicators</h2>
 
     <div class="kit-group">
@@ -852,7 +867,7 @@
   </section>
 
 <section class="kit-section" id="lists">
-    <div class="kit-section-title">16</div>
+    <div class="kit-section-title">19</div>
     <h2>Lists</h2>
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 700px;">
@@ -905,7 +920,7 @@
   </section>
 
 <section class="kit-section" id="code">
-    <div class="kit-section-title">17</div>
+    <div class="kit-section-title">20</div>
     <h2>Code</h2>
 
     <div class="kit-group">
@@ -916,49 +931,61 @@
     <div class="kit-group">
       <div class="kit-label">Block</div>
       <pre class="code-block"><span class="keyword">import</span> { readJSON, writeJSON } <span class="keyword">from</span> <span class="string">'./fs'</span>;
+<span class="keyword">import</span> { extractTags, validateSchema } <span class="keyword">from</span> <span class="string">'./pipeline'</span>;
 
+<span class="comment">// ── Load source board ─────────────────────────────────────</span>
 <span class="keyword">const</span> board   = <span class="keyword">await</span> readJSON(<span class="string">'boards/aerospace.json'</span>);
 <span class="keyword">const</span> images  = board.images.filter(i => i.reviewed);
 <span class="keyword">const</span> refs    = images.slice(<span class="number">0</span>, <span class="number">5</span>);
-<span class="keyword">const</span> tags    = <span class="keyword">await</span> extractTags(refs);  <span class="comment">// AI pipeline</span>
 
-<span class="keyword">await</span> writeJSON(<span class="string">'output/tags.json'</span>, tags);
+<span class="comment">// ── Run extraction & validation ───────────────────────────</span>
+<span class="keyword">const</span> tags    = <span class="keyword">await</span> extractTags(refs);
+<span class="keyword">const</span> report  = validateSchema(tags, <span class="string">'v2'</span>);
+
+<span class="keyword">await</span> writeJSON(<span class="string">'output/tags.json'</span>,       tags);
+<span class="keyword">await</span> writeJSON(<span class="string">'output/report.json'</span>,     report);
+<span class="keyword">await</span> writeJSON(<span class="string">'output/manifest.json'</span>,   { count: tags.length });
+
 console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t0}ms`</span>);</pre>
     </div>
   </section>
 
 <section class="kit-section" id="summary">
-    <div class="kit-section-title">18</div>
+    <div class="kit-section-title">21</div>
     <h2>Summary / Quote</h2>
 
     <div class="kit-group">
-      <div class="kit-label">L — var(--text-xl)</div>
+      <div class="kit-label">L — var(--text-2xl)</div>
       <div class="summary summary-lg">
-        Build for today. Three similar lines &gt; premature abstraction. No speculative flexibility.
+        Build for today. Three similar lines beat premature abstraction.
+        No speculative flexibility. Ship what you need now.
       </div>
     </div>
     <div class="kit-group">
-      <div class="kit-label">M — var(--text-lg)</div>
+      <div class="kit-label">M — var(--text-xl)</div>
       <div class="summary summary-md">
-        Boring infra, novel value. Proven tools for plumbing. Innovate only where it creates differentiated value.
+        Boring infra, novel value. Proven tools for plumbing.
+        Innovate only where it creates differentiated value.
       </div>
     </div>
     <div class="kit-group">
-      <div class="kit-label">S — var(--text-md)</div>
+      <div class="kit-label">S — var(--text-lg)</div>
       <div class="summary summary-sm">
-        Close every loop. Every tool opened gets closed. Every resource freed. No orphans.
+        Close every loop. Every tool opened gets closed.
+        Every resource freed. No orphans left behind.
       </div>
     </div>
     <div class="kit-group">
       <div class="kit-label">Hero — clamp(2rem, 4.5vw, 6.5rem)</div>
       <div class="summary summary-hero">
-        Across 20 sessions, chemistry scores 8.0/10. Parallel execution active in 40%&nbsp;—&nbsp;fork-don't-queue applied.
+        Across 20 sessions, chemistry scores 8.0/10. Parallel execution
+        active in 40%&nbsp;—&nbsp;fork-don't-queue applied.
       </div>
     </div>
   </section>
 
 <section class="kit-section" id="kv">
-    <div class="kit-section-title">19</div>
+    <div class="kit-section-title">22</div>
     <h2>Key-Value Grid</h2>
 
     <div class="kv-grid">
@@ -966,11 +993,15 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
       <div class="kv-cell"><span class="kv-label">EVENT SOURCE</span><span class="kv-value">VIBECRAFT JSONL</span></div>
       <div class="kv-cell"><span class="kv-label">SESSIONS ANALYZED</span><span class="kv-value">20</span></div>
       <div class="kv-cell"><span class="kv-label">CLASSIFICATION</span><span class="kv-value">UNCLASSIFIED</span></div>
+      <div class="kv-cell"><span class="kv-label">OPERATOR</span><span class="kv-value">CMDR. SHEPARD</span></div>
+      <div class="kv-cell"><span class="kv-label">SECTOR</span><span class="kv-value">ALPHA-9</span></div>
+      <div class="kv-cell"><span class="kv-label">STATUS</span><span class="kv-value">NOMINAL</span></div>
+      <div class="kv-cell"><span class="kv-label">UPTIME</span><span class="kv-value">47h 12m</span></div>
     </div>
   </section>
 
 <section class="kit-section" id="empty">
-    <div class="kit-section-title">20</div>
+    <div class="kit-section-title">23</div>
     <h2>File Upload</h2>
 
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 900px;">
@@ -1001,7 +1032,7 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
   </section>
 
 <section class="kit-section" id="cmd">
-    <div class="kit-section-title">27</div>
+    <div class="kit-section-title">24</div>
     <h2>Command Palette</h2>
     <div class="cmd-hint">Press <kbd class="kbd">⌘K</kbd> to open</div>
     <div class="demo-cmd">
@@ -1022,7 +1053,6 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
           </div>
           <div class="cmd-item">
             <span>Launch Calculator</span>
-            <span class="cmd-shortcut" style="visibility: hidden;">⌘</span>
           </div>
           <div class="cmd-group-heading">Settings</div>
           <div class="cmd-item">
@@ -1059,8 +1089,8 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
     })();
   </script>
 
-<section class="kit-section" id="popover" style="min-height: 350px;">
-    <div class="kit-section-title">28</div>
+<section class="kit-section" id="popover" style="min-height: 420px;">
+    <div class="kit-section-title">25</div>
     <h2>Popover</h2>
     <div class="kit-row">
       <div style="position: relative; display: inline-block;" class="popover-wrap">
@@ -1093,10 +1123,7 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
         (function() {
           const wrap = document.querySelector('.popover-wrap');
           if (!wrap) return;
-          const pop = wrap.querySelector('.popover-content');
-          const btn = wrap.querySelector('button');
-          btn.addEventListener('click', e => { e.stopPropagation(); pop.classList.toggle('popover-hidden'); });
-          document.addEventListener('click', e => { if (!wrap.contains(e.target)) pop.classList.add('popover-hidden'); });
+          // Drag logic for popover input handles (toggle is handled by interactions.js)
           wrap.querySelectorAll('.popover-input').forEach(inp => {
             const handle = inp.parentElement.querySelector('.input-handle');
             if (!handle) return;
@@ -1127,39 +1154,63 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
   </section>
 
 <section class="kit-section" id="toast">
-    <div class="kit-section-title">29</div>
+    <div class="kit-section-title">26</div>
     <h2>Toast</h2>
     <div class="kit-row" style="margin-bottom: 16px;">
       <button class="btn btn-secondary btn-sm" id="toast-trigger">Trigger Toast</button>
       <button class="btn btn-secondary btn-sm" id="toast-trigger-mini">Trigger Mini</button>
       <button class="btn btn-ghost btn-sm" id="toast-trigger-err">Trigger Error</button>
     </div>
-    <div class="kit-row">
-      <div class="toast-viewport" style="position: relative; padding: 0;">
-        <div class="toast" data-state="open">
-          <div class="toast-title">Scheduled: Catch up</div>
-          <div class="toast-desc">Friday, February 10, 2023 at 5:57 PM</div>
-          <button class="toast-action btn btn-sm btn-secondary">Undo</button>
-          <div class="toast-close">✕</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px;">
+      <div>
+        <div class="kit-label" style="margin-bottom: 8px;">Brief</div>
+        <div class="toast-viewport" style="position: relative; padding: 0;">
+          <div class="toast" data-state="open">
+            <div class="toast-title">Scheduled: Catch up</div>
+            <div class="toast-desc">Friday, February 10, 2023 at 5:57 PM</div>
+            <button class="toast-action btn btn-sm btn-secondary">Undo</button>
+            <div class="toast-close">✕</div>
+          </div>
         </div>
-        <div class="toast destructive" data-state="open">
-          <div class="toast-title">Uh oh! Something went wrong.</div>
-          <div class="toast-desc">There was a problem with your request.</div>
-          <button class="toast-action btn btn-sm btn-danger">Try again</button>
-          <div class="toast-close">✕</div>
+      </div>
+      <div>
+        <div class="kit-label" style="margin-bottom: 8px;">In-Depth</div>
+        <div class="toast-viewport" style="position: relative; padding: 0;">
+          <div class="toast" data-state="open">
+            <div class="toast-title">Profile Updated</div>
+            <div class="toast-desc">Your changes have been saved successfully and synced across all devices.</div>
+            <button class="toast-action btn btn-sm btn-secondary">View</button>
+            <div class="toast-close">✕</div>
+          </div>
         </div>
-        <div class="toast destructive" data-state="open">
-          <div class="toast-title">Upload Failed — ERR_UPLOAD_412</div>
-          <div class="toast-desc">Payload exceeds 25MB limit. Compress or split into multiple uploads. <a href="#" style="color: var(--accent);">Learn more →</a></div>
-          <button class="toast-action btn btn-sm btn-secondary">Retry</button>
-          <div class="toast-close">✕</div>
+      </div>
+      <div>
+        <div class="kit-label" style="margin-bottom: 8px;">Brief Destructive</div>
+        <div class="toast-viewport" style="position: relative; padding: 0;">
+          <div class="toast destructive" data-state="open">
+            <div class="toast-title">Uh oh! Something went wrong.</div>
+            <div class="toast-desc">There was a problem with your request.</div>
+            <button class="toast-action btn btn-sm btn-danger">Try again</button>
+            <div class="toast-close">✕</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="kit-label" style="margin-bottom: 8px;">In-Depth Destructive</div>
+        <div class="toast-viewport" style="position: relative; padding: 0;">
+          <div class="toast destructive" data-state="open">
+            <div class="toast-title">Upload Failed — ERR_UPLOAD_412</div>
+            <div class="toast-desc">Payload exceeds 25MB limit. Compress or split into multiple uploads. <a href="#" style="color: var(--accent);">Learn more →</a></div>
+            <button class="toast-action btn btn-sm btn-secondary">Retry</button>
+            <div class="toast-close">✕</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
 <section class="kit-section" id="mini-toast">
-    <div class="kit-section-title">30b</div>
+    <div class="kit-section-title">27</div>
     <h2>Mini Toast (Centered)</h2>
     <div class="kit-group">
       <div class="kit-label">Success State</div>
@@ -1181,7 +1232,7 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
   </section>
 
 <section class="kit-section" id="stepper">
-    <div class="kit-section-title">30c</div>
+    <div class="kit-section-title">28</div>
     <h2>Stepper Control</h2>
     <div class="kit-group">
       <div class="kit-label">Bullets</div>
@@ -1204,8 +1255,8 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
 <span class="keyword">.stepper-val</span> { <span class="prop">padding</span>: 8px 16px; <span class="prop">border-left</span>: 1px solid <span class="keyword">var</span>(--border-dim); <span class="prop">border-right</span>: 1px solid <span class="keyword">var</span>(--border-dim); }</pre>
   </section>
 
-<section class="kit-section" id="hovercard" style="min-height: 260px;">
-    <div class="kit-section-title">30</div>
+<section class="kit-section" id="hovercard" style="min-height: 340px;">
+    <div class="kit-section-title">29</div>
     <h2>Hover Card</h2>
     <div class="kit-row">
       <div style="position: relative; display: inline-block;" data-hovercard-host>
@@ -1235,7 +1286,7 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
   </section>
 
 <section class="kit-section" id="header">
-    <div class="kit-section-title">21</div>
+    <div class="kit-section-title">30</div>
     <h2>Page Header</h2>
 
     <div class="page-header">
@@ -1251,7 +1302,7 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
   </section>
 
 <section class="kit-section" id="footer">
-    <div class="kit-section-title">22</div>
+    <div class="kit-section-title">31</div>
     <h2>Page Footer</h2>
 
     <div class="page-footer">
@@ -1261,13 +1312,13 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
   </section>
 
 <section class="kit-section" id="modal">
-    <div class="kit-section-title">23</div>
+    <div class="kit-section-title">32</div>
     <h2>Modal</h2>
 
     <div class="demo-modal">
       <div class="modal-backdrop">
         <div class="modal-window">
-          <div style="padding: 16px 24px; border-bottom: 1px solid var(--border-dim); font-weight: 600; color: var(--text-bright); display: flex; justify-content: space-between;">
+          <div style="padding: 16px 24px; border-bottom: 1px solid var(--border-dim); font-weight: 600; color: var(--text-bright); display: flex; justify-content: space-between; align-items: center;">
             Confirm Action
             <button class="modal-close">×</button>
           </div>
@@ -1285,7 +1336,7 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
   </section>
 
 <section class="kit-section" id="dividers">
-    <div class="kit-section-title">24</div>
+    <div class="kit-section-title">33</div>
     <h2>Dividers</h2>
 
     <div style="max-width: 500px; display: flex; flex-direction: column; gap: 24px;">
@@ -1309,7 +1360,7 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
   </section>
 
 <section class="kit-section" id="skeleton">
-    <div class="kit-section-title">25</div>
+    <div class="kit-section-title">34</div>
     <h2>Skeleton Loading</h2>
 
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 700px;">
@@ -1335,7 +1386,7 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
   </section>
 
 <section class="kit-section" id="tooltip">
-    <div class="kit-section-title">26</div>
+    <div class="kit-section-title">35</div>
     <h2>Tooltip</h2>
 
     <div class="kit-row" style="gap: 32px; padding-bottom: 24px;">

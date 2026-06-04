@@ -66,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const toast = document.createElement('div');
     toast.className = `toast ${variant}`;
-    toast.dataset.state = 'open';
     toast.innerHTML = `
       <div class="toast-title">${title}</div>
       ${desc ? `<div class="toast-desc">${desc}</div>` : ''}
@@ -74,20 +73,20 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="toast-close" role="button" aria-label="Close">✕</div>
     `;
 
-    // Slide-in: start translated, then animate to position
-    toast.style.transform = 'translateX(calc(100% + 24px))';
-    toast.style.transition = 'transform 200ms ease';
     toastViewport.appendChild(toast);
 
+    // Force reflow then open so CSS transition plays from translateY(100%)
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        toast.style.transform = 'translateX(0)';
+        toast.dataset.state = 'open';
       });
     });
 
     function dismiss() {
-      toast.style.transform = 'translateX(calc(100% + 24px))';
+      toast.removeAttribute('data-state');
       toast.addEventListener('transitionend', () => toast.remove(), { once: true });
+      // Fallback removal if transition doesn't fire
+      setTimeout(() => toast.remove(), 400);
     }
 
     toast.querySelector('.toast-close').addEventListener('click', dismiss);
@@ -137,7 +136,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       cmdSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-      // Brief amber flash on the cmd-dialog
+      // Focus the cmd-list so arrow keys work immediately
+      const list = cmdSection.querySelector('.cmd-list');
+      if (list) {
+        list.focus({ preventScroll: true });
+      }
+
+      // Brief amber flash on the cmd-dialog (persistent outline via CSS :focus)
       const dialog = cmdSection.querySelector('.cmd-dialog');
       if (dialog) {
         dialog.style.transition = 'box-shadow 150ms ease';
@@ -147,6 +152,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 600);
       }
     }
+  });
+
+
+  // ── TABS ─────────────────────────────────────────────
+  document.querySelectorAll('.tabs').forEach(tabContainer => {
+    const panels = tabContainer.parentElement.querySelectorAll('.tab-panel');
+    const tabs = tabContainer.querySelectorAll('.tab');
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        if (tab.disabled) return;
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        panels.forEach((panel, i) => {
+          panel.classList.toggle('active', i === index);
+        });
+      });
+    });
+  });
+
+
+  // ── SLIDER FILL ──────────────────────────────────────
+  document.querySelectorAll('.slider').forEach(slider => {
+    function updateFill() {
+      const min = +slider.min || 0;
+      const max = +slider.max || 100;
+      const val = +slider.value;
+      const pct = ((val - min) / (max - min)) * 100;
+      slider.style.setProperty('--slider-fill', pct + '%');
+    }
+    slider.addEventListener('input', updateFill);
+    updateFill();
   });
 
 

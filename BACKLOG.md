@@ -15,3 +15,6 @@ Items that are not immediate fixes, need design direction, or require separate r
 
 ## Accessibility
 - **Button disabled state WCAG failure**: `opacity: 0.35` on `.btn:disabled` fails WCAG AA contrast (4.5:1) on both filled and outline variants. Need to redesign disabled state with explicit muted colors instead of opacity reduction. Keep opacity for cursor/pointer-events but set explicit color values.
+
+## Command Palette
+- **State variants visualisation**: brainstorm and enrich in-depth state variants for the command palette — autocomplete dropdown, search result suggestions, loading/querying state, no-results empty state, highlighted match within results, group headers with collapse, recent/frequent items section, error state, and keyboard shortcut rebinding hints. Each variant needs distinct visual treatment while staying cohesive with the palette's dark, minimal aesthetic.
