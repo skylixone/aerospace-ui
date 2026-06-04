@@ -107,3 +107,15 @@
 - KV grid: user prefers table-like (gap-trick + outer border) over separate tile cards; reverted tile approach
 - Section `#steppers` had been missing `kit-section-title` for multiple batches — only caught now during numbering audit
 - Renumbering sections: always count section titles against sidebar links to catch missing/extra titles
+
+## Session 2026-06-04 — Sidebar Sync Principle
+- **When adding/removing main content sections, ALWAYS sync the sidebar nav links** to match the actual section list. Sidebar is the source of truth for ordering, but it must also be the accurate reflection of what exists.
+- Before committing any section add/remove, grep both the sidebar `<nav>` and the main `<section>` tags to verify 1:1 correspondence.
+
+## Session 2026-06-04 — Batch M
+- Dividers: accent divider now solid (no opacity), dashed divider uses brighter border color
+- Tooltip: added arrow indicator via ::before; border brightened; demo text given dotted underline for affordance
+- Header demo: 3-word title "Flight Control Dashboard" to test line-break behavior
+- Skeleton section already had visuals — verified, no changes
+- Footer demo already had timestamp + status — verified, no changes
+- #vision section not present in HTML — no cleanup needed

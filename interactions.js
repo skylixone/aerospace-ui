@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     toastViewport.appendChild(toast);
 
-    // Force reflow then open so CSS transition plays from translateY(100%)
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         toast.dataset.state = 'open';
@@ -85,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function dismiss() {
       toast.removeAttribute('data-state');
       toast.addEventListener('transitionend', () => toast.remove(), { once: true });
-      // Fallback removal if transition doesn't fire
       setTimeout(() => toast.remove(), 400);
     }
 
@@ -93,38 +91,52 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(dismiss, 4000);
   }
 
-  const triggerBtn = document.getElementById('toast-trigger');
-  if (triggerBtn) {
-    triggerBtn.addEventListener('click', () => {
-      showToast({
-        title: 'Board updated',
-        desc: 'Aerospace v2 — 14 images indexed.',
-        action: 'Undo',
+  function showMiniToast({ text, updating = false }) {
+    if (!toastViewport) return;
+
+    const toast = document.createElement('div');
+    toast.className = `mini-toast ${updating ? 'updating' : ''}`;
+    toast.innerHTML = `
+      <div class="mini-toast-icon">${updating ? '⟳' : '✓'}</div>
+      <span>${text}</span>
+    `;
+
+    toastViewport.appendChild(toast);
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        toast.classList.add('show');
       });
     });
+
+    function dismiss() {
+      toast.classList.remove('show');
+      toast.addEventListener('transitionend', () => toast.remove(), { once: true });
+      setTimeout(() => toast.remove(), 500);
+    }
+
+    setTimeout(dismiss, 3000);
   }
 
-  const triggerMiniBtn = document.getElementById('toast-trigger-mini');
-  if (triggerMiniBtn) {
-    triggerMiniBtn.addEventListener('click', () => {
-      showToast({
-        title: 'System check complete',
-        variant: 'toast-mini',
-      });
-    });
-  }
+  document.getElementById('toast-trigger-brief')?.addEventListener('click', () => {
+    showToast({ title: 'Scheduled: Catch up', desc: 'Friday, February 10, 2023 at 5:57 PM', action: 'Undo' });
+  });
 
-  const triggerErrBtn = document.getElementById('toast-trigger-err');
-  if (triggerErrBtn) {
-    triggerErrBtn.addEventListener('click', () => {
-      showToast({
-        title: 'Upload failed',
-        desc: '2 images could not be processed.',
-        action: 'Retry',
-        variant: 'destructive',
-      });
-    });
-  }
+  document.getElementById('toast-trigger-indepth')?.addEventListener('click', () => {
+    showToast({ title: 'Profile Updated', desc: 'Your changes have been saved successfully and synced across all devices.', action: 'View' });
+  });
+
+  document.getElementById('toast-trigger-err')?.addEventListener('click', () => {
+    showToast({ title: 'Upload Failed — ERR_UPLOAD_412', desc: 'Payload exceeds 25MB limit. Compress or split into multiple uploads.', action: 'Retry', variant: 'destructive' });
+  });
+
+  document.getElementById('toast-trigger-mini-ok')?.addEventListener('click', () => {
+    showMiniToast({ text: 'Saved' });
+  });
+
+  document.getElementById('toast-trigger-mini-busy')?.addEventListener('click', () => {
+    showMiniToast({ text: 'Saving...', updating: true });
+  });
 
 
   // ── CMD+K ────────────────────────────────────────────
@@ -200,6 +212,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sections.forEach(section => {
     revealObserver.observe(section);
+  });
+
+  // ── STEPPER CONTROLS ─────────────────────────────────
+  document.querySelectorAll('.stepper-control').forEach(control => {
+    const minus = control.querySelector('.stepper-btn:first-child');
+    const plus = control.querySelector('.stepper-btn:last-child');
+    const val = control.querySelector('.stepper-val');
+    if (!minus || !plus || !val) return;
+
+    function update(delta) {
+      const current = parseFloat(val.textContent) || 0;
+      const step = current % 1 === 0 ? 1 : 0.1;
+      const next = +(current + delta * step).toFixed(1);
+      val.textContent = next;
+      minus.disabled = next <= 0;
+    }
+
+    minus.addEventListener('click', () => update(-1));
+    plus.addEventListener('click', () => update(+1));
   });
 
 });

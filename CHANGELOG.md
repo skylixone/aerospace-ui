@@ -88,3 +88,11 @@ All notable changes to the Aerospace UI Kit.
 - **KV grid**: restored table-like visual (reverted separate tiles; back to `gap: 1px` + `background: var(--border-dim)` + outer border)
 - **Section numbering**: discovered `#steppers` was missing `kit-section-title`; added it; renumbered all 35 sections sequentially 01–35 to match sidebar order
 - **Empty state**: verified present at `#empty` (renumbered to 23)
+
+### Batch M — Dividers / Skeleton / Tooltip / Header / Footer
+- **Dividers**: `.divider-accent` removed opacity (now solid `var(--accent)` at 2px); `.divider-dashed` border color upgraded to `var(--border-bright)`
+- **Skeleton**: already populated with 3-card shimmer grid — no changes needed
+- **Tooltip**: border upgraded to `var(--border-bright)`; added `::before` arrow indicator; demo text styled with dotted underline + bright color for affordance
+- **Header demo**: changed to 3-word title "Flight Control Dashboard" (avoids forced line-break)
+- **Footer**: already includes timestamp + status indicators — verified
+- **Cleanup**: no `#vision` section present — nothing to remove

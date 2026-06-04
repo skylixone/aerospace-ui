@@ -45,7 +45,6 @@
   <a href="#cmd">Command Palette</a>
   <a href="#popover">Popover</a>
   <a href="#toast">Toast</a>
-  <a href="#mini-toast">Mini Toast</a>
   <a href="#stepper">Stepper</a>
   <a href="#hovercard">Hover Card</a>
   <div class="nav-heading">Layout</div>
@@ -1156,15 +1155,17 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
 <section class="kit-section" id="toast">
     <div class="kit-section-title">26</div>
     <h2>Toast</h2>
-    <div class="kit-row" style="margin-bottom: 16px;">
-      <button class="btn btn-secondary btn-sm" id="toast-trigger">Trigger Toast</button>
-      <button class="btn btn-secondary btn-sm" id="toast-trigger-mini">Trigger Mini</button>
-      <button class="btn btn-ghost btn-sm" id="toast-trigger-err">Trigger Error</button>
+    <div class="kit-row" style="margin-bottom: 16px; flex-wrap: wrap;">
+      <button class="btn btn-secondary btn-sm" id="toast-trigger-brief">Trigger Brief</button>
+      <button class="btn btn-secondary btn-sm" id="toast-trigger-indepth">Trigger In-Depth</button>
+      <button class="btn btn-ghost btn-sm" id="toast-trigger-err">Trigger Destructive</button>
+      <button class="btn btn-secondary btn-sm" id="toast-trigger-mini-ok">Trigger Mini OK</button>
+      <button class="btn btn-secondary btn-sm" id="toast-trigger-mini-busy">Trigger Mini Busy</button>
     </div>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; max-width: 1200px;">
       <div>
         <div class="kit-label" style="margin-bottom: 8px;">Brief</div>
-        <div class="toast-viewport" style="position: relative; padding: 0;">
+        <div class="toast-viewport" style="position: relative; padding: 0; align-items: start;">
           <div class="toast" data-state="open">
             <div class="toast-title">Scheduled: Catch up</div>
             <div class="toast-desc">Friday, February 10, 2023 at 5:57 PM</div>
@@ -1175,7 +1176,7 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
       </div>
       <div>
         <div class="kit-label" style="margin-bottom: 8px;">In-Depth</div>
-        <div class="toast-viewport" style="position: relative; padding: 0;">
+        <div class="toast-viewport" style="position: relative; padding: 0; align-items: start;">
           <div class="toast" data-state="open">
             <div class="toast-title">Profile Updated</div>
             <div class="toast-desc">Your changes have been saved successfully and synced across all devices.</div>
@@ -1185,8 +1186,17 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
         </div>
       </div>
       <div>
+        <div class="kit-label" style="margin-bottom: 8px;">Mini Success</div>
+        <div class="toast-viewport" style="position: relative; padding: 0; align-items: start;">
+          <div class="mini-toast" style="position: relative; transform: none; opacity: 1; top: auto; left: auto;">
+            <div class="mini-toast-icon">✓</div>
+            <span>Saved</span>
+          </div>
+        </div>
+      </div>
+      <div>
         <div class="kit-label" style="margin-bottom: 8px;">Brief Destructive</div>
-        <div class="toast-viewport" style="position: relative; padding: 0;">
+        <div class="toast-viewport" style="position: relative; padding: 0; align-items: start;">
           <div class="toast destructive" data-state="open">
             <div class="toast-title">Uh oh! Something went wrong.</div>
             <div class="toast-desc">There was a problem with your request.</div>
@@ -1197,7 +1207,7 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
       </div>
       <div>
         <div class="kit-label" style="margin-bottom: 8px;">In-Depth Destructive</div>
-        <div class="toast-viewport" style="position: relative; padding: 0;">
+        <div class="toast-viewport" style="position: relative; padding: 0; align-items: start;">
           <div class="toast destructive" data-state="open">
             <div class="toast-title">Upload Failed — ERR_UPLOAD_412</div>
             <div class="toast-desc">Payload exceeds 25MB limit. Compress or split into multiple uploads. <a href="#" style="color: var(--accent);">Learn more →</a></div>
@@ -1206,29 +1216,16 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-<section class="kit-section" id="mini-toast">
-    <div class="kit-section-title">27</div>
-    <h2>Mini Toast (Centered)</h2>
-    <div class="kit-group">
-      <div class="kit-label">Success State</div>
-      <div class="mini-toast" style="position: relative; transform: none; opacity: 1; top: auto; left: auto;">
-        <div class="mini-toast-icon">✓</div>
-        <span>Saved</span>
+      <div>
+        <div class="kit-label" style="margin-bottom: 8px;">Mini Updating</div>
+        <div class="toast-viewport" style="position: relative; padding: 0; align-items: start;">
+          <div class="mini-toast updating" style="position: relative; transform: none; opacity: 1; top: auto; left: auto;">
+            <div class="mini-toast-icon">⟳</div>
+            <span>Saving...</span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="kit-group">
-      <div class="kit-label">Updating State</div>
-      <div class="mini-toast updating" style="position: relative; transform: none; opacity: 1; top: auto; left: auto;">
-        <div class="mini-toast-icon">⟳</div>
-        <span>Saving...</span>
-      </div>
-    </div>
-    <pre class="code-block"><span class="keyword">.mini-toast-container</span> { <span class="prop">position</span>: fixed; <span class="prop">top</span>: 80px; <span class="prop">left</span>: 50%; <span class="prop">transform</span>: translateX(-50%); }
-<span class="keyword">.mini-toast</span> { <span class="prop">background</span>: <span class="keyword">var</span>(--green); <span class="prop">color</span>: <span class="keyword">var</span>(--bg); }
-<span class="keyword">.mini-toast.show</span> { <span class="prop">transform</span>: translateY(0) scale(1); <span class="prop">opacity</span>: 1; }</pre>
   </section>
 
 <section class="kit-section" id="stepper">
@@ -1250,9 +1247,6 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
         <button class="stepper-btn">+</button>
       </div>
     </div>
-    <pre class="code-block"><span class="keyword">.stepper-control</span> { <span class="prop">display</span>: inline-flex; <span class="prop">align-items</span>: center; <span class="prop">border</span>: 1px solid <span class="keyword">var</span>(--border-dim); }
-<span class="keyword">.stepper-btn</span> { <span class="prop">min-width</span>: 36px; <span class="prop">padding</span>: 8px 12px; }
-<span class="keyword">.stepper-val</span> { <span class="prop">padding</span>: 8px 16px; <span class="prop">border-left</span>: 1px solid <span class="keyword">var</span>(--border-dim); <span class="prop">border-right</span>: 1px solid <span class="keyword">var</span>(--border-dim); }</pre>
   </section>
 
 <section class="kit-section" id="hovercard" style="min-height: 340px;">
@@ -1292,7 +1286,7 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
     <div class="page-header">
       <div>
         <div class="overline">System Name</div>
-        <h1>Component Reference</h1>
+        <h1>Flight Control Dashboard</h1>
       </div>
       <div class="kv-grid">
         <div class="kv-cell"><span class="kv-label">META KEY</span><span class="kv-value">META VALUE</span></div>
@@ -1327,8 +1321,8 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
             <div class="type-small" style="color: var(--text-dim);">This action cannot be undone.</div>
           </div>
           <div style="padding: 16px 24px; border-top: 1px solid var(--border-dim); display: flex; justify-content: flex-end; gap: 12px; background: var(--bg-surface);">
-            <button class="btn btn-ghost btn-sm">Cancel</button>
-            <button class="btn btn-danger btn-sm">Remove</button>
+            <button class="btn btn-ghost">Cancel</button>
+            <button class="btn btn-danger">Remove</button>
           </div>
         </div>
       </div>
@@ -1390,7 +1384,7 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
     <h2>Tooltip</h2>
 
     <div class="kit-row" style="gap: 32px; padding-bottom: 24px;">
-      <span class="tooltip" data-tooltip="This is a tooltip">Hover me (Text)</span>
+      <span class="tooltip" data-tooltip="This is a tooltip" style="border-bottom: 1px dotted var(--border-bright); color: var(--text-bright);">Hover me (Text)</span>
       <span class="tag tag-accent tooltip" data-tooltip="12 images · 8 reviewed">Hover me (Tag)</span>
     </div>
   </section>

@@ -665,7 +665,7 @@ select.input {
   font-weight: 600;
   padding: 0 6px;
   background: transparent;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-bright);
   color: var(--accent);
 }
 
@@ -807,7 +807,7 @@ table {
 .metric-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-bright);
 }
 
 .metric {
@@ -955,7 +955,7 @@ table {
 
 .cmd-dialog {
   background: var(--bg);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-bright);
   width: 100%;
   max-width: 640px;
   box-shadow:
@@ -1078,7 +1078,7 @@ table {
 .toast {
   pointer-events: auto;
   background: var(--bg-raised);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-bright);
   padding: var(--space-md);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   display: grid;
@@ -1238,7 +1238,7 @@ table {
    ═══════════════════════════════════════════════ */
 .stepper-control {
   display: inline-flex;
-  align-items: center;
+  align-items: stretch;
   border: 1px solid var(--border-dim);
   background: var(--bg-surface);
 }
@@ -1250,7 +1250,7 @@ table {
   color: var(--text-dim);
   background: transparent;
   border: 1px solid var(--border-dim);
-  padding: 8px 14px;
+  padding: 0 14px;
   cursor: pointer;
   transition: all var(--transition-fast);
   line-height: 1;
@@ -1952,10 +1952,10 @@ ul.list.list-triple-dash li {
 
 .modal-window {
   background: var(--bg);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-bright);
   border-radius: var(--radius-md);
   width: 100%;
-  max-width: 420px;
+  max-width: 520px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
   animation: scale-in 0.15s ease-out;
   overflow: hidden;
@@ -1995,12 +1995,11 @@ ul.list.list-triple-dash li {
 .divider-accent {
   height: 2px;
   background: var(--accent);
-  opacity: 0.5;
 }
 
 .divider-dashed {
   background: none;
-  border-top: 1px dashed var(--border-dim);
+  border-top: 1px dashed var(--border-bright);
   height: 0;
 }
 
@@ -2043,7 +2042,7 @@ ul.list.list-triple-dash li {
   left: 50%;
   transform: translateX(-50%);
   background: var(--bg-raised);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-bright);
   color: var(--text);
   font-size: var(--text-xs);
   padding: 6px 10px;
@@ -2056,6 +2055,26 @@ ul.list.list-triple-dash li {
 }
 
 .tooltip:hover::after {
+  opacity: 1;
+}
+
+/* Tooltip arrow */
+.tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 3px);
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--border-bright) transparent transparent transparent;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition);
+  z-index: 101;
+}
+
+.tooltip:hover::before {
   opacity: 1;
 }
 
@@ -2506,7 +2525,7 @@ ul.list.list-triple-dash li {
 
 .tag-remove {
   cursor: pointer;
-  opacity: 0.5;
+  
   transition: opacity var(--transition);
   margin-left: 2px;
 }
