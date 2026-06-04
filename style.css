@@ -2062,9 +2062,10 @@ ul.list.list-triple-dash li {
 .tooltip::before {
   content: '';
   position: absolute;
-  bottom: calc(100% + 3px);
+  bottom: calc(100%);
   left: 50%;
   transform: translateX(-50%);
+ 
   border-width: 4px;
   border-style: solid;
   border-color: var(--border-bright) transparent transparent transparent;
