@@ -69,7 +69,7 @@
       <h1>Component Reference</h1>
     </div>
     <div class="kv-grid">
-      <div class="kv-cell"><span class="kv-label">VERSION</span><span class="kv-value">1.0</span></div>
+      <div class="kv-cell"><span class="kv-label">VERSION</span><span class="kv-value">1.1</span></div>
       <div class="kv-cell"><span class="kv-label">FONT</span><span class="kv-value">GEIST MONO</span></div>
       <div class="kv-cell"><span class="kv-label">THEME</span><span class="kv-value">DARK AEROSPACE</span></div>
       <div class="kv-cell"><span class="kv-label">LICENSE</span><span class="kv-value">PERSONAL USE</span></div>
@@ -465,57 +465,177 @@
 <section class="kit-section" id="steppers">
     <div class="kit-section-title">08</div>
     <h2>Interactive Steppers</h2>
-    
+
     <div class="kit-group">
-      <div class="kit-label">Phased Operations (Horizontal)</div>
+      <div class="kit-label">State Taxonomy — Horizontal</div>
       <div class="stepper">
         <div class="step complete">
           <div class="step-indicator"></div>
-          <div class="step-label">Ignition</div>
-          <div class="step-info">T-minus 10s</div>
+          <div class="step-label">Complete</div>
+          <div class="step-info">.step.complete</div>
+        </div>
+        <div class="step progress">
+          <div class="step-indicator"></div>
+          <div class="step-label">Progress</div>
+          <div class="step-info">.step.progress</div>
+        </div>
+        <div class="step review">
+          <div class="step-indicator"></div>
+          <div class="step-label">Review</div>
+          <div class="step-info">.step.review</div>
         </div>
         <div class="step active">
           <div class="step-indicator"></div>
-          <div class="step-label">Lift-off</div>
-          <div class="step-info">Ascent active</div>
+          <div class="step-label">Active</div>
+          <div class="step-info">.step.active</div>
+        </div>
+        <div class="step next">
+          <div class="step-indicator"></div>
+          <div class="step-label">Next Up</div>
+          <div class="step-info">.step.next</div>
         </div>
         <div class="step">
           <div class="step-indicator"></div>
-          <div class="step-label">Stage 1 Sep</div>
-          <div class="step-info">Pending altitude</div>
-        </div>
-        <div class="step">
-          <div class="step-indicator"></div>
-          <div class="step-label">Orbit Entry</div>
-          <div class="step-info">Target Met</div>
+          <div class="step-label">Queued</div>
+          <div class="step-info">default .step</div>
         </div>
       </div>
     </div>
 
     <div class="kit-group">
-      <div class="kit-label">Checklist (Vertical)</div>
+      <div class="kit-label">Adjacent Mixed Pairs — No Separation Needed</div>
+      <div class="stepper" style="margin-bottom: var(--space-lg);">
+        <div class="step complete">
+          <div class="step-indicator"></div>
+          <div class="step-label">01 Complete</div>
+          <div class="step-info">Verified</div>
+        </div>
+        <div class="step progress">
+          <div class="step-indicator"></div>
+          <div class="step-label">02 Progress</div>
+          <div class="step-info">Started</div>
+        </div>
+        <div class="step review">
+          <div class="step-indicator"></div>
+          <div class="step-label">03 Review</div>
+          <div class="step-info">Pending check</div>
+        </div>
+        <div class="step active">
+          <div class="step-indicator"></div>
+          <div class="step-label">04 Active</div>
+          <div class="step-info">Current</div>
+        </div>
+        <div class="step next">
+          <div class="step-indicator"></div>
+          <div class="step-label">05 Next</div>
+          <div class="step-info">Queued after active</div>
+        </div>
+        <div class="step">
+          <div class="step-indicator"></div>
+          <div class="step-label">06 Queued</div>
+          <div class="step-info">Not started</div>
+        </div>
+      </div>
+      <div class="stepper">
+        <div class="step progress animated">
+          <div class="step-indicator"></div>
+          <div class="step-label">Animated</div>
+          <div class="step-info">.progress.animated</div>
+        </div>
+        <div class="step progress">
+          <div class="step-indicator"></div>
+          <div class="step-label">Static</div>
+          <div class="step-info">.progress</div>
+        </div>
+        <div class="step complete">
+          <div class="step-indicator"></div>
+          <div class="step-label">Complete</div>
+          <div class="step-info">Fused pair accepted</div>
+        </div>
+        <div class="step complete">
+          <div class="step-indicator"></div>
+          <div class="step-label">Complete</div>
+          <div class="step-info">Same hue merges</div>
+        </div>
+        <div class="step next">
+          <div class="step-indicator"></div>
+          <div class="step-label">Next</div>
+          <div class="step-info">After active</div>
+        </div>
+        <div class="step active">
+          <div class="step-indicator"></div>
+          <div class="step-label">Active</div>
+          <div class="step-info">Before next</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kit-group">
+      <div class="kit-label">Checklist — Vertical Variant</div>
       <div class="stepper stepper-vertical" style="max-width: 300px;">
         <div class="step complete">
           <div class="step-indicator"></div>
           <div>
             <div class="step-label">Pre-flight check</div>
-            <div class="step-info">All systems nominal</div>
+            <div class="step-info">.complete — done, verified</div>
+          </div>
+        </div>
+        <div class="step progress">
+          <div class="step-indicator"></div>
+          <div>
+            <div class="step-label">Fueling</div>
+            <div class="step-info">.progress — started, not finished</div>
+          </div>
+        </div>
+        <div class="step review">
+          <div class="step-indicator"></div>
+          <div>
+            <div class="step-label">Tank seal inspect</div>
+            <div class="step-info">.review — complete, pending verification</div>
           </div>
         </div>
         <div class="step active">
           <div class="step-indicator"></div>
           <div>
-            <div class="step-label">Fueling</div>
-            <div class="step-info">45% Complete</div>
+            <div class="step-label">Crew Ingress</div>
+            <div class="step-info">.active — current step</div>
+          </div>
+        </div>
+        <div class="step next">
+          <div class="step-indicator"></div>
+          <div>
+            <div class="step-label">Hatch close</div>
+            <div class="step-info">.next — queued immediately after active</div>
           </div>
         </div>
         <div class="step">
           <div class="step-indicator"></div>
           <div>
-            <div class="step-label">Crew Ingress</div>
-            <div class="step-info">Awaiting confirmation</div>
+            <div class="step-label">Launch</div>
+            <div class="step-info">default — not started</div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="kit-group">
+      <div class="kit-label">Usage Note</div>
+      <div class="summary" style="font-size: var(--text-sm); color: var(--text-dim); max-width: 65ch;">
+        Pick adjacent states so their fill patterns differ. Two identical states will merge visually — that is accepted only for consecutive <code class="code-inline">.complete</code> steps. Do not add gaps, margins, or dividers between indicators. Use <code class="code-inline">.progress.animated</code> for an opt-in drifting stripe; animation is removed under <code class="code-inline">prefers-reduced-motion</code>.
+      </div>
+    </div>
+
+    <div class="kit-group">
+      <div class="kit-label">Semantic Guidance</div>
+      <div class="summary" style="font-size: var(--text-sm); color: var(--text-dim); max-width: 65ch;">
+        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-sm);">
+          <li><code class="code-inline">.complete</code> — step is done and verified.</li>
+          <li><code class="code-inline">.progress</code> — step is started but not finished.</li>
+          <li><code class="code-inline">.review</code> — step is complete and pending verification.</li>
+          <li><code class="code-inline">.active</code> — the current step in focus.</li>
+          <li><code class="code-inline">.next</code> — the step queued immediately after active.</li>
+          <li><code class="code-inline">.step</code> — a step that has not started.</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -1391,7 +1511,7 @@ console.log(<span class="string">`Tagged ${tags.length} refs in ${Date.now() - t
 
   <!-- ── FOOTER ── -->
   <div class="page-footer" style="margin-top: 48px;">
-    <span>AEROSPACE UI KIT · V1.0</span>
+    <span>AEROSPACE UI KIT · V1.1</span>
     <span>33 COMPONENTS</span>
   </div>
 

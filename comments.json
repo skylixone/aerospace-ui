@@ -688,5 +688,143 @@
     "text": "control demos should have interactive tabs",
     "snippet": "<section class=\"kit-section revealed\" id=\"tabs\">\n    <div class=\"kit-section-title\">07</div>\n    <h2",
     "url": "http://localhost:8000/components/#stepper"
+  },
+  {
+    "selector": "div.status",
+    "text": "replace with link \"\u2190 Back to 3mdash\". href=3mdash.net",
+    "snippet": "<div class=\"status\">\n      <span class=\"status-dot online\"></span>\n      AEROSPACE UI KIT\n    </div>",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "span.type-overline.bright",
+    "text": "ditch",
+    "snippet": "<span class=\"type-overline bright\">INDUSTRIAL DESIGN SYSTEM \u2014 A 3MDASH.NET PROJECT</span>",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "#top",
+    "text": "make this section 100vw;\ninsert assets/landingScreenshot.png on the right, aspect locked, 30% viewport img height",
+    "snippet": "<section class=\"page-hero\" id=\"top\">\n    <span class=\"type-overline bright\">INDUSTRIAL DESIGN SYSTEM",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "h1.type-hero.hero-title",
+    "text": "font-size: calc(var(--text-3xl) * 1.618)",
+    "snippet": "<h1 class=\"type-hero hero-title\" data-reveal=\"\" style=\"opacity: 1; transform: translateY(0px);\">Inte",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "p.type-subheading.hero-sub",
+    "text": "replace copy: \"UI-kit for high-reliability and mission-critical applications: IoT, industrial SaaS, miltech. Single 62 kb CSS file, zero dependencies, amber on black. Clarity-first\"",
+    "snippet": "<p class=\"type-subheading hero-sub\" data-reveal=\"\" style=\"opacity: 1; transform: translateY(0px);\">\n",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "span.tag.sd",
+    "text": "move to replace /html/body/div[1]/section[1]/span[1]",
+    "snippet": "<span class=\"tag sd\">NO JS REQUIRED</span>",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "span.section-index",
+    "text": "section # are aligned by cap height of the section title, see https://aerospace.3mdash.net/components/",
+    "snippet": "<span class=\"section-index\">02</span>",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "h2.type-heading",
+    "text": "no all-caps in section titles",
+    "snippet": "<h2 class=\"type-heading\">LIVE SHOWCASE</h2>",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "div.panel-body",
+    "text": "need a darker primary  bg for this component (both here and in ui kit)",
+    "snippet": "<div class=\"panel-body\">\n          <div class=\"timeline\">\n            <div class=\"timeline-row\">\n   ",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "#t-latency",
+    "text": "grid values should be in monospace",
+    "snippet": "<div class=\"metric-value green\" id=\"t-latency\">36 ms</div>",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "div.metric-trend.up",
+    "text": "doesn't match baseline of other .metric-detail in this .metric card (too high)",
+    "snippet": "<div class=\"metric-trend up\">\u25b2 STEADY</div>",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "div",
+    "text": "move to end of section 02",
+    "snippet": "<div data-reveal=\"\" style=\"opacity: 1; transform: translateY(0px);\">\n        <span class=\"type-overl",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "span.step-info",
+    "text": "swap the order: first the title, then the stepper. arrange both by left side (2-col table in essence)",
+    "snippet": "<span class=\"step-info\">01 \u2014 COMPLETE</span>",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "div.stack",
+    "text": "also wtf is stepper component doing in \"how to use\"?",
+    "snippet": "<div class=\"stack\">\n\n      <span class=\"type-overline class-label\">.stepper-vertical \u2014 state taxonom",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "span.tag.sa-filled",
+    "text": "move up to \"no js required\"",
+    "snippet": "<span class=\"tag sa-filled\">FREE</span>",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "#top",
+    "text": "hero section must be 100vw",
+    "snippet": "<section class=\"page-hero\" id=\"top\">\n    <div class=\"hero-eyebrow\" data-reveal=\"\" style=\"opacity: 1;",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "img",
+    "text": "screenshot is broken atm; mmust be: hero text on the left, image on the right. all within one scroll",
+    "snippet": "<img src=\"assets/landingScreenshot.png\" alt=\"Aerospace UI Kit component overview screenshot\" loading",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "div.kv-cell",
+    "text": "ditch the kv.grid section here",
+    "snippet": "<div class=\"kv-cell\"><span class=\"kv-label\">Components</span><span class=\"kv-value\">30</span></div>",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "div.metric-detail",
+    "text": "remove \"last 30 days\"",
+    "snippet": "<div class=\"metric-detail\">last 30 days</div>",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "div.usage-col",
+    "text": "this section clips out the right side of main content column; fix by reducing width of \"how to use 01 codeblock\"",
+    "snippet": "<div class=\"usage-col\">\n          <span class=\"type-overline class-label\">02 \u2014 Components are classe",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "span.type-overline",
+    "text": "ditch \"origin\"",
+    "snippet": "<span class=\"type-overline\">ORIGIN</span>",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "p.type-heading",
+    "text": "normal capitalization",
+    "snippet": "<p class=\"type-heading\" style=\"max-width: 26ch; margin-top: var(--space-md);\">IN OPERATIONAL USE BY ",
+    "url": "http://localhost:8000/landing.html"
+  },
+  {
+    "selector": "#kit",
+    "text": "center the whole text in this section",
+    "snippet": "<footer class=\"footer-sign\" id=\"kit\">\n    <span class=\"type-overline bright\">STATUS</span>\n    <p cl",
+    "url": "http://localhost:8000/landing.html"
   }
 ]

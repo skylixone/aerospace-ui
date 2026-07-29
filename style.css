@@ -3,7 +3,7 @@
    ═══════════════════════════════════════════════ */
 :root {
   /* Backgrounds */
-  --bg: #0a0a0a;
+  --bg: #000;
   --bg-raised: #111111;
   --bg-surface: #0d0d0d;
   --bg-hover: #141414;
@@ -211,6 +211,7 @@ body {
   font-weight: 700;
   color: var(--text-bright);
   letter-spacing: -0.01em;
+  line-height:28px;
 }
 
 .type-subheading {
@@ -721,6 +722,7 @@ select.input {
 
 .panel-body {
   padding: var(--space-lg);
+  background: var(--bg-surface);
 }
 
 .panel-footer {
@@ -831,6 +833,8 @@ table {
   font-weight: 700;
   line-height: 1;
   color: var(--text-bright);
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
 }
 
 .metric-value.accent {
@@ -843,7 +847,18 @@ table {
 .metric-detail {
   font-size: var(--text-sm);
   color: var(--text-dim);
+  line-height: 1;
+}
+
+.metric-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
   margin-top: var(--space-sm);
+}
+
+.metric-row .metric-trend {
+  margin-top: 0;
 }
 
 .metric-value span.frac {
@@ -2141,6 +2156,72 @@ ul.list.list-triple-dash li {
 
 .step.complete .step-label {
   color: var(--text-bright);
+}
+
+/* New stepper states — distinct fill patterns, no gaps or dividers.
+   Reset the .step.progress element so it is not styled by the unrelated
+   .progress progress-bar component class. */
+.step.progress {
+  height: auto;
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.step.progress .step-indicator {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      var(--green) 0 3px,
+      transparent 3px 6px
+    ),
+    var(--border-muted);
+}
+
+.step.review .step-indicator {
+  background: transparent;
+  border: 1px solid var(--green);
+}
+
+.step.next .step-indicator {
+  background: var(--accent-dim);
+}
+
+.step.progress .step-label,
+.step.review .step-label {
+  color: var(--green);
+}
+
+.step.next .step-label {
+  color: var(--text);
+}
+
+/* Opt-in animated progress stripe (static by default) */
+.step.progress.animated .step-indicator {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      var(--green) 0 3px,
+      transparent 3px 6px
+    ),
+    var(--border-muted);
+  background-size: 8.49px 8.49px; /* sqrt(6^2 + 6^2) for seamless 6px diagonal repeat */
+  animation: stepper-progress-drift 2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step.progress.animated .step-indicator {
+    animation: none;
+  }
+}
+
+@keyframes stepper-progress-drift {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 8.49px 0;
+  }
 }
 
 .step-info {

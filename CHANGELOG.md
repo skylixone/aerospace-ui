@@ -4,6 +4,14 @@ All notable changes to the Aerospace UI Kit.
 
 ## [Unreleased]
 
+### Stepper State System (v1.1.0)
+- **Steppers**: expanded state taxonomy from three to six states
+- Added `.step.progress` — diagonal green hatch over muted base for started-but-unfinished steps
+- Added `.step.review` — hollow green border for completed steps pending verification
+- Added `.step.next` — dim amber fill for the step queued immediately after active
+- Added `.step.progress.animated` — opt-in drifting progress stripe, disabled under `prefers-reduced-motion`
+- Updated stepper documentation with live examples, class names, semantic guidance, and the "states not separation" usage note
+
 ### Batch J — Badges / Status / Tags / Lists
 - **Badges**: increased to 32×32px across all variants (was 26×26px); icon font-size 14px → 16px
 - **Badge demos**: reorganized to alert semantics — `i` (info), `✓` (success), `!` (warning), `!` (error)
