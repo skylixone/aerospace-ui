@@ -727,7 +727,7 @@
   },
   {
     "selector": "span.section-index",
-    "text": "section # are aligned by cap height of the section title, see https://aerospace.3mdash.net/components/",
+    "text": "section # are aligned by cap height of the section title, see https://3mdash.net/aerospace-ui/components/",
     "snippet": "<span class=\"section-index\">02</span>",
     "url": "http://localhost:8000/landing.html"
   },

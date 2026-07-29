@@ -157,7 +157,7 @@
         UI-kit for high-reliability and mission-critical applications: IoT, industrial SaaS, miltech. Single 62 KB CSS file, zero dependencies, amber on black. Clarity-first.
       </p>
       <div class="hero-actions" data-reveal>
-        <a class="btn btn-primary btn-lg" href="https://aerospace.3mdash.net/" target="_blank" rel="noopener">GET THE KIT</a>
+        <a class="btn btn-primary btn-lg" href="https://3mdash.net/aerospace-ui/" target="_blank" rel="noopener">GET THE KIT</a>
         <a class="btn btn-secondary btn-lg" href="#how-to-use">HOW TO USE ↓</a>
       </div>
     </div>
@@ -231,7 +231,7 @@
           <div class="metric">
             <div class="metric-label">Stylesheet CDN</div>
             <div class="metric-value green" id="t-latency">24 ms</div>
-            <div class="metric-detail">aerospace.3mdash.net</div>
+            <div class="metric-detail">3mdash.net/aerospace-ui</div>
           </div>
           <div class="metric">
             <div class="metric-label">Build</div>
@@ -339,7 +339,7 @@
             <pre class="code-block"><code id="snippet-page"><span class="prop">&lt;!DOCTYPE html&gt;</span>
 <span class="prop">&lt;html&gt;</span>
 <span class="prop">&lt;head&gt;</span>
-  <span class="prop">&lt;link</span> <span class="keyword">rel</span>=<span class="string">"stylesheet"</span> <span class="keyword">href</span>=<span class="string">"https://aerospace.3mdash.net/style.css"</span><span class="prop">&gt;</span>
+  <span class="prop">&lt;link</span> <span class="keyword">rel</span>=<span class="string">"stylesheet"</span> <span class="keyword">href</span>=<span class="string">"https://3mdash.net/aerospace-ui/style.css"</span><span class="prop">&gt;</span>
 <span class="prop">&lt;/head&gt;</span>
 <span class="prop">&lt;body&gt;</span>
   <span class="prop">&lt;button</span> <span class="keyword">class</span>=<span class="string">"btn btn-primary"</span><span class="prop">&gt;</span>IT WORKS<span class="prop">&lt;/button&gt;</span>
@@ -382,8 +382,8 @@
             <hr class="divider">
             <p class="type-body" style="margin: 0; max-width: 64ch;">No external dependency: download <span class="code-inline">style.css</span> into your project and link it locally — <span class="code-inline">&lt;link rel="stylesheet" href="./aerospace.css"&gt;</span>. You stop receiving monthly updates; you change when you choose.</p>
             <div class="install-row">
-              <a class="btn btn-secondary btn-sm" href="https://aerospace.3mdash.net/style.css" id="vendor-download" download>Download style.css</a>
-              <a class="btn btn-ghost btn-sm" href="https://aerospace.3mdash.net/" target="_blank" rel="noopener">Component reference ↗</a>
+              <a class="btn btn-secondary btn-sm" href="https://3mdash.net/aerospace-ui/style.css" id="vendor-download" download>Download style.css</a>
+              <a class="btn btn-ghost btn-sm" href="https://3mdash.net/aerospace-ui/" target="_blank" rel="noopener">Component reference ↗</a>
             </div>
           </div>
         </div>
@@ -441,7 +441,7 @@
 
   <div class="page-footer">
     <span>AEROSPACE UI KIT — A <a href="https://3mdash.net" target="_blank" rel="noopener">3MDASH.NET</a> PROJECT</span>
-    <span><a href="https://aerospace.3mdash.net/" target="_blank" rel="noopener">GET THE KIT</a> — FREE · UPDATED MONTHLY</span>
+    <span><a href="https://3mdash.net/aerospace-ui/" target="_blank" rel="noopener">GET THE KIT</a> — FREE · UPDATED MONTHLY</span>
   </div>
 
 </div>
@@ -477,7 +477,7 @@
 <script type="module">
 import { animate, stagger } from 'animejs';
 
-const INSTALL_SNIPPET = '<link rel="stylesheet" href="https://aerospace.3mdash.net/style.css">';
+const INSTALL_SNIPPET = '<link rel="stylesheet" href="https://3mdash.net/aerospace-ui/style.css">';
 const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 let reducedMotion = motionQuery.matches;
 const motionStateEl = document.getElementById('cmd-motion-state');
@@ -551,7 +551,7 @@ document.querySelectorAll('[data-copy-for]').forEach(btn => {
 document.getElementById('vendor-download').addEventListener('click', async e => {
   e.preventDefault();
   try {
-    const res = await fetch('https://aerospace.3mdash.net/style.css');
+    const res = await fetch('https://3mdash.net/aerospace-ui/style.css');
     if (!res.ok) throw new Error(res.status);
     const blob = await res.blob();
     const a = document.createElement('a');
@@ -560,7 +560,7 @@ document.getElementById('vendor-download').addEventListener('click', async e => 
     a.click();
     URL.revokeObjectURL(a.href);
   } catch {
-    window.open('https://aerospace.3mdash.net/style.css', '_blank', 'noopener');
+    window.open('https://3mdash.net/aerospace-ui/style.css', '_blank', 'noopener');
   }
 });
 
@@ -627,8 +627,8 @@ function run(item) {
       reducedMotion = !reducedMotion;
       syncMotionState();
       break;
-    case 'kit': window.open('https://aerospace.3mdash.net/', '_blank', 'noopener'); break;
-    case 'ref': window.open('https://aerospace.3mdash.net/', '_blank', 'noopener'); break;
+    case 'kit': window.open('https://3mdash.net/aerospace-ui/', '_blank', 'noopener'); break;
+    case 'ref': window.open('https://3mdash.net/aerospace-ui/', '_blank', 'noopener'); break;
   }
 }
 
